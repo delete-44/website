@@ -6,4 +6,4 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - .:/usr/website/app
+      - .:/srv/jekyll/site
