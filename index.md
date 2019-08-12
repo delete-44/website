@@ -5,4 +5,4 @@
 layout: page
 title: eggs
 ---
-<p class='f1'>h-hewwo? uWu</p>
+<p class='f1 primary'>h-hewwo? uWu</p>

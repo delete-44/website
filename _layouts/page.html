@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title>{{page.title}}</title>
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
-</head>
+{% include head.html %}
 <body>
+    {% include header.html %}
     {{ content }}
+    <p>Layout: Page</p>
 </body>
