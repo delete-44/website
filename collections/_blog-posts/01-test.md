@@ -1,5 +1,5 @@
 ---
 layout: page
-name: First post :)
+title: First post :)
 ---
 This is a first boy
