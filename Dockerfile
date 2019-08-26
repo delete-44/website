@@ -8,4 +8,4 @@ RUN jekyll build
 
 RUN bundle install
 
-CMD jekyll serve --livereload
+CMD jekyll serve

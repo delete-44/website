@@ -1,3 +1,22 @@
-.primary {
-    color: #204d1e;
+$primary : #596475;
+$secondary : #FDE8E9;
+$tertiary : #C8AFCC;
+$quarternary : #1F2232;
+
+$base-font : 'Open Sans', sans-serif;
+
+// Sitewide defaults
+html { 
+    font-family: 'Open Sans', sans-serif;
 }
+
+// Default colours
+.primary { color: $primary }
+.secondary { color: $secondary }
+.tertiary { color: $tertiary }
+
+// Background colours
+.bgp { background-color: $primary }
+.bgs { background-color: $secondary }
+.bgt { background-color: $tertiary }
+.bgq { background-color: $quarternary }

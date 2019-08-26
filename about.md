@@ -2,4 +2,4 @@
 layout: page
 title: About
 ---
-About :)
+<p class='primary'>About :)</p>
