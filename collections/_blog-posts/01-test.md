@@ -1,6 +1,7 @@
 ---
 layout: post
 title: First post :)
+image: https://placekitten.com/200/200
 ---
 #First Boy
   *  bullet
