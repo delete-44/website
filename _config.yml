@@ -27,6 +27,9 @@ markdown: kramdown
 plugins:
   - jekyll-assets
 
+kramdown:  
+  parse_block_html: true
+  
 # Asset pipeline
 assets:
   digest: true

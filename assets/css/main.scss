@@ -1,19 +1,25 @@
-$primary : #596475;
-$secondary : #FDE8E9;
-$tertiary : #C8AFCC;
+// $primary : #596475;     // Text content
+// $secondary : #FDE8E9;   // Header bg
+// $tertiary : #C8AFCC;    // Site bg
+// $quarternary : #1F2232; // Footer bg
+
+$primary : #FDE8E9;
+$secondary : rgb(107, 96, 109);
+$tertiary : #434b55;
 $quarternary : #1F2232;
 
 $base-font : 'Open Sans', sans-serif;
 
 // Sitewide defaults
 html { 
-    font-family: 'Open Sans', sans-serif;
+  font-family: $base-font;
 }
 
 // Default colours
 .primary { color: $primary }
 .secondary { color: $secondary }
 .tertiary { color: $tertiary }
+.quarternary { color: $quarternary }
 
 // Background colours
 .bgp { background-color: $primary }
