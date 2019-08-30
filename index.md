@@ -5,4 +5,4 @@
 layout: page
 title: Home
 ---
-<p class='f1 primary'>h-hewwo? uWu</p>
+<p class='f1 primary'>Rainy days</p>
