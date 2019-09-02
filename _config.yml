@@ -24,11 +24,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Contact info
 name: Anthony Davies
 avatar: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb
-social:
-  email: daviesanthonye1234@gmail.com
-  github: ctrlaltdelete44
-  linkedin: ctralaltdelete44
-  instagram: anthonyed1
+email: daviesanthonye1234@gmail.com
 
 # Build settings
 markdown: kramdown
