@@ -14,5 +14,4 @@ gem 'minima', '~> 2.5.0'
 
 group :jekyll_plugins do
   gem 'jekyll-assets', '~> 3.0', '>= 3.0.12'
-  
 end

@@ -33,3 +33,9 @@ html {
 .hover-darken:hover {
   color: $primary-dark;
 }
+
+// Vertical center
+.vc {
+  top: 50%;
+  transform: translateY(+50%);
+}

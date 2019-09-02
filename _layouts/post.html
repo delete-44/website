@@ -2,11 +2,13 @@
 layout: page
 ---
 <!DOCTYPE html>
-
-<div class='w-100 bg-center h4' style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://placekitten.com/1920/300")'>
-    <p class='f1 primary tc center'>{{ page.title }}</p>
-</div>
-
+{% if page.image %}
+    <div class='w-80 center bg-center h4' style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ page.image }}")'>
+        <p class='f1 primary tc vc'>{{ page.title }}</p>
+    </div>
+{% else %}
+    <p class='f1 primary tc vc'>{{ page.title }}</p>
+{% endif %}
 <div class='mw8 center bgs tc primary pv3 ph2 mb2'>
     {{ content }}
 </div>
