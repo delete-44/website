@@ -15,10 +15,12 @@ $base-font : 'Open Sans', sans-serif;
 // Sitewide defaults
 html { 
   font-family: $base-font;
+  color: $primary;
 }
 
 // Default colours
 .primary { color: $primary }
+.primary-dark { color: $primary-dark }
 .secondary { color: $secondary }
 .tertiary { color: $tertiary }
 .quarternary { color: $quarternary }
@@ -34,7 +36,7 @@ html {
   color: $primary-dark;
 }
 
-// Vertical center
+// Vertical center (hero images in post template)
 .vc {
   top: 50%;
   transform: translateY(+50%);

@@ -1,8 +1,20 @@
-<div class='w-30-ns mb2 br2 shadow-1 p2 tc bgs'>
-    <a href='/'>
-        <img src='{{ post.image }}' class='center br-100 h3 w3 db' title='{{ post.title }}' alt='{{ post.title }}'>
-    </a>
-    <a href="{{ post.url }}" class='primary pv2'>
-        {{ post.title }}
-    </a>
+<div class='w-50-ns mb2 br2 shadow-1 pa2 bgs center'>
+    <div class='fl mh2 mv1'>
+        <a href='{{ post.url }}' class='link'>
+            <img src='{{ post.image }}' class='center br-100 h3 w3 db' title='{{ post.title }}' alt='{{ post.title }}'>
+        </a>
+    </div>
+    <div class='dib mt2'>
+        <a href="{{ post.url }}" class='primary link hover-darken'>
+            {{ post.title }}
+        </a>
+        <p class='primary'>
+            {% if post.custom_excerpt %}
+                {{ post.custom_excerpt }}&hellip;
+            {% else %}
+                {% assign excerpt = post.content | split:'.' | first %}
+                {{ excerpt }}&hellip;
+            {% endif %}
+        </p>
+    </div>
 </div>

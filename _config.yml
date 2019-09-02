@@ -47,6 +47,8 @@ collections_dir: collections
 collections:
   blog-posts:
     output: true
+  sections:
+    output: false
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
