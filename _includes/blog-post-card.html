@@ -1,14 +1,20 @@
-<div class='w-50-ns mb2 br2 shadow-1 pa2 bgs center'>
+<div class='w-100-ns mb2 br2 shadow-1 pa2 bgs center'>
     <div class='fl mh2 mv1'>
         <a href='{{ post.url }}' class='link'>
             <img src='{{ post.image }}' class='center br-100 h3 w3 db' title='{{ post.title }}' alt='{{ post.title }}'>
         </a>
     </div>
     <div class='dib mt2'>
-        <a href="{{ post.url }}" class='primary link hover-darken'>
+        <a href="{{ post.url }}" class='primary-dark link f4 hover-lighten mv0'>
             {{ post.title }}
         </a>
-        <p class='primary'>
+        {% if post.date %}
+            <p class='subtle dib ph2 f7 mv0'>
+                {{ post.date | date: site.date-format }}
+            </p>
+        {% endif %}
+
+        <p class='primary mv0 f5'>
             {% if post.custom_excerpt %}
                 {{ post.custom_excerpt }}&hellip;
             {% else %}

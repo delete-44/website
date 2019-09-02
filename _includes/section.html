@@ -1,7 +1,9 @@
 <div class='w-70 center'>
-    <p class='primary f2'>
-        {{ section.title }}
-    </p>
+    {% if section.label != '' %}
+        <p class='primary-dark f2 mb0'>
+            {{ section.label }}
+        </p>
+    {% endif %}
     <p class='primary f3'>
         {{ section.content }}
     </p>

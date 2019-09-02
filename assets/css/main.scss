@@ -9,6 +9,7 @@ $tertiary : #434b55;
 $quarternary : #1F2232;
 
 $primary-dark : darken($primary, 10%);
+$subtle : #b3b3b3;
 
 $base-font : 'Open Sans', sans-serif;
 
@@ -20,10 +21,13 @@ html {
 
 // Default colours
 .primary { color: $primary }
-.primary-dark { color: $primary-dark }
 .secondary { color: $secondary }
 .tertiary { color: $tertiary }
 .quarternary { color: $quarternary }
+
+//Additional colours
+.primary-dark { color: $primary-dark }
+.subtle { color: $subtle }
 
 // Background colours
 .bgp { background-color: $primary }
@@ -34,6 +38,11 @@ html {
 .hover-darken:focus,
 .hover-darken:hover {
   color: $primary-dark;
+}
+
+.hover-lighten:focus,
+.hover-lighten:hover {
+  color: $primary;
 }
 
 // Vertical center (hero images in post template)

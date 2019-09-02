@@ -23,11 +23,12 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Contact info
 name: Anthony Davies
-email: daviesanthonye1234@gmail.com
-github: ctrlaltdelete44
-linkedin: ctralaltdelete44
-instagram: anthonyed1
 avatar: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb
+social:
+  email: daviesanthonye1234@gmail.com
+  github: ctrlaltdelete44
+  linkedin: ctralaltdelete44
+  instagram: anthonyed1
 
 # Build settings
 markdown: kramdown
@@ -36,6 +37,8 @@ plugins:
 
 kramdown:  
   parse_block_html: true
+
+date-format: '%B %d, %Y'
   
 # Asset pipeline
 assets:
@@ -46,7 +49,7 @@ collections_dir: collections
 
 collections:
   blog-posts:
-    output: true
+    output: false
   sections:
     output: false
 

@@ -1,5 +1,4 @@
 ---
-title: Home
 priority: 1
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec molestie velit. Interdum et malesuada fames ac ante
