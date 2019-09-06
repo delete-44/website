@@ -45,7 +45,7 @@ collections_dir: collections
 
 collections:
   blog-posts:
-    output: false
+    output: true
   sections:
     output: false
 

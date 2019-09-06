@@ -35,9 +35,15 @@ html {
 .bgt { background-color: $tertiary }
 .bgq { background-color: $quarternary }
 
+.b--primary { border-color: $primary }
+.b--secondary{ border-color: $secondary}
+.b--tertiary { border-color: $tertiary }
+.b--quarternary { border-color: $quarternary }
+
 .hover-darken:focus,
 .hover-darken:hover {
   color: $primary-dark;
+  border-color: $primary-dark;
 }
 
 .hover-lighten:focus,
@@ -48,5 +54,10 @@ html {
 // Vertical center (hero images in post template)
 .vc {
   top: 50%;
-  transform: translateY(+50%);
+  transform: translateY(+100%);
+}
+
+// Banner headers
+.f0 {
+  font-size: 5rem;
 }

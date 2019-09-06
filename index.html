@@ -5,15 +5,9 @@
 layout: page
 title: Home
 ---
-<div class='w-80 center'>
-    <p class='f1 primary-dark tc'>Rainy days</p>
-
-    
+<div class='w-80-ns w-100 center'>
     {% assign sections = site.sections | sort: "priority" %}
     {% for section in sections %}
         {% include section.html %}
     {% endfor %}
-
-
-
 </div>
