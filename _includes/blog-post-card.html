@@ -1,5 +1,26 @@
-<div class='w-30-ns mb2 br2 shadow-1 p2 tc bgs'>
-    <a href="{{ post.url }}" class='primary pv2'>
-        {{ post.title }}
+<div class='w-100-ns mb2 br2 shadow-1 pa2 bgs center'>
+    <a href='{{ post.url }}' class='link fl mh2 mv1 dib-ns dn'>
+        <img src='{{ post.image }}' class='br-100 h3 w3' title='{{ post.title }}' alt='{{ post.title }}'>
     </a>
+    <div class='dib mt2'>
+        <a href="{{ post.url }}" class='primary-dark link f4 hover-lighten mv0'>
+            {{ post.title }}
+        </a>
+        {% if post.date %}
+            <p class='subtle dib-ns db ph2-ns f7 mv0'>
+                {{ post.date | date: site.date-format }}
+            </p>
+        {% endif %}
+
+        <div class='primary mv0 f5 db-ns dn'>
+          <p>
+            {% if post.custom_excerpt %}
+              {{ post.custom_excerpt }}&hellip;
+            {% else %}
+              {% assign excerpt = post.content | split:'.' | first %}
+              {{ excerpt }}&hellip;
+            {% endif %}
+          </p>
+        </div>
+    </div>
 </div>

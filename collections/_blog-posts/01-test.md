@@ -1,9 +1,9 @@
 ---
 layout: post
 title: First post :)
+image: https://placekitten.com/1920/1920
+date:  2019-01-01 00:00:00 -0600
 ---
-#First Boy
-  *  bullet
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec molestie velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse orci lectus, bibendum at malesuada tincidunt, viverra ut libero. Proin elementum quam ut feugiat interdum. Ut facilisis venenatis diam, ac lacinia quam consectetur nec. Suspendisse potenti. Pellentesque consequat dapibus tortor eu rhoncus. Proin lobortis velit nec ipsum aliquam hendrerit. Nullam mattis volutpat ante at aliquet.
 
 Vivamus porttitor laoreet dui, at malesuada mauris mattis nec. Vivamus venenatis sit amet diam vitae elementum. Integer pharetra, massa ac ultrices feugiat, turpis nisl lacinia mauris, bibendum venenatis eros mauris in massa. Vivamus porttitor risus orci, vel finibus diam placerat a. Aenean tempus arcu ac risus bibendum, et porta purus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ultricies ultricies diam id vehicula.

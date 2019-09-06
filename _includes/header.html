@@ -1,5 +1,10 @@
-<header class='w-100-ns mb2 pv1 br2 shadow-1 flex justify-around-ns bgs'>
-    <a href='/' class='f3 primary link hover-darken'>Home</a>
-    <a href='/about' class='f3 primary link hover-darken'>About</a>
-    <a href='/blog-posts' class='f3 primary link hover-darken'>Posts</a>
+<header class='w-100 mb2 pv1 br2 shadow-1 flex justify-between-ns justify-center bgs relative-ns fixed top-0'>
+    <div>
+        <a href='/' class='f3 primary link hover-darken ph3 dib-ns dn'>
+            <i class="fas fa-home"></i>
+        </a>
+    </div>
+    <div>
+        {% include contact-info.html %}
+    </div>
 </header>
