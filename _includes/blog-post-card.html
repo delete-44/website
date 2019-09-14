@@ -1,13 +1,13 @@
-<div class='w-100-ns mb2 br2 shadow-1 pa2 bgs center'>
+<div class='w-100-ns mb2 br2-ns shadow-1-ns pa2 bgs-ns bn-ns bb b--primary center'>
     <a href='{{ post.url }}' class='link fl mh2 mv1 dib-ns dn'>
         <img src='{{ post.image }}' class='br-100 h3 w3' title='{{ post.title }}' alt='{{ post.title }}'>
     </a>
     <div class='dib mt2'>
-        <a href="{{ post.url }}" class='primary-dark link f4 hover-lighten mv0'>
+        <a href="{{ post.url }}" class='primary-dark link f4 hover-lighten'>
             {{ post.title }}
         </a>
         {% if post.date %}
-            <p class='subtle dib-ns db ph2-ns f7 mv0'>
+            <p class='subtle dib-ns db ph2-ns f7 mv0-ns mb0'>
                 {{ post.date | date: site.date-format }}
             </p>
         {% endif %}
@@ -23,4 +23,7 @@
           </p>
         </div>
     </div>
+    <a class="link primary-dark hover-lighten f3 ph1 dn-ns fr mt2" href="{{ post.url }}">
+      <i class="fas fa-arrow-circle-right"></i>
+    </a>
 </div>

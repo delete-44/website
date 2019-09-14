@@ -35,10 +35,25 @@ html {
 .bgt { background-color: $tertiary }
 .bgq { background-color: $quarternary }
 
+// Border colours
 .b--primary { border-color: $primary }
-.b--secondary{ border-color: $secondary}
+.b--secondary { border-color: $secondary}
 .b--tertiary { border-color: $tertiary }
 .b--quarternary { border-color: $quarternary }
+
+@media screen and (min-width: 30em) {
+  // Background colours for large screens
+  .bgp-ns { background-color: $primary }
+  .bgs-ns { background-color: $secondary }
+  .bgt-ns { background-color: $tertiary }
+  .bgq-ns { background-color: $quarternary }
+
+  // Border colours for large screens
+  .b--primary-ns { border-color: $primary }
+  .b--secondary-ns { border-color: $secondary}
+  .b--tertiary-ns { border-color: $tertiary }
+  .b--quarternary-ns { border-color: $quarternary }
+}
 
 .hover-darken:focus,
 .hover-darken:hover {
