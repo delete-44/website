@@ -16,8 +16,29 @@ $base-font : 'Open Sans', sans-serif;
 // Sitewide defaults
 html { 
   font-family: $base-font;
+}
+
+// Text defaults
+p {
   color: $primary;
 }
+
+// Link defaults- link primary-dark hover-lighten
+a {
+  text-decoration: none;
+  transition: color .15s ease-in;
+  color: $primary-dark;
+  &:focus {
+    outline: 1px dotted currentColor;
+  }
+  &:hover, &:focus {
+    color: $primary;
+  }
+  &:link, &:visited, &:hover, &:active, &:focus {
+    transition: color .15s ease-in;
+  }
+}
+
 
 // Default colours
 .primary { color: $primary }
