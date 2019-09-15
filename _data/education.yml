@@ -1,0 +1,93 @@
+gcse:
+  condense: true
+  name: GCSE
+  english_literature:
+    name: English Literature
+    grade: A
+  english_language:
+    name: English Language
+    grade: A
+  mathematics:
+    name: Mathematics
+    grade: A
+  computing:
+    name: Computing
+    grade: B
+  history:
+    name: History
+    grade: B
+  geography:
+    name: Geography
+    grade: A
+  biology:
+    name: Biology
+    grade: A
+  chemistry:
+    name: Chemistry
+    grade: A
+  physics:
+    name: Physics
+    grade: A
+  statistics:
+    name: Statistics
+    grade: A
+
+a-level:
+  condense: false
+  name: A-Level
+  biology:
+    name: Biology
+    grade: B
+  chemistry:
+    name: Chemistry
+    grade: B
+  statistics:
+    name: Mathematics (Statistics)
+    grade: B
+  creative_writing:
+    name: Creative Writing
+    grade: B
+
+year_one:
+  condense: false
+  name: University Year One
+  software_engineering:
+    name: Software Engineering
+    grade: 80.89%
+  databases:
+    name: Database Analysis, Design and Development
+    grade: 71.4%
+  infrastructure:
+    name: Principles of Infrastructure
+    grade: 69.33%
+  cybersecurity:
+    name: Cybersecurity Essentials
+    grade: 70%
+  mathematics:
+    name: Algorithms, Data Structures and Mathematics
+    grade: 74.39%
+  introduction:
+    name: Immersive Introduction
+    grade: 65.75%
+
+year_two:
+  condense: false
+  name: University Year Two
+  design_pattenrs:
+    name: Object Orientated Software Engineering with Design Pattern
+    grade: 79.35%
+  ui_design:
+    name: User-Centred Interface Design
+    grade: 74%
+  databases:
+    name: Database Applications Development
+    grade: 71.5%
+  artificial_intelligence:
+    name: Computation Theory and Artificial Intelligence
+    grade: 62.5%
+  embedded_programming:
+    name: Embedded Programming and the IoT
+    grade: 63%
+  integrated_project:
+    name: Computer Science Integrating Project
+    grade: 71.52%
