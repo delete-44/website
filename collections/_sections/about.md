@@ -1,18 +1,11 @@
 ---
-label: About
-priority: 2
+label: Bio
+show_label: true
+priority: 3
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec molestie velit. Interdum et malesuada fames ac ante
-ipsum primis in faucibus. Suspendisse orci lectus, bibendum at malesuada tincidunt, viverra ut libero. Proin elementum
-quam ut feugiat interdum. Ut facilisis venenatis diam, ac lacinia quam consectetur nec. Suspendisse potenti.
-Pellentesque consequat dapibus tortor eu rhoncus. Proin lobortis velit nec ipsum aliquam hendrerit. Nullam mattis
-volutpat ante at aliquet.
+Anthony is a software developer and former freelance editor - his experience in both fields has given him an appreciation for close attention to detail and efficiency in the workplace. As such he is a firm believer in the value of small, agile development teams - developing for an MVP with regular meetings to establish targets and achievements is an effective fundamental for running a development team. Equally fundamental is a balance between communication and bureaucracy - this is to prevent either a lack of effective communication or the team being caught up in unecessary paperwork that infringes on actual development.
 
-Vivamus porttitor laoreet dui, at malesuada mauris mattis nec. Vivamus venenatis sit amet diam vitae elementum. Integer
-pharetra, massa ac ultrices feugiat, turpis nisl lacinia mauris, bibendum venenatis eros mauris in massa. Vivamus
-porttitor risus orci, vel finibus diam placerat a. Aenean tempus arcu ac risus bibendum, et porta purus venenatis. Class
-aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ultricies ultricies diam id
-vehicula.
+Outside of work Anthony is an avid creator and consumer of literature. He specialises in short, introspective fiction and has a growing anthology of poetry. In this he is frequently inspired by music (and indeed spends most of his life with a backing soundtrack) and the complex emotions evoked - particularly nostalgia, escapism, and anxiety. Fiendishly difficult to replicate in a first-person stream of concsiousness piece, but with endless potential for abusing characters. His primary experiment in long fiction is a fantasy novella written during college and unfinished at time of writing.
 
 Donec sit amet dolor sed sem elementum pretium eu non erat. Phasellus a lobortis nisl. Pellentesque condimentum sapien
 nibh, sed semper tortor venenatis sed. Suspendisse sit amet sem sit amet mi dictum interdum a nec leo. Sed malesuada
