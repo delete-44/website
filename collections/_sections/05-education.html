@@ -5,16 +5,29 @@ priority: 5
 ---
 <table class='w-100'>
     <tr>
-        <th>Qualification</th>
-        <th>Subject</th>
-        <th>Grade</th>
+        <th class='tl primary-dark f4 normal bb b--primary'>Qualification</th>
+        <th class='tl primary-dark f4 normal bb b--primary'>Subject</th>
+        <th class='tl primary-dark f4 normal bb b--primary'>Grade</th>
     </tr>
     {% for education_level in site.data.education %}
         {% if site.data.education_config[education_level.first].condense %}
             <tr></tr>
         {% else %}
             {% for qualification in education_level[1] %}
-                {% include table-row.html show_label = forloop.first %}
+                <tr>
+                    {% if forloop.first %}
+                        {% assign content=site.data.education_config[education_level.first].name %}
+                        {% include table-cell.html content=content strike_off=forloop.last %}
+                    {% else %}
+                        {% include table-cell.html content='' strike_off=forloop.last %}
+                    {% endif %}
+
+                    {% assign content=qualification[1].name %}
+                    {% include table-cell.html content=content strike_off=forloop.last %}
+
+                    {% assign content=qualification[1].grade %}
+                    {% include table-cell.html content=content strike_off=forloop.last %}
+                </tr>
             {% endfor %}
         {% endif %}
     {% endfor %}
