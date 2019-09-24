@@ -5,13 +5,17 @@ priority: 5
 ---
 <table class='w-100'>
     <tr>
-        <th>Subject</th>
         <th>Qualification</th>
+        <th>Subject</th>
         <th>Grade</th>
     </tr>
     {% for education_level in site.data.education %}
-        {% for qualification in education_level[1] %}
-            {% include table-row.html show_label=false %}
-        {% endfor %}
+        {% if site.data.education_config[education_level.first].condense %}
+            <tr></tr>
+        {% else %}
+            {% for qualification in education_level[1] %}
+                {% include table-row.html show_label = forloop.first %}
+            {% endfor %}
+        {% endif %}
     {% endfor %}
 </table>

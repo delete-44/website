@@ -1,7 +1,7 @@
 <tr>
     <td>
         {% if include.show_label %}
-            <p>Education level name</p>
+            {{ site.data.education_config[education_level.first].name }}
         {% endif %}
     </td>
     <td>{{ qualification[1].name }}</td>
