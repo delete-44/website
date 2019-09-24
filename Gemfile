@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-git_source(:github) {|repo_name| 'https://github.com/#{repo_name}' }
+git_source(:github) { |_repo_name| 'https://github.com/#{repo_name}' }
 
 gem 'sprockets', '~> 3.7', '>= 3.7.2'
 
