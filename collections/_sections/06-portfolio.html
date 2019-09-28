@@ -6,15 +6,14 @@ priority: 6
 <p>
     During my time with the University of Plymouth I have studied C# and Java. Using these I have
     explored the fundamentals of Object Orientated Programming, including the study of design patterns.
-    These skills were used particularly during my second year, in which one assignment called for the
-    development of a Patient Administration System. This was graded on the use of effective (but basic)
-    version control, and appropriate use of design patterns.
 </p>
 
-<p>
-    Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
-    generated mazemaker in Excel...
-</p>
+{% for portfolio-data in site.data.portfolio %}
+    {% assign portfolio-piece = portfolio-data[1] %}
+    {% assign modulus = forloop.index | modulo:2 %}
+
+    {% include portfolio-card.html flipper=modulus %}
+{% endfor %}
 
 <p>
     Working with Plymouth Software has drastically improved my skills both in development and project

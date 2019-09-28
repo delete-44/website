@@ -1,6 +1,14 @@
 patient-admin:
   title: Patient Administration System
   link: https://github.com/ctrlaltdelete44/SOFT252
+  summary: >-
+    These skills were used particularly during my second year, in which one assignment called for the 
+    development of a Patient Administration System. This was graded on the use of effective (but basic)
+    version control, and appropriate use of design patterns.
+
 zombies:
   title: Mazemaker
   link: n
+  summary: >-
+    Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
+    generated mazemaker in Excel...
