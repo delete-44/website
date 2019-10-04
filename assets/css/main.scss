@@ -92,3 +92,13 @@ a {
   top: 50%;
   transform: translateY(+100%);
 }
+
+// Reverse orientation of items every flip
+.flex-flip-0 {
+  flex-direction: row;
+  text-align: end;
+}
+
+.flex-flip-1 {
+  flex-direction: row-reverse;
+}

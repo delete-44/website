@@ -8,7 +8,7 @@ patient-admin:
 
 zombies:
   title: Mazemaker
-  link: n
+  link: Null
   summary: >-
     Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
     generated mazemaker in Excel...
