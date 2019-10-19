@@ -3,23 +3,9 @@ label: Portfolio
 show_label: true
 priority: 6
 ---
-<p>
-    During my time with the University of Plymouth I have studied C# and Java. Using these I have
-    explored the fundamentals of Object Orientated Programming, including the study of design patterns.
-</p>
 
 {% for portfolio-data in site.data.portfolio %}
     {% assign portfolio-piece = portfolio-data[1] %}
     {% assign modulus = forloop.index | modulo:2 %}
-
     {% include portfolio-card.html flipper=modulus %}
 {% endfor %}
-
-<p>
-    Working with Plymouth Software has drastically improved my skills both in development and project
-    management. I have been working largely with Ruby on Rails - this website itself is a testament to
-    that - handling serverside functionality. In preparation for my placement here, I taught myself the
-    basics of Rails and created a test application (following Michael Hartl's wonderful [tutorial]). I
-    have since been able to expand upon this, and use it as a testing ground for for significant changes
-    in other projects.
-</p>

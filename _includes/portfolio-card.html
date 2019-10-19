@@ -1,17 +1,26 @@
-<div class='w-100-ns mb2 br2-ns shadow-1-ns bgs-ns bn-ns bb b--primary center flex justify-around flex-flip-{{ include.flipper }}'>
-    <div class='w-40'>
-
-    </div>
-    <div class='w-40 pa2'>
+<p class='primary pt2'>
+    {{ portfolio-piece.introduction }}
+</p>
+<div class='w-100-ns mb2 br2-ns shadow-1-ns bgs-ns bn-ns center flex-ns justify-between-ns pa-1 flex-flip-{{ include.flipper }}'>
+    <div class='w-70-ns dib w-100 pa2'>
         {% if portfolio-piece.link %}
-            <a href='{{ portfolio-piece.link }}'>
-                <p class='primary-dark link hover-lighten'> {{ portfolio-piece.title }} </p>
-            </a>
+        <a href='{{ portfolio-piece.link }}'>
+            <p class='primary-dark link hover-lighten dib-ns'> {{ portfolio-piece.title }} </p>
+        </a>
         {% else %}
-            <p class='primary-dark'> {{ portfolio-piece.title }} </p>
+        <p class='primary-dark dib-ns'> {{ portfolio-piece.title }} </p>
         {% endif %}
         <p>
             {{ portfolio-piece.summary }}
         </p>
+    </div>
+    <div class='w-30-ns dib-ns'>
+        {% if portfolio-piece.link %}
+            <a href='{{ portfolio-piece.link }}' class='link'>
+                {% include portfolio-image-tag.html %}
+            </a>
+        {% else %}
+            {% include portfolio-image-tag.html %}
+        {% endif %}
     </div>
 </div>

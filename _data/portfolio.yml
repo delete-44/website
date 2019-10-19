@@ -1,6 +1,10 @@
 patient-admin:
   title: Patient Administration System
   link: https://github.com/ctrlaltdelete44/SOFT252
+  image: https://placekitten.com/500/500
+  introduction: >-
+    During my time with the University of Plymouth I have studied C# and Java. Using these I have
+    explored the fundamentals of Object Orientated Programming, including the study of design patterns.
   summary: >-
     These skills were used particularly during my second year, in which one assignment called for the 
     development of a Patient Administration System. This was graded on the use of effective (but basic)
@@ -9,6 +13,22 @@ patient-admin:
 zombies:
   title: Mazemaker
   link: Null
+  image: https://placekitten.com/500/500
+  introduction: Null
   summary: >-
     Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
     generated mazemaker in Excel...
+
+dungeons-ror:
+  title: RoR Tutorial
+  link: https://github.com/ctrlaltdelete44/DungeonsROR
+  image: https://placekitten.com/500/500
+  introduction: >-
+    Working with Plymouth Software has drastically improved my skills both in development and project
+    management. I have been working largely with Ruby on Rails - this website itself is a testament to
+    that - handling serverside functionality.
+  summary: >-
+    In preparation for my placement here, I taught myself the
+    basics of Rails and created a test application (following Michael Hartl's wonderful [tutorial]). I
+    have since been able to expand upon this, and use it as a testing ground for for significant changes
+    in other projects.
