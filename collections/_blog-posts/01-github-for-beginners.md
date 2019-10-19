@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Software Development for Beginners
+title: GitHub Basics
 image: https://placekitten.com/1920/1920
 date:  2019-10-19
+custom_excerpt: Things I wish I'd known starting uni...
 ---
 ### Content warning: this article covers serious basics - if you're at all familiar with GitHub & version control, you're going to get bored *very* quickly
 
@@ -29,10 +30,13 @@ GitHub is used for version control. Whenever you make a significant change to yo
 ### Sounds great in theory! How do I actually use it?
 #### Initialising a repository
 Assuming you've got a GitHub account set up and project in mind, getting started with version control is simple.
+
 1. Through the GitHub site, create a new repository. There will be an option to initialise the project with a `README.md`, which is good to check. That will create an empty Markdown document that will be displayed on the repositories page to share important information with people viewing it.
+
 2. With this created, you'll be presented with a page like [this](), albeit much more empty. There will be a button in the corner, `Clone or Download`, and when you click it you'll be given a link:
 `https://github.com/your-github-username/your-repository-name.git`
 Get a copy of this!
+
 3. You'll need to open up a command line - `cmd.exe` on Windows, or `Terminal` on Mac. This will by default open in your root drive (something like `C:/`) and you can use basic commands to navigate to where you want to store your repositories. I've put a Command cheatsheet below, feel free to refer to this
 
 N.B here a $ denotes a command to type, do not include this in your terminal
@@ -40,6 +44,7 @@ N.B here a $ denotes a command to type, do not include this in your terminal
 $ mkdir documents/repositories
 $ cd documents/repositories
 ```
+
 4. ...clone a local copy of your repository..
 ```
 $ git clone https://github.com/your-github-username/your-repository-name.git
@@ -54,20 +59,21 @@ That's the setup for local development sorted! You can do this from any machine 
 
 #### Making a commit
 With your command line set up as before and already in the correct directory, you're good to make your first commit
+
 1. Check what you're about to upload. Run the following command which will show you what files you're about to commit
 
 N.B here a > denotes a response from the terminal
 ```
 $ git status
-   > On branch github-blog-post
-   > Changes not staged for commit:
-   >   (use "git add <file>..." to update what will be committed)
-   >   (use "git checkout -- <file>..." to discard changes in working directory)
+>   On branch github-blog-post
+>   Changes not staged for commit:
+>     (use "git add <file>..." to update what will be committed)
+>     (use "git checkout -- <file>..." to discard changes in working directory)
 
-   > 	modified:   _layouts/post.html
-   > 	modified:   collections/_blog-posts/01-github-for-beginners.md
+>   	modified:   _layouts/post.html
+>   	modified:   collections/_blog-posts/01-github-for-beginners.md
 
-   > no changes added to commit (use "git add" and/or "git commit -a")
+>   no changes added to commit (use "git add" and/or "git commit -a")
 ```
 This response is telling me that, at time of writing, I've modified two documents in my repository - both related to the blog post I'm writing at the moment.
 
@@ -81,15 +87,33 @@ $ git add -A
 ```
 
 3. Create a commit for these changes. Give this a message with the `-m` tag
----
+```
 $ git commit -m 'Added making a commit tutorial'
----
+>   git[github-blog-post 5b36022] Added making a commit tutorial
+>   2 files changed, 69 insertions(+), 6 deletions(-)
+```
 
 4. And push this to your repository:
----
+```
 $ git push
----
-### CLI Cheatsheet
+>   Enumerating objects: 13, done.
+>   Counting objects: 100% (13/13), done.
+>   Delta compression using up to 8 threads
+>   Compressing objects: 100% (7/7), done.
+>   Writing objects: 100% (7/7), 4.03 KiB | 4.03 MiB/s, done.
+>   Total 7 (delta 2), reused 0 (delta 0)
+>   remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+>   To https://github.com/ctrlaltdelete44/website.git
+>      dc92a21..5b36022  github-blog-post -> github-blog-post
+```
+
+Now if you visit your repository on GitHub, https://github.com/your-github-username/your-repository-name, you'll see your changes published there. Now you'll also be able to visit the `commits` tab to see a history of your changes, and view an individual commit to see the diff report.
+
+Explore as much as you want to - this will become very familiar very quickly, so don't worry if the command line stuff seems daunting at first.
+
+There are of course more advanced steps with version control that are designed to give you an efficient and thoroughly tested workflow that you're welcome to research.
+
+### Basics of CLI Cheatsheet
 
 ## 2. Make projects for fun!
 

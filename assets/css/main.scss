@@ -69,5 +69,6 @@ html {
 // Vertical center (hero images in post template)
 .vc {
   top: 50%;
-  transform: translateY(+100%);
+  left: 50%;
+  transform: translate(-50%, -125%);
 }
