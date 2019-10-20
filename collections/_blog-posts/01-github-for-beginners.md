@@ -20,6 +20,8 @@ GitHub is used for version control. Whenever you make a significant change to yo
  * **Repository:** The online location of your entire project
  * **Commit:** A change to your code. This is given a message and a unique identifier (a SHA code), which means you can see a clear history of your development and undo steps as needed
  * **Diff~~erence~~ Report:** A tool provided by GitHub that allows you to see a direct, line-by-line comparison of your commit with what's already on the repository
+ * **Local:** A copy of your code stored on a development computer
+ * **Remote:** The copy of your code stored on Git
 
 ### What makes that useful?
  * You can access this code from any computer with an internet connection
@@ -114,6 +116,12 @@ Explore as much as you want to - this will become very familiar very quickly, so
 There are of course more advanced steps with version control that are designed to give you an efficient and thoroughly tested workflow that you're welcome to research.
 
 ### Basics of CLI Cheatsheet
+ * **cd:** *Change directory*, this is used for traversing your storage in the command line. For example `cd documents/repos` will navigate to, if the source is found, the repos folder in your documents. `cd ../` can be used to navigate up a path level, for example if you're already in `repos` and want to return to `documents`
+* **ls:** *List*, this is used to show files and folders in your current directory. This can be useful when using cd to remember filenames
+* **git status:** This will return a report on what files have been changed since your last commit
+* **git add:** This is used to stage files ready to be committed. It can be used with `.` or `-A` as options to add all changed files
+* **git commit:** This creates a commit based on staged files. Use the `-m` option to add a message to this commit
+* **git push:** This pushes your local commits to your remote repository
 
 ## 2. Make projects for fun!
 
