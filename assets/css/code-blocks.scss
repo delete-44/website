@@ -1,0 +1,22 @@
+/*
+* Adapted from GitHub style for Pygments syntax highlighter, for use with Jekyll
+* Courtesy of GitHub.com
+*/
+
+.highlight pre, pre, .highlight .hll {
+  background-color: #373737;
+  border: 1px solid rgb(66, 49, 62);
+  margin: 0 auto; padding: 6px 10px;
+  border-radius: 2px;
+  color: white;
+}
+
+.highlight {
+  .nb { color: #0086b3; }
+  .o { font-weight: bold; }
+  .s2 { color: #dd7e11; }
+  .c { color: #6a9b60; font-style: italic; }
+  .nt { color: #4cc7f0; }
+}
+
+pre { overflow-x: scroll; }
