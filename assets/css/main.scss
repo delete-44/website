@@ -63,6 +63,7 @@ a {
 .b--quarternary { border-color: $quarternary }
 
 @media screen and (min-width: 30em) {
+  body { line-height: 1.6; }
   // Background colours for large screens
   .bgp-ns { background-color: $primary }
   .bgs-ns { background-color: $secondary }
@@ -85,12 +86,6 @@ a {
 .hover-lighten:focus,
 .hover-lighten:hover {
   color: $primary;
-}
-
-// Vertical center (hero images in post template)
-.vc {
-  top: 50%;
-  transform: translateY(+100%);
 }
 
 // Reverse orientation of items every flip
