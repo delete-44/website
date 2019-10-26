@@ -1,0 +1,15 @@
+year_two:
+  condense: false
+  name: University Year Two
+
+year_one:
+  condense: false
+  name: University Year One
+
+a-level:
+  condense: false
+  name: A-Level
+
+gcse:
+  condense: true
+  name: GCSE

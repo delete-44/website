@@ -1,0 +1,65 @@
+patient-admin:
+  title: Patient Administration System
+  link: https://github.com/ctrlaltdelete44/SOFT252
+  image: https://placekitten.com/500/500
+  introduction: >-
+    During my time with the University of Plymouth I have studied C# and Java. Using these I have
+    explored the fundamentals of Object Orientated Programming, including the study of design patterns.
+  summary: >-
+    These skills were used particularly during my second year, in which one assignment called for the 
+    development of a Patient Administration System. This was graded on the use of effective (but basic)
+    version control, and appropriate use of design patterns.
+
+train-service:
+  title: Train Booking System
+  link: Null
+  image: https://placekitten.com/500/500
+  introduction: >-
+    The following semester, we were assigned random groups and given a bigger project than we'd seen before,
+    a train booking system. This was to incorporate a mobile app for customers, a Java desktop app for staff
+    use, and a web app for administration (plus a database and web API so they could interact). Unfortunately
+    as a university-managed task, the GitHub repo has since been removed.
+  summary: >-
+    My role in this was building the desktop app, web app, and co-authoring a Java library that handled our
+    API connections that we could simply import to every project.
+
+zombies:
+  title: Mazemaker
+  link: Null
+  image: https://placekitten.com/500/500
+  introduction:
+    Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
+    generated mazemaker in Excel.
+  summary: >-
+    This, very simply, created a random maze using the Excel sheet as a grid. The process was to create a
+    `Master` path from the center of the given range, which would repeatedly select 'valid' (ie unblocked)
+    adjacent squares until it couldn't find any other valid paths or reached the end of the selection.
+    Then the code would traverse along this path (with a given step size so you could adjust complexity)
+    and create a 'child' path wherever it could.
+
+
+dungeons-ror:
+  title: RoR Tutorial
+  link: https://github.com/ctrlaltdelete44/DungeonsROR
+  image: https://placekitten.com/500/500
+  introduction: >-
+    Working with Plymouth Software has drastically improved my skills both in development and project
+    management. I have been working largely with Ruby on Rails - this website itself is a testament to
+    that - handling serverside functionality.
+  summary: >-
+    In preparation for my placement here, I taught myself the
+    basics of Rails and created a test application (following Michael Hartl's wonderful
+    <a href='https://www.railstutorial.org'>tutorial</a>). I have since been able to expand upon this, and use it
+    as a testing ground for for significant changes in other projects.
+    At time of writing, this is live <a href='https://young-forest-93499.herokuapp.com/'>here</a>
+
+rainy-days:
+  title: This website!
+  link: https://github.com/ctrlaltdelete44/website
+  image: https://placekitten.com/500/500
+  introduction: >-
+    Learning about so many new technologies made me excited to try them outside of work. So I made this!
+  summary: >-
+    This website is my personal practice in development. I'm using GitHub for version control (and to a
+    better standard than I have before) and have it deployed via Netlify. Feel free to check out the repo
+    for more information on how it's been built

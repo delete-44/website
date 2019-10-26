@@ -1,9 +1,8 @@
-
-{% if section.label != '' %}
-    <p class='primary-dark f2 mb0 tl-ns tc'>
+{% if section.show_label %}
+    <p class='primary-dark f3 f2-ns bb b--primary '>
         {{ section.label }}
     </p>
 {% endif %}
-<p class='primary mv0'>
+<p class='primary'>
     {{ section.content }}
 </p>

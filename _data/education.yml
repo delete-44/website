@@ -1,0 +1,101 @@
+year_two:
+  design_patterns:
+    name: Object Orientated Software Engineering with Design Patterns
+    shorthand: Design Patterns
+    grade: 79.35%
+  ui_design:
+    name: User-Centred Interface Design
+    shorthand: UX Design
+    grade: 74%
+  databases:
+    name: Database Applications Development
+    shorthand: Database Development
+    grade: 71.5%
+  artificial_intelligence:
+    name: Computation Theory and Artificial Intelligence
+    shorthand: AI
+    grade: 62.5%
+  embedded_programming:
+    name: Embedded Programming and the IoT
+    shorthand: Embedded Systems
+    grade: 63%
+  integrated_project:
+    name: Computer Science Integrating Project
+    shorthand: Integrated Project
+    grade: 71.52%
+
+year_one:
+  software_engineering:
+    name: Software Engineering
+    shorthand: Software Engineering
+    grade: 80.89%
+  databases:
+    name: Database Analysis, Design and Development
+    shorthand: Database Design
+    grade: 71.4%
+  infrastructure:
+    name: Principles of Infrastructure
+    shorthand: Infrastructure
+    grade: 69.33%
+  cybersecurity:
+    name: Cybersecurity Essentials
+    shorthand: Cybersecurity
+    grade: 70%
+  mathematics:
+    name: Algorithms, Data Structures and Mathematics
+    shorthand: Algorithms
+    grade: 74.39%
+  introduction:
+    name: Immersive Introduction
+    shorthand: Introduction
+    grade: 65.75%
+
+a-level:
+  biology:
+    name: Biology
+    shorthand: Biology
+    grade: B
+  chemistry:
+    name: Chemistry
+    shorthand: Chemistry
+    grade: B
+  statistics:
+    name: Mathematics (Statistics)
+    shorthand: Statistics
+    grade: B
+  creative_writing:
+    name: Creative Writing
+    shorthand: Creative Writing
+    grade: B
+
+gcse:
+  english_literature:
+    name: English Literature
+    grade: A
+  english_language:
+    name: English Language
+    grade: A
+  mathematics:
+    name: Mathematics
+    grade: A
+  computing:
+    name: Computing
+    grade: B
+  history:
+    name: History
+    grade: B
+  geography:
+    name: Geography
+    grade: A
+  biology:
+    name: Biology
+    grade: A
+  chemistry:
+    name: Chemistry
+    grade: A
+  physics:
+    name: Physics
+    grade: A
+  statistics:
+    name: Statistics
+    grade: A
