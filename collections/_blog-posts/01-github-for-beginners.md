@@ -37,7 +37,9 @@ Assuming you've got a GitHub account set up and project in mind, getting started
 
 2. With this created, you'll be presented with a page like [this](https://github.com/ctrlaltdelete44/website), albeit much more empty. There will be a button in the corner, `Clone or Download`, and when you click it you'll be given a link:
 
-`https://github.com/your-github-username/your-repository-name.git`
+```
+https://github.com/your-github-username/your-repository-name.git
+```
 
 Get a copy of this!
 
@@ -159,7 +161,8 @@ My best recommendation is to decide on a language or framework you're interested
 You have complete freedom over what you choose to study outside of your course. Take advantage of this time!
 
 ## 5. Go to hackathons
-### Hackathon: An organised event (check with any computing societies at your university, or the [MLH website](https://mlh.io/) to see when) that, in my experience, are dedicated 12-hour sessions of programming around a given theme
+***Hackathon**: An organised event (check with any computing societies at your university, or the [MLH website](https://mlh.io/) to see when) that, in my experience, are dedicated 12-hour sessions of programming around a given theme*
+
 Struggling to find time to work on your own projects? Take part in events organised for people like you. Hackathons are a great learning experience and can be a *lot* of fun. In my experience they...
  * are free to sign up for
  * offer lunch &amp; refreshments
