@@ -42,9 +42,7 @@ html {
 .b--quarternary { border-color: $quarternary }
 
 @media screen and (min-width: 30em) {
-  body {
-    line-height: 1.6;
-  }
+  body { line-height: 1.6; }
   // Background colours for large screens
   .bgp-ns { background-color: $primary }
   .bgs-ns { background-color: $secondary }
