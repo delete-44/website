@@ -1,15 +1,10 @@
-// $primary : #596475;     // Text content
-// $secondary : #FDE8E9;   // Header bg
-// $tertiary : #C8AFCC;    // Site bg
-// $quarternary : #1F2232; // Footer bg
+$primary : #424242; // Text content
+$secondary : #f5b342; // Accent colour
+$tertiary : #FEFEFA; // Site background
+$quarternary : #1F2232; // Footer background
 
-$primary : #FDE8E9;
-$secondary : rgb(107, 96, 109);
-$tertiary : #434b55;
-$quarternary : #1F2232;
-
-$primary-dark : darken($primary, 10%);
 $subtle : #b3b3b3;
+$secondary-dark : darken($secondary, 20%);
 
 $base-font : 'Open Sans', sans-serif;
 
@@ -23,22 +18,25 @@ p {
   color: $primary;
 }
 
-// Link defaults- link primary-dark hover-lighten
+// Link defaults - link secondary hover-secondary-darken
 a {
   text-decoration: none;
   transition: color .15s ease-in;
-  color: $primary-dark;
+  color: $secondary;
   &:focus {
     outline: 1px dotted currentColor;
   }
   &:hover, &:focus {
-    color: $primary;
+    color: $secondary-dark;
   }
   &:link, &:visited, &:hover, &:active, &:focus {
     transition: color .15s ease-in;
   }
 }
 
+// Header defaults for styling MD
+h1, h2, h3 { color: $secondary; }
+h4 { color: $subtle; }
 
 // Default colours
 .primary { color: $primary }
@@ -47,7 +45,6 @@ a {
 .quarternary { color: $quarternary }
 
 //Additional colours
-.primary-dark { color: $primary-dark }
 .subtle { color: $subtle }
 
 // Background colours
@@ -75,25 +72,34 @@ a {
   .b--secondary-ns { border-color: $secondary}
   .b--tertiary-ns { border-color: $tertiary }
   .b--quarternary-ns { border-color: $quarternary }
+
+  // Reverse orientation of items every flip
+  .flex-flip-0-ns {
+    flex-direction: row;
+    text-align: end;
+  }
+
+  .flex-flip-1-ns{
+    flex-direction: row-reverse;
+  }
 }
 
-.hover-darken:focus,
-.hover-darken:hover {
-  color: $primary-dark;
-  border-color: $primary-dark;
-}
-
-.hover-lighten:focus,
-.hover-lighten:hover {
+.hover-primary:focus,
+.hover-primary:hover {
   color: $primary;
 }
 
-// Reverse orientation of items every flip
-.flex-flip-0 {
-  flex-direction: row;
-  text-align: end;
+.hover-secondary:focus,
+.hover-secondary:hover {
+  color: $secondary;
 }
 
-.flex-flip-1 {
-  flex-direction: row-reverse;
+.hover-tertiary:focus,
+.hover-tertiary:hover {
+  color: $tertiary;
+}
+
+.hover-secondary-dark:focus,
+.hover-secondary-dark:hover {
+  color: $secondary-dark;
 }
