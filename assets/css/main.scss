@@ -1,12 +1,7 @@
-// $primary : #596475;     // Text content
-// $secondary : #FDE8E9;   // Header bg
-// $tertiary : #C8AFCC;    // Site bg
-// $quarternary : #1F2232; // Footer bg
-
-$primary : #424242;
-$secondary : #f5b342;
-$tertiary : #FEFEFA;
-$quarternary : #1F2232;
+$primary : #424242; // Text content
+$secondary : #f5b342; // Accent colour
+$tertiary : #FEFEFA; // Site background
+$quarternary : #1F2232; // Footer background
 
 $subtle : #b3b3b3;
 $secondary-dark : darken($secondary, 20%);

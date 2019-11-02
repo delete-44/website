@@ -21,7 +21,7 @@ GitHub is used for version control. Whenever you make a significant change to yo
  * **Commit:** A change to your code. This is given a message and a unique identifier (a SHA hash), which means you can see a clear history of your development and undo steps as needed
  * **Diff~~erence~~ Report:** A tool provided by GitHub that allows you to see a direct, line-by-line comparison of your commit with what's already on the repository
  * **Local**: A copy of the repository stored on your local machine
- * **Remote**: A copy of the repository stored on a remote location (could be another local folder, another machine on your network, or a 'real' remote machine such as Github)
+ * **Remote**: A copy of the repository stored on a remote location (could be another local folder, another machine on your network, or a "real" remote machine such as Github)
 
 ### What makes that useful?
  * You can access this code from any computer with an internet connection
@@ -74,13 +74,13 @@ With your command line set up as before and already in the correct directory, yo
    git status
    >   On branch github-blog-post
    >   Changes not staged for commit:
-   >     (use 'git add <file>...' to update what will be committed)
-   >     (use 'git checkout -- <file>...' to discard changes in working directory)
+   >     (use "git add <file>..." to update what will be committed)
+   >     (use "git checkout -- <file>..." to discard changes in working directory)
 
    >   	modified:   _layouts/post.html
    >   	modified:   collections/_blog-posts/01-github-for-beginners.md
 
-   >   no changes added to commit (use 'git add' and/or 'git commit -a')
+   >   no changes added to commit (use "git add" and/or "git commit -a")
    ```
    This response is telling me that, at time of writing, I've modified two documents in my repository - both related to the blog post I'm writing at the moment.
 
@@ -154,9 +154,9 @@ It doesn't matter how seemingly small or insignificant these projects seem, if i
 *But I'm barely a first year! I know how to make a terminal say my name and that's about it*, I hear you cry. And to that I say get on Google and get on tutorials. Before my placement started I taught myself the basics of Ruby on Rails using [this](https://www.railstutorial.org/book) wonderful tutorial.
 
 My best recommendation is to decide on a language or framework you're interested in. This could be by:
- 1. Having an idea in mind *(I wonder if it'd be possible to generate a maze using the Excel spreadsheet as a grid?)* and jumping to Google: 'Writing code in Excel'. This'll then point you to VBA, and the handy documentation for people trying to learn it.
- 2. Have a specific project in mind. *'I've had this great idea for an app!'*. Same process: 'Getting started with mobile development'
- 3. Gaming the system - say you have a specific career path in mind, or just want to stay ahead of the curve: 'Most used programming languages for web development'.
+ 1. Having an idea in mind *(I wonder if it'd be possible to generate a maze using the Excel spreadsheet as a grid?)* and jumping to Google: "Writing code in Excel". This'll then point you to VBA, and the handy documentation for people trying to learn it.
+ 2. Have a specific project in mind. *"I've had this great idea for an app!"*. Same process: "Getting started with mobile development"
+ 3. Gaming the system - say you have a specific career path in mind, or just want to stay ahead of the curve: "Most used programming languages for web development".
 
 You have complete freedom over what you choose to study outside of your course. Take advantage of this time!
 
