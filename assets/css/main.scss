@@ -3,12 +3,13 @@
 // $tertiary : #C8AFCC;    // Site bg
 // $quarternary : #1F2232; // Footer bg
 
-$primary : black;
+$primary : #424242;
 $secondary : #f5b342;
 $tertiary : #FEFEFA;
 $quarternary : #1F2232;
 
 $subtle : #b3b3b3;
+$secondary-dark : darken($secondary, 20%);
 
 $base-font : 'Open Sans', sans-serif;
 
@@ -22,7 +23,7 @@ p {
   color: $primary;
 }
 
-// Link defaults- link primary-dark hover-lighten
+// Link defaults - link secondary hover-secondary-darken
 a {
   text-decoration: none;
   transition: color .15s ease-in;
@@ -31,13 +32,16 @@ a {
     outline: 1px dotted currentColor;
   }
   &:hover, &:focus {
-    color: $primary;
+    color: $secondary-dark;
   }
   &:link, &:visited, &:hover, &:active, &:focus {
     transition: color .15s ease-in;
   }
 }
 
+// Header defaults for styling MD
+h1, h2, h3 { color: $secondary; }
+h4 { color: $subtle; }
 
 // Default colours
 .primary { color: $primary }
@@ -73,6 +77,16 @@ a {
   .b--secondary-ns { border-color: $secondary}
   .b--tertiary-ns { border-color: $tertiary }
   .b--quarternary-ns { border-color: $quarternary }
+
+  // Reverse orientation of items every flip
+  .flex-flip-0-ns {
+    flex-direction: row;
+    text-align: end;
+  }
+
+  .flex-flip-1-ns{
+    flex-direction: row-reverse;
+  }
 }
 
 .hover-primary:focus,
@@ -89,12 +103,8 @@ a {
 .hover-tertiary:hover {
   color: $tertiary;
 }
-// Reverse orientation of items every flip
-.flex-flip-0 {
-  flex-direction: row;
-  text-align: end;
-}
 
-.flex-flip-1 {
-  flex-direction: row-reverse;
+.hover-secondary-dark:focus,
+.hover-secondary-dark:hover {
+  color: $secondary-dark;
 }
