@@ -3,12 +3,11 @@
 // $tertiary : #C8AFCC;    // Site bg
 // $quarternary : #1F2232; // Footer bg
 
-$primary : #FDE8E9;
-$secondary : rgb(107, 96, 109);
-$tertiary : #434b55;
+$primary : black;
+$secondary : #f5b342;
+$tertiary : #FEFEFA;
 $quarternary : #1F2232;
 
-$primary-dark : darken($primary, 10%);
 $subtle : #b3b3b3;
 
 $base-font : 'Open Sans', sans-serif;
@@ -27,7 +26,7 @@ p {
 a {
   text-decoration: none;
   transition: color .15s ease-in;
-  color: $primary-dark;
+  color: $secondary;
   &:focus {
     outline: 1px dotted currentColor;
   }
@@ -47,7 +46,6 @@ a {
 .quarternary { color: $quarternary }
 
 //Additional colours
-.primary-dark { color: $primary-dark }
 .subtle { color: $subtle }
 
 // Background colours
@@ -77,17 +75,20 @@ a {
   .b--quarternary-ns { border-color: $quarternary }
 }
 
-.hover-darken:focus,
-.hover-darken:hover {
-  color: $primary-dark;
-  border-color: $primary-dark;
-}
-
-.hover-lighten:focus,
-.hover-lighten:hover {
+.hover-primary:focus,
+.hover-primary:hover {
   color: $primary;
 }
 
+.hover-secondary:focus,
+.hover-secondary:hover {
+  color: $secondary;
+}
+
+.hover-tertiary:focus,
+.hover-tertiary:hover {
+  color: $tertiary;
+}
 // Reverse orientation of items every flip
 .flex-flip-0 {
   flex-direction: row;

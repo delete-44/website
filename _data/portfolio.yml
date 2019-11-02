@@ -29,13 +29,16 @@ zombies:
   image: https://placekitten.com/500/500
   introduction:
     Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
-    generated mazemaker in Excel.
-  summary: >-
-    This, very simply, created a random maze using the Excel sheet as a grid. The process was to create a
-    `Master` path from the center of the given range, which would repeatedly select 'valid' (ie unblocked)
-    adjacent squares until it couldn't find any other valid paths or reached the end of the selection.
-    Then the code would traverse along this path (with a given step size so you could adjust complexity)
+    generated mazemaker in Excel. This, very simply, created a random maze using the Excel sheet as a grid.
+    The process was to create a `Master` path from the center of the given range, which would repeatedly select
+    'valid' (ie unblocked) adjacent squares until it couldn't find any other valid paths or reached the end of
+    the selection.
+    The code would then traverse along this path (with a given step size so you could adjust complexity)
     and create a 'child' path wherever it could.
+  summary: >-
+    This was created purely as an exercise to see if I <strong>could</strong>. It was used very briefly in
+    a Dungeons and Dragons session I wrote, but the project ended there with vague plans that I could take
+    concepts from it to apply to bigger projects as needed.
 
 
 dungeons-ror:
