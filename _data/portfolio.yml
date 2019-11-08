@@ -1,7 +1,7 @@
 patient-admin:
   title: Patient Administration System
   link: https://github.com/ctrlaltdelete44/SOFT252
-  image: https://placekitten.com/500/500
+  image: java.svg
   introduction: >-
     During my time with the University of Plymouth I have studied C# and Java. Using these I have
     explored the fundamentals of Object Orientated Programming, including the study of design patterns.
@@ -13,7 +13,7 @@ patient-admin:
 train-service:
   title: Train Booking System
   link: Null
-  image: https://placekitten.com/500/500
+  image: train.png
   introduction: >-
     The following semester, we were assigned random groups and given a bigger project than we'd seen before,
     a train booking system. This was to incorporate a mobile app for customers, a Java desktop app for staff
@@ -26,7 +26,7 @@ train-service:
 zombies:
   title: Mazemaker
   link: Null
-  image: https://placekitten.com/500/500
+  image: maze.png
   introduction:
     Alongside my studies, I educated myself in fundamentals of VBA so that I could create a procedurally-
     generated mazemaker in Excel. This, very simply, created a random maze using the Excel sheet as a grid.
@@ -44,7 +44,7 @@ zombies:
 dungeons-ror:
   title: RoR Tutorial
   link: https://github.com/ctrlaltdelete44/DungeonsROR
-  image: https://placekitten.com/500/500
+  image: ruby-on-rails.svg
   introduction: >-
     Working with Plymouth Software has drastically improved my skills both in development and project
     management. I have been working largely with Ruby on Rails - this website itself is a testament to
@@ -59,7 +59,7 @@ dungeons-ror:
 rainy-days:
   title: This website!
   link: https://github.com/ctrlaltdelete44/website
-  image: https://placekitten.com/500/500
+  image: docker.svg
   introduction: >-
     Learning about so many new technologies made me excited to try them outside of work. So I made this!
   summary: >-
