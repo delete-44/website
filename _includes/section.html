@@ -1,8 +1,7 @@
 {% if section.show_label %}
-    <p class='f3 f2-ns bb b--secondary '>
+    <p class='f3 f2-ns bb b--secondary ' id='{{ section.label }}'>
         {{ section.label }}
     </p>
 {% endif %}
-<p class='primary'>
-    {{ section.content }}
-</p>
+
+{{ section.content }}
