@@ -78,12 +78,6 @@ gcse:
   mathematics:
     name: Mathematics
     grade: A
-  computing:
-    name: Computing
-    grade: B
-  history:
-    name: History
-    grade: B
   geography:
     name: Geography
     grade: A
@@ -99,3 +93,9 @@ gcse:
   statistics:
     name: Statistics
     grade: A
+  computing:
+    name: Computing
+    grade: B
+  history:
+    name: History
+    grade: B
