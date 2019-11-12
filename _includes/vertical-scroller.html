@@ -1,0 +1,14 @@
+<section class='right-0 fixed h-auto'>
+    {% assign sections = site.sections | sort: 'priority' %}
+    <li>
+        {% for section in sections %}
+            {% if section.link_to %}
+                <li class='tr pa1'>
+                    <a href='#{{ section.label | slugify }}'>
+                        {{ section.label }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </li>
+</section>

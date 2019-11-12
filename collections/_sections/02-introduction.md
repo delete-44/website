@@ -1,6 +1,7 @@
 ---
 label: Introduction
 show_label: false
+link_to: true
 priority: 2
 ---
 I'm Anthony - a software development student currently taking a placement at
