@@ -3,7 +3,7 @@
     <ul class='list'>
         {% for section in sections %}
             {% if section.link_to %}
-                <li class='pa1'>
+                <li class='tr pa1 mr2'>
                     <a href='#{{ section.label | slugify }}'>
                         {{ section.label }}
                     </a>

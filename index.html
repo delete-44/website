@@ -5,6 +5,7 @@
 layout: page
 title: Home
 ---
+{% include vertical-scroller.html %}
 <div class='w-50-ns w-90 center'>
     {% assign sections = site.sections | sort: 'priority' %}
     {% for section in sections %}
