@@ -1,14 +1,14 @@
-<section class='right-0-ns db-ns dn top-50-ns bottom-0 fixed h-auto'>
+<section class='right-0-ns db-ns dn vc top-50-ns fixed h-auto'>
     {% assign sections = site.sections | sort: 'priority' %}
-    <li>
+    <ul class='list'>
         {% for section in sections %}
             {% if section.link_to %}
-                <li class='tr pa1'>
+                <li class='pa1'>
                     <a href='#{{ section.label | slugify }}'>
                         {{ section.label }}
                     </a>
                 </li>
             {% endif %}
         {% endfor %}
-    </li>
+            </ul>
 </section>

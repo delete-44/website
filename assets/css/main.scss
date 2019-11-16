@@ -68,6 +68,9 @@ h4 { color: $subtle; }
   .bgt-ns { background-color: $tertiary }
   .bgq-ns { background-color: $quarternary }
 
+  .top-50-ns { top: 50% }
+  .vc { transform: translateY(-50%) }
+
   // Border colours for large screens
   .b--primary-ns { border-color: $primary }
   .b--secondary-ns { border-color: $secondary}
