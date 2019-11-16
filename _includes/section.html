@@ -2,6 +2,8 @@
     <p class='f3 f2-ns bb b--secondary' id='{{ section.label | slugify }}'>
         {{ section.label }}
     </p>
+{% else %}
+    <p id='{{ section.label | slugify }}'></p>
 {% endif %}
 
 {{ section.content }}

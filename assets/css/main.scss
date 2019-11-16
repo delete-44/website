@@ -11,6 +11,7 @@ $base-font : 'Open Sans', sans-serif;
 // Sitewide defaults
 html { 
   font-family: $base-font;
+  scroll-behavior: smooth;
 }
 
 // Text defaults
@@ -103,3 +104,6 @@ h4 { color: $subtle; }
 .hover-secondary-dark:hover {
   color: $secondary-dark;
 }
+
+.h0 { height: 0px; }
+.w0 { width: 0px; }
