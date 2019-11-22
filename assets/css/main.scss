@@ -69,7 +69,7 @@ h4 { color: $subtle; }
   .bgq-ns { background-color: $quarternary }
 
   .top-50-ns { top: 50% }
-  .vc { transform: translateY(-50%) }
+  .vc-ns { transform: translateY(-50%) }
 
   // Border colours for large screens
   .b--primary-ns { border-color: $primary }
@@ -107,6 +107,3 @@ h4 { color: $subtle; }
 .hover-secondary-dark:hover {
   color: $secondary-dark;
 }
-
-.h0 { height: 0px; }
-.w0 { width: 0px; }
