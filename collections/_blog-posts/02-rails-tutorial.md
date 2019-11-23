@@ -62,18 +62,22 @@ $ git clone https://github.com/github-username/project-name.git
 
 And we're going to use the `rails new` command to create the base project.
 ```bash
-$ rails new project-name --skip-bootsnap
+$ rails new project-name --skip-bootsnap --skip-javascript
     > ... # Another long list of output as it creates the file structure
     > Bundle complete! 13 Gemfile dependencies, 68 gems now installed
 ```
-*NB. Here I'm passing the `--skip-bootsnap` option to the command. This is because this gem doesn't play well with Heroku, which we'll be using later in the chapter. You can run `rails new --help` or the shorthand `rails new -h` for a discussion of other options you can use here*
+*NB. Here I'm passing the `--skip-bootsnap` option to the command. This is because this gem doesn't play well with Heroku, which we'll be using later in the chapter. The `--skip-javascript` option is because the new rails default for handling Javascript assets is Webpacker, which requires Node.js to be installed. It has been omitted in the interest of keeping this install light. You can run `rails new --help` or the shorthand `rails new -h` for a discussion of other options you can use here*
 
+To test that this works, return to your terminal and run:
 ```bash
 $ cd project-name
+$ rails s   # This is shorthand for `rails server` :)
+    > => Booting Puma
+    > => Rails 6.0.1 application starting in development
+    > => Run 'rails server --help' for more startup options
 ```
 
-... and open the project in the text editor of your choice
-*If you use VSCode you can run `$ code .` from the terminal and it will open the current directory :)*
+Open a browser of your choice, cross your fingers for luck, and navigate to `localhost:3000`. You should be greeted with the "Yay! You're on Rails!" starting screen. If so, it's time to get more familar with your program...
 
 # 3. The Ruby Directory Structure
 For someone unfamilar with Ruby, the file structure can be confusing. I'm going to cover the basics here, but I fully recommend reading [this wonderful blog](https://www.sitepoint.com/a-quick-study-of-the-ruby-directory-structure) that discusses it in more depth.
@@ -134,9 +138,20 @@ This can be a confusing system to understand, but incredibly useful. This will m
 For example, if you have a route declared as `get '/characters/:id', to: 'characters#show'` your application will recieve the `GET characters/1` HTTP request and navigate to the `characters` controller, looking for the `show` action. The parameters will include `id: '1'` as per the request.
 
 ## db/migrate
+Rails handles database creation a little differently to how I've seen it before (take this with a pinch of salt, I don't have a whole lot of past experience). Instead of writing a table in SQL and subsequently building relationships, in Rails you write incremental `migrations`. These are used to make minor adjustments to the database schema, with the idea that running through the migrations in order will fully regenerate the schema.
+
+Example migrations could be creating a table, or adding a column to an existing one.
+
 ## db/seeds
+This can be useful for development purposes - you can dictate a set of sample information that can be injected into your database so you have access to test data.
+
 ## test
+I mention this document purely to mention that convention prefers Test Driven Development. The Rails default is a gem called `minitest`, which creates this file, but as part of this guide we'll be switching over to use a gem called `rspec` instead.
+
+With either, test files are created for most pages you generate, including for models and controllers. You should write tests for the expected output of a method or action, which will then flag if you ever make a breaking change.
+
 ## Gemfile & Gemfile.lock
+I've mentioned 'Gems' a lot in this first chapter alone. Gems can be installed to your project and offer functionality. For example, `rspec` provides an alternative test suite to the default. The [Ruby Toolbox](https://www.ruby-toolbox.com/) is a very useful service for finding Gems as it includes statistics on usage & upkeep. 
 
 # 4. Going Live
 # 5. Next Steps
