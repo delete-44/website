@@ -20,3 +20,13 @@
 }
 
 pre { overflow-x: scroll; }
+
+code {
+  &.highlighter-rouge {
+    background-color: #ffffff;
+    border: 1px solid #dadada;
+    margin: 0 auto; padding: 3px 5px;
+    border-radius: 5px;
+    color: #c05f5f;
+  }
+}

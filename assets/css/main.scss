@@ -1,5 +1,5 @@
 $primary : #424242; // Text content
-$secondary : #f5b342; // Accent colour
+$secondary : #f8a81d; // Accent colour
 $tertiary : #fffbee; // Site background
 $quarternary : #1F2232; // Footer background
 
@@ -14,9 +14,7 @@ html {
 }
 
 // Text defaults
-p {
-  color: $primary;
-}
+p { color: $primary; }
 
 // Link defaults - link secondary hover-secondary-darken
 a {
