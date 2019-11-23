@@ -48,5 +48,95 @@ $ rails -v
 And that's it! We're good to get started.
 
 # 2. Creating a local app
-# 3. Going Live
-# 4. Next Steps
+The first step, which is both encouraged for version control but required for #4, is to create a GitHub repository for your project.
+*New to GitHub? Don't know what I'm talking about? Try reading [this](01-github-for-beginners.md)!*
+
+Create a new repository; #4 requires it to be public, and you don't need to worry about initialising the repo with a README. Just grab the link and clone it to your local machine:
+
+```bash
+$ cd path/to/repository
+$ git clone https://github.com/github-username/project-name.git
+    > Cloning into 'project-name'...
+    > warning: You appear to have cloned an empty repository
+```
+
+And we're going to use the `rails new` command to create the base project.
+```bash
+$ rails new project-name --skip-bootsnap
+    > ... # Another long list of output as it creates the file structure
+    > Bundle complete! 13 Gemfile dependencies, 68 gems now installed
+```
+*NB. Here I'm passing the `--skip-bootsnap` option to the command. This is because this gem doesn't play well with Heroku, which we'll be using later in the chapter. You can run `rails new --help` or the shorthand `rails new -h` for a discussion of other options you can use here*
+
+```bash
+$ cd project-name
+```
+
+... and open the project in the text editor of your choice
+*If you use VSCode you can run `$ code .` from the terminal and it will open the current directory :)*
+
+# 3. The Ruby Directory Structure
+For someone unfamilar with Ruby, the file structure can be confusing. I'm going to cover the basics here, but I fully recommend reading [this wonderful blog](https://www.sitepoint.com/a-quick-study-of-the-ruby-directory-structure) that discusses it in more depth.
+
+*Here `>` denotes a folder, and `*` a file*
+```
+# This is by no means a full list, and your generated directory will be a lot more full than this.
+# Consult the link above for further discussion
+
+> app
+    > assets
+        > stylesheets
+            * application.css
+    > controllers
+        > concerns
+    > helpers
+    > jobs
+    > models
+        > concerns
+    > views
+        > layouts
+            * application.html.rb
+> config
+    * routes.rb
+> db
+    > migrate
+    * seeds.rb
+> test
+* Gemfile
+* Gemfile.lock
+```
+
+## app/assets
+This is where you'll keep any assets for your program frontend - this includes css & javascript documents. The document `application.css` is required for the **asset pipeline** - this is how Rails compiles and serves assets. In this document you can reference any other stylesheets you create
+
+## app/controllers
+MVC dictates that the Models & Views of your application should be kept separate, with Controllers handling user requests and responding by rendering the appropriate view. To that end, controllers in Rails have a set of actions - for example `show` or `index`. In these controller actions you can dictate what view is to be shown, and what information the view should have.
+
+Additionally here you have `concerns`. These are importable modules that allow the reuse of code across several controllers. The same folder & system exists for models
+
+## app/helpers
+These are modules you can import into views that promote the reuse of code. There will be a default `application_helper.rb` that will be available in all views, but additional helpers will be created for specific controllers
+
+## app/jobs
+These are a component of the `ActiveJobs` gem. These can be used to run expensive or slow tasks on a background worker as opposed to on the main web server
+
+## app/models
+This is where the logic of your program will reside. Convention is to have skinny controllers and fat methods - that is, keep your controllers limited to request handling, and keep as much logic in the models as possible.
+
+That being said, model methods should be context-free. They should not need to know about the logged-in user, and should be able to be operated from controllers, background workers, or the terminal without issues.
+
+## app/views
+Your actual HTML output will be stored here. These are the views that your controllers will render. The `application.html.rb` includes the `<head></head>` tags you'd expect, and every other view derives from this as per the `<%= yield %>` tag - we'll explain **that** later.
+
+## config/routes
+This can be a confusing system to understand, but incredibly useful. This will map HTTP requests to controller actions, and will then generate a number of helper methods to let you access these controller actions throughout your codebase.
+
+For example, if you have a route declared as `get '/characters/:id', to: 'characters#show'` your application will recieve the `GET characters/1` HTTP request and navigate to the `characters` controller, looking for the `show` action. The parameters will include `id: '1'` as per the request.
+
+## db/migrate
+## db/seeds
+## test
+## Gemfile & Gemfile.lock
+
+# 4. Going Live
+# 5. Next Steps

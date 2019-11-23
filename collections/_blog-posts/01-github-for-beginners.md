@@ -37,9 +37,9 @@ Assuming you've got a GitHub account set up and project in mind, getting started
 
 2. With this created, you'll be presented with a page like [this](https://github.com/ctrlaltdelete44/website), albeit much more empty. There will be a button in the corner, `Clone or Download`, and when you click it you'll be given a link:
 
-```
-https://github.com/your-github-username/your-repository-name.git
-```
+   ```
+   https://github.com/your-github-username/your-repository-name.git
+   ```
 
 Get a copy of this!
 
