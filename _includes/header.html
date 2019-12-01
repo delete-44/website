@@ -1,10 +1,5 @@
 <header class='w-100 pv1 shadow-1 flex db dn-ns justify-center bgs fixed top-0'>
     <div>
-        <a href='/' class='f3 primary link hover-tertiary ph3 dib-ns dn'>
-            <i class='fas fa-home'></i>
-        </a>
-    </div>
-    <div>
         {% for resource in site.data.resources %}
             <a class='link tertiary hover-secondary-darken f3 ph2' href='{{ resource[1].url }}'>
                 <i class='fab fa-{{ resource[0] }}'></i>
