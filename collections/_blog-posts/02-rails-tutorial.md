@@ -40,7 +40,7 @@ $ irb           # This will take you to the ruby console - you'll see a lot more
 ```bash
 $ gem install rails
     > ... # Here you'll see a lot of temrinal output where a number of gems are fetched & installed
-    > 40 gems installed
+    > 41 gems installed
 $ rails -v
     > Rails 6.0.1
 ```
@@ -49,7 +49,7 @@ And that's it! We're good to get started.
 
 # 2. Creating a local app
 The first step, which is both encouraged for version control but required for #4, is to create a GitHub repository for your project.
-*New to GitHub? Don't know what I'm talking about? Try reading [this](01-github-for-beginners.md)!*
+*New to GitHub? Don't know what I'm talking about? Try reading [this](01-github-for-beginners)!*
 
 Create a new repository; #4 requires it to be public, and you don't need to worry about initialising the repo with a README. Just grab the link and clone it to your local machine:
 
@@ -154,4 +154,45 @@ With either, test files are created for most pages you generate, including for m
 I've mentioned 'Gems' a lot in this first chapter alone. Gems can be installed to your project and offer functionality. For example, `rspec` provides an alternative test suite to the default. The [Ruby Toolbox](https://www.ruby-toolbox.com/) is a very useful service for finding Gems as it includes statistics on usage & upkeep. 
 
 # 4. Going Live
+For hosting this app we're going to use [Heroku](). This is a PaaS hosting platform that works well with Ruby on Rails applications, and has some very useful GitHub interactions.
+
+**However**, it's important to state that some Rails defaults do not work with Heroku - particularly SQLite3, a storage gem. Heroku has some information on *why* [here](https://devcenter.heroku.com/articles/sqlite3).
+So your first task is going to be to go into your `Gemfile` - a folder in your projects root directory - and remove the `sqlite3` gem.
+
+```ruby
+...
+gem 'rails', '~> 6.0.1'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', '~1.4' # Remove THIS line!
+...
+```
+
+Then return to your terminal and run the following:
+```bash
+$ bundle install
+$ rails s
+```
+
+The first step here is to commit your initial project creation. If you're happy you can get it running locally and access the 'Welcome to Ruby' screen, push it up to your repo.
+
+*Don't know how? Give [this](01-github-for-beginners) a read*
+
+Next, go to Heroku and create an account. I won't walk you through this, it's fairly standard. But you should reach a point where you can `Create a new app`. At which point you should see a screen something like this...
+
+Screenshot
+*NB. You can leave the name blank to get a randomly-generated one*
+
+A very powerful feature of Heroku that we're going to be taking advantage of is the automatic deployment process. For this we're going to need to connect the app to GitHub, and then to the specific repository you created for this app - hence needing it to be public.
+
+Screenshot
+
+Connect your branch, and then enable automatic deployments from the `master` branch.
+
+Screenshot
+
+Finally, make the initial manual deployment and navigate to the `Overview` tab. You should see a message along the lines of `Build in progress`, with a link to view the build logs. You can follow this link and compare the logs to those that generated when you created the project - the output is from the `bundle install` command that runs in both processes.
+
+Assuming the project build successfully, your logs should end up looking like this:
+
+
 # 5. Next Steps
