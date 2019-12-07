@@ -11,6 +11,7 @@ $base-font : 'Open Sans', sans-serif;
 // Sitewide defaults
 html { 
   font-family: $base-font;
+  scroll-behavior: smooth;
 }
 
 // Text defaults
@@ -67,6 +68,9 @@ h4 { color: $subtle; }
   .bgt-ns { background-color: $tertiary }
   .bgq-ns { background-color: $quarternary }
 
+  .top-50-ns { top: 50% }
+  .vc-ns { transform: translateY(-50%) }
+
   // Border colours for large screens
   .b--primary-ns { border-color: $primary }
   .b--secondary-ns { border-color: $secondary}
@@ -102,4 +106,11 @@ h4 { color: $subtle; }
 .hover-secondary-dark:focus,
 .hover-secondary-dark:hover {
   color: $secondary-dark;
+}
+
+.active-anchor-link {
+  border-color: $secondary;
+  width: 16rem;
+  transition: color .15s ease-in;
+  transition: width .15s ease-in;
 }
