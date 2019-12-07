@@ -29,6 +29,6 @@ $(window).scroll(function () {
 
     // Set/remove active class
     menuItems
-        .parent().removeClass('bb b--primary')
-        .end().filter("[href='#" + id + "']").parent().addClass('bb b--primary');
+        .parent().removeClass('active-anchor-link')
+        .end().filter("[href='#" + id + "']").parent().addClass('active-anchor-link');
 });

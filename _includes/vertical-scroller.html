@@ -1,10 +1,10 @@
-<section class='right-0-ns db-ns dn vc-ns top-50-ns fixed h-auto'>
+<section class='db-ns dn vc-ns top-50-ns fixed h-auto'>
     {% assign sections = site.sections | sort: 'priority' %}
-    <ul class='list' id='verticalScroller'>
+    <ul class='list pa0' id='verticalScroller'>
         {% for section in sections %}
             {% if section.link_to %}
-                <li class='tr pa1 mr2'>
-                    <a href='#{{ section.label | slugify }}' class='pa0'>
+                <li class='ma2 w4 bb b--primary'>
+                    <a href='#{{ section.label | slugify }}'>
                         {{ section.label }}
                     </a>
                 </li>

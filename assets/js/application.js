@@ -1,1 +1,1 @@
-//= require vertical-scrolls
+//= require vertical-scroller

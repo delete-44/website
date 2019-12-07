@@ -107,3 +107,10 @@ h4 { color: $subtle; }
 .hover-secondary-dark:hover {
   color: $secondary-dark;
 }
+
+.active-anchor-link {
+  border-color: $secondary;
+  width: 16rem;
+  transition: color .15s ease-in;
+  transition: width .15s ease-in;
+}
