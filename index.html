@@ -2,10 +2,15 @@
 layout: page
 title: Home
 ---
+{% assign sections = site.sections | sort: 'priority' %}
+{% for section in sections %}
+    {% if forloop.first %}
+        <div class='vh-100 w-100 bgp'>
+    {% else %}
+        <div class='w-50-ns w-90 center'>
+    {% endif %}
+    {% include section.html %}
+    </div>
+{% endfor %}
+
 {% include vertical-scroller.html %}
-<div class='w-50-ns w-90 center'>
-    {% assign sections = site.sections | sort: 'priority' %}
-    {% for section in sections %}
-        {% include section.html %}
-    {% endfor %}
-</div>
