@@ -1,0 +1,55 @@
+---
+label: Profile
+show_label: false
+link_to: false
+priority: 1
+---
+<a href='{{ site.data.resources.github.url }}' class='link center db h5 w5'>
+    <img src='{{ site.avatar }}?s=500' class='center br-100 b--primary h5 w5 db pa1 ba' title='{{ site.name }}'
+        alt='{{ site.name }}'>
+</a>
+
+<div class='flex justify-center pt3'>
+    {% include contact-info.html %}
+</div>
+
+<div class='w-70 center pt5'>
+    <p class='tertiary'>
+        I'm Anthony - a software development student currently taking a placement at
+        <a href='https://plymouthsoftware.com'>
+            Plymouth Software
+        </a>, which really means I spend
+        most of my time listening to music and struggling with UI design.
+    </p>
+
+    <p class='tertiary'>
+        I currently work mostly in 
+        <a href='https://rubyonrails.org/'>
+            Ruby on Rails
+        </a> web apps,
+        with plans to expand my skills in mobile development (with a particular interest in AR)
+        using 
+        <a href='https://flutter.dev'>
+            Flutter
+        </a>. This site itself is built on
+        <a href='https://jekyllrb.com/'>
+            Jekyll
+        </a>
+        (which compiles Markdown, Liquid, HTML & SCSS
+        into static websites), using 
+        <a href='https://tachyons.io'>
+            Tachyons
+        </a> for styling and
+        containerised with 
+        <a href='https://www.docker.com'>
+            Docker
+        </a>
+    </p>
+
+    <p class='tertiary'>
+        You can find the GitHub repo 
+        <a href='https://github.com/ctrlaltdelete44/website'>
+            here
+        </a>.
+    </p>
+</div>

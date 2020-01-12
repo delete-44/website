@@ -108,12 +108,11 @@ h4 { color: $subtle; }
   color: $secondary-dark;
 }
 
-.tr--color { transition: color .15s ease-in; }
-.tr--width { transition: width .15s ease-in; }
-
 .active-anchor-link {
   border-color: $secondary;
   width: 16rem;
   transition: color .15s ease-in;
   transition: width .15s ease-in;
 }
+
+.ho { line-height: 0px; }
