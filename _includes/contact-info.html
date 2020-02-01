@@ -1,5 +1,9 @@
 {% for resource in site.data.resources %}
-    <a class='link secondary hover-secondary-darken f3 ph1 dn dib-ns' href='{{ resource[1].url }}'>
-        <i class='fab fa-{{ resource[0] }}'></i>
-    </a>
+  {% if size %}
+      <a class='link secondary hover-secondary-darken f{{ size }} ph1 dn dib-ns' href='{{ resource[1].url }}'>
+  {% else %}
+    <a class='link secondary hover-secondary-darken f4 ph1 dn dib-ns' href='{{ resource[1].url }}'>
+  {% endif %}
+    <i class='fab fa-{{ resource[0] }}'></i>
+  </a>
 {% endfor %}
