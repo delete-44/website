@@ -4,17 +4,17 @@ show_label: false
 link_to: false
 priority: 1
 ---
-<a href='{{ site.data.resources.github.url }}' class='link center db h5 w5'>
-    <img src='{{ site.avatar }}?s=500' class='center br-100 b--primary b--secondary-ns h5 w5 db pa1 ba ' title='{{ site.name }}'
+<a href='{{ site.data.resources.github.url }}' class='link center dt h5'>
+    <img src='{{ site.avatar }}?s=500' class='center br-100 b--primary b--secondary-ns h5 db pa1 ba ' title='{{ site.name }}'
         alt='{{ site.name }}'>
 </a>
 
-<div class='flex justify-center pt3'>
+<div class='w-100 flex justify-center mt3'>
     {% assign size=1 %}
     {% include contact-info.html size=size %}
 </div>
 
-<div class='w-70 center pt5'>
+<div class='w-70 center mt3 tc'>
     <p class='tertiary'>
         I'm Anthony - a software development student currently taking a placement at
         <a href='https://plymouthsoftware.com'>
@@ -24,12 +24,11 @@ priority: 1
     </p>
 
     <p class='tertiary'>
-        I currently work mostly in 
+        I currently work primarily with 
         <a href='https://rubyonrails.org/'>
             Ruby on Rails
-        </a> web apps,
-        with plans to expand my skills in mobile development (with a particular interest in AR)
-        using 
+        </a> web apps
+        and mobile development using 
         <a href='https://flutter.dev'>
             Flutter
         </a>. This site itself is built on
