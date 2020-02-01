@@ -1,6 +1,6 @@
 ---
-label: Contact
+label: Experience
 show_label: false
 link_to: false
-priority: 7
+priority: 3
 ---
