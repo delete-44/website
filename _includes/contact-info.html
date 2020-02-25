@@ -1,5 +1,5 @@
 {% for resource in site.data.resources %}
-  {% if size %}
+  {% if include.size %}
       <a class='link secondary hover-secondary-darken f{{ size }} mh{{ size | times: 4 }} dn dib-ns' href='{{ resource[1].url }}'>
   {% else %}
     <a class='link secondary hover-secondary-darken f4 mh1 dn dib-ns' href='{{ resource[1].url }}'>
