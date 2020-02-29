@@ -3,14 +3,21 @@ layout: page
 title: Home
 ---
 {% assign sections = site.sections | sort: 'priority' %}
-{% for section in sections %}
-    {% if forloop.first %}
-        <div class='vh-100 w-100 bgp pt6-ns pt5'>
-    {% else %}
-        <div class='w-50-ns w-90 center'>
-    {% endif %}
-    {% include section.html %}
-    </div>
-{% endfor %}
+
+<section class='vh-100 w-100 bgp pt6-ns pt5'>
+    {% include section.html section=sections.first %}
+</section>
+
+<div class='w-50-ns w-90 center'>
+    {% for section in sections %}
+        {% if forloop.first %}
+            {% continue %}
+        {% endif %}
+
+        <section>
+            {% include section.html section=section %}
+        </section>
+    {% endfor %}
+</div>
 
 {% include vertical-scroller.html %}
