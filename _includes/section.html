@@ -1,9 +1,9 @@
-{% if section.show_label %}
-    <p class='f3 f2-ns bb b--secondary' id='{{ section.label | slugify }}'>
-        {{ section.label }}
+{% if include.section.show_label %}
+    <p class='f3 f2-ns bb b--secondary' id='{{ include.section.label | slugify }}'>
+        {{ include.section.label }}
     </p>
 {% else %}
-    <p class='dn' id='{{ section.label | slugify }}'></p>
+    <p class='dn' id='{{ include.section.label | slugify }}'></p>
 {% endif %}
 
-{{ section.content }}
+{{ include.section.content }}
