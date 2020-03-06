@@ -1,5 +1,5 @@
 ---
-title: Rails with Vue - Your First Component
+title: Your First Component
 date: 2020-03-02
 layout: post
 image: https://placekitten.com/1920/1920
