@@ -332,4 +332,4 @@ You will need to refresh your page this time after restarting the `webpack` serv
 
 This is what I mean by the power of Vue being in it's completely isolated components: the navigation bar is fully created, styled, and configured without impacting anything else on the page. You could feasibly add other Vue components with the `.navigation-bar` and `.navigation-item` classes styled differently, and both would work *independently*.
 
-Now that we've created our new Vue project in Rails, its time to take a look at APIs and how we can use these components to access your Rails data. Join me in the next article, [Accessing Rails Data](/articles/rails-with-vue-accessing-rails-data/)
+Now that we've created our new Vue project in Rails, its time to take a look at APIs and how we can use these components to access your Rails data. Join me in the next article, [Accessing Rails Data](/blog-posts/03-rails-with-vue-accessing-rails-data)
