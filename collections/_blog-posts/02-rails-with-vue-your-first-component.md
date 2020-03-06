@@ -6,7 +6,7 @@ image: https://placekitten.com/1920/1920
 custom_excerpt: This is intended to be an introduction to the VueJS framework, running from the creation of a new Rails project through to creating your first Vue component
 ---
 
-### This article assumes you have a fundamental knowlege of Ruby on Rails, but will discuss the complete basics of Vue
+#### This article assumes you have a fundamental knowlege of Ruby on Rails, but will discuss the complete basics of Vue
 
 ### This is the first of a series of articles intended to be an introduction to the VueJS framework and it's integration with a Ruby on Rails backend
 
@@ -300,7 +300,7 @@ The `insertBefore` is standard javascript for injecting html elements, and any a
   }
 
   .navigation-item {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     line-height: 1.6;
   }

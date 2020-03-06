@@ -5,18 +5,26 @@
 
 .highlight pre, pre, .highlight .hll {
   background-color: #373737;
-  border: 1px solid rgb(66, 49, 62);
-  margin: 0 auto; padding: 6px 10px;
+  border: 1px solid #42313e;
+  margin: 0 auto;
+  padding: 6px 10px;
   border-radius: 2px;
   color: white;
 }
 
 .highlight {
-  .nb { color: #0086b3; }
+  .nb, .na, .no { color: #0086b3; }
+  .nl { color: #a5e9fd }
+  .nf { color: #d0d67b }
   .o { font-weight: bold; }
-  .s2 { color: #dd7e11; }
-  .c { color: #6a9b60; font-style: italic; }
+  .s2, .k, .n { color: #dd7e11; }
   .nt { color: #4cc7f0; }
+  .c, .c1 {
+    color: #6a9b60;
+    font-style: italic;
+  }
 }
 
-pre { overflow-x: scroll; }
+pre {
+  overflow-x: scroll;
+}
