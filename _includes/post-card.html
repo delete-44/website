@@ -16,7 +16,7 @@
 
       <div class='mv0 db-ns dn'>
         {% if post.custom_excerpt %}
-          {{ post.custom_excerpt }}&hellip;
+          {{ post.custom_excerpt }}
         {% else %}
           {% assign excerpt = post.content | split:'.' | first %}
           {{ excerpt }}&hellip;
