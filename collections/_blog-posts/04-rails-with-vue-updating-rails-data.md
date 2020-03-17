@@ -196,3 +196,158 @@ And that's it!
 *N.B that around here the `films-list` component becomes really redundant. If you're checking against the [repository]() and are concerned, I've just cleared out some of the older code from the first two chapters*
 
 ## 3. Updating the data
+
+Currently we're three steps into this article and essentially all we've done is glorified the output from the last chapter. Let's get to *actually* updating Rails data.
+
+### 1. Add form fields to your table
+
+This is done by specifying a template for the cells you want to edit - in this case the `title` and `year` of the movies.
+
+```html
+<!-- app/javascript/films-table.vue -->
+<template>
+  <div>
+    <b-table striped hover
+      :items='items'
+      :fields='fields'
+      >
+      <!-- Add these templates to add text fields for title and description -->
+      <template v-slot:cell(title)='row'>
+        <b-form-input v-model='row.item.title'/>
+      </template>
+
+      <template v-slot:cell(description)='row'>
+        <b-form-input v-model='row.item.description'/>
+      </template>
+    </b-table>
+  </div>
+</template>
+```
+
+#### N.B - for additional input types, see the [documentation](https://bootstrap-vue.js.org/docs/components/form-input/)
+
+### 2. Create an api action to accept changes to the data
+
+There are a few things that need to happen here. Firstly we want to collect the film to be updated from the params:
+
+```rb
+# app/controllers/films_controller.rb
+before_action :fetch_film, except: :index
+
+private
+
+def fetch_film
+  @film = Film.find(params[:id])
+end
+```
+
+... and, as good practice, use strong parameters when we update this:
+
+```rb
+private
+
+def film_params
+  params.require(:film).permit(:id, :title, :description)
+end
+```
+
+... and, finally, add the actual `update` action. Your final controller should look like this:
+
+```rb
+class FilmsController < ApplicationController
+  before_action :fetch_film, except: :index
+
+  def index
+    # I added this order as a minor quality-of-life improvement for later :smiley:
+    @films = Film.all.order(:id)
+  end
+
+  def update
+    @film.update(film_params)
+  end
+
+  private
+
+  def fetch_film
+    @film = Film.find(params[:id])
+  end
+
+  def film_params
+    params.require(:film).permit(:id, :title, :description)
+  end
+end
+```
+
+### 3. Create the route
+
+```rb
+# config/routes.rb
+resources :films, only: %i[index update] # -> formerly resources :films, only: :index
+```
+
+### 4. Create a method to send the updated data
+
+We've had no issues 'GETting' out data. However with Rails CSRF protections, we're going to struggle with modifying it. Thankfully, [somebody](https://github.com/pipopotamasu/) far smarter than I has put together a [package](https://github.com/pipopotamasu/axios-on-rails) that makes it simple.
+
+So exit out of your webpack server and add the package as such: 
+
+```bash
+$ yarn add axios-on-rails 
+  ...
+  > ✨  Done in 5.79s.
+
+$ bin/webpack-dev-server
+  ...
+  > ℹ ｢wdm｣: Compiled successfully.
+```
+
+As well as the lifecycle hooks (such as `created`, which we have used already) Vue has an option for entirely custom methods:
+
+```js
+<script>
+  import axios from 'axios'
+
+  export default {
+    data() { // Unchanged }
+    created () { // Unchanged }
+    methods: {
+      dataChanged(e) {
+        // This is just a process of getting the selected film and then finding the new data in the table.
+        // The put request, as before, is handled by Axios.
+        let row = e.target.closest('tr')
+        let film = this.items[row.rowIndex - 1]
+
+        axios
+          .put('/films/' + film.id,
+          {
+            film: {
+              title: row.children[1].children[0]._value,
+              description: row.children[2].children[0]._value
+            }
+          })
+      },
+    }
+  }
+</script>
+```
+
+### 5. Bind the method to the native `onchange` event of the input fields
+
+Alongside their own method maps, Vue lets you access input field native methods. Any experience with javascript and you've probably encountered these before, but [W3Schools](https://www.w3schools.com/js/js_input_examples.asp) is a useful reference. We're going to be using one of these, specifically `onchange`, to trigger our method.
+
+```html
+<!-- app/javascript/films-table.vue, on each of your template input fields -->
+<template v-slot:cell(title)='row'>
+  <b-form-input v-model='row.item.title' v-on:change.native="dataChanged"/>
+</template>
+```
+
+The moment of truth. Make some changes to your data, and check the console. If there are any errors then you're welcome to send me a very angry email. If not, refresh your page and see the change in data persisted. You can check this in the console, in other Vue components, wherever - you've just built an inline editor for Rails data!
+
+The next steps in this are:
+
+* Validating data changes
+* Adding and removing entries
+* Limiting or debouncing requests
+
+As usual, if you lost track at any point a version of the code, complete to this point, is available [here]()
