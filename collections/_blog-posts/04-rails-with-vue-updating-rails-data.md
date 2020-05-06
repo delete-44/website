@@ -3,7 +3,7 @@ title: Updating Rails Data
 date: 2020-03-03
 layout: post
 image: https://placekitten.com/1920/1920
-custom_excerpt: This is intended to be a guide to updating Rails data using an inline table editor made with Vue
+custom_excerpt: This is the third installment in a series, covering updating Rails data using an inline table editor made with Vue
 ---
 
 #### This tutorial assumes you have read the previous articles, starting from [here](/blog-posts/02-rails-with-vue-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-2) repo
@@ -154,11 +154,9 @@ To enjoy your moment of glory, head to [http://localhost:3000/films](http://loca
 
 ## 2. Populating the table with Rails data
 
-The particularly eagle-eyed amongst you will notice that this article promises the use of Rails data - indeed, by the end of the [last article](blog-posts/03-rails-with-vue-accessing-rails-data.html) we already had access to our data. And now we're back to static data? Prepostorous!
+Boom - we have our table. Now let's hook it up to our API.
 
-I can only humbly apologise, dear reader, and seek to rectify this as soon as possible.
-
-Step one is clearing out that awful, nasty static data to stop you from complaining about it any more.
+Step one is clearing out the static data, so you should end up with something like this:
 
 ```js
 // app/javascript/films-table.vue
@@ -232,6 +230,14 @@ Currently we're three steps into this article and essentially all we've done is 
 
 #### N.B - for additional input types, see the [documentation](https://bootstrap-vue.js.org/docs/components/form-input/)
 
+#### N.B.2 - If you're working with a complex datamodel or one with variable fields you can use the following as a 'default' template - any fields you overwrite above it will be set to the overwritten template instead
+
+  ```html
+  <template v-slot:cell()='data'>
+    <b-form-input v-model="data.value" />
+  </template>
+  ```
+
 ### 2. Create an api action to accept changes to the data
 
   There are a few things that need to happen here. Firstly we want to collect the film to be updated from the params:
@@ -293,19 +299,38 @@ Currently we're three steps into this article and essentially all we've done is 
 
 ### 4. Create a method to send the updated data
 
-  We've had no issues 'GETting' out data. However with Rails CSRF protections, we're going to struggle with modifying it. Thankfully, [somebody](https://github.com/pipopotamasu/) far smarter than I has put together a [package](https://github.com/pipopotamasu/axios-on-rails) that makes it simple.
+  Due to Rails CSRF protection, we're going to hit issues updating data. As such we'll ned to extract the CSRF header from the document and allow Axios to use it. We're going to do this by creating a new document: `app/javascript/packs/csrf-token.js`.
 
-  So exit out of your webpack server and add the package as such:
+  ```js
+  function setCSRFToken(axios, document) {
+    const csrfTokenQuery = document.querySelector("meta[name=csrf-token]")
+    const csrfToken = csrfTokenQuery ? csrfTokenQuery.content : ''
 
-  ```bash
-  $ yarn add axios-on-rails
-    ...
-    > ✨  Done in 5.79s.
+    axios.defaults.headers.common['X-CSRF-Token'] = csrfToken
+  }
 
-  $ bin/webpack-dev-server
-    ...
-    > ℹ ｢wdm｣: Compiled successfully.
+  export { setCSRFToken }
   ```
+
+  This function does exactly that - extracts the CSRF header and attaches it to our axios module. Now we just need to import and call it in our component:
+
+  ```js
+  <script>
+    import axios from 'axios'
+    import { setCSRFToken } from './packs/csrf-token.js'
+
+    export default {
+      data() { // Unchanged },
+      created () {
+        setCSRFToken(axios, document)
+
+        // Unchanged...
+      }
+    }
+  </script>
+  ```
+
+  The importance of creating it in a separate document and exporting it is that we can use this in any other Vue components - and indeed any other javascript at all - we may need.
 
   As well as the lifecycle hooks (such as `created`, which we have used already) Vue has an option for entirely custom methods:
 
@@ -348,14 +373,6 @@ Currently we're three steps into this article and essentially all we've done is 
   </template>
   ```
 
-  The moment of truth. Make some changes to your data, and check the console. If there are any errors then you're welcome to send me a very angry email. If not, refresh your page and see the change in data persisted. You can check this in the console, in other Vue components, wherever - you've just built an inline editor for Rails data!
+  The moment of truth. Make some changes to your data, refresh your page and see the change in data persisted. You can check this in the console, in other Vue components, wherever - you've just built an inline editor for Rails data!
 
-## 4. Conclusion
-
-The next steps in this are:
-
-* Validating data changes
-* Adding and removing entries
-* Limiting or debouncing requests
-
-As usual, if you lost track at any point a version of the code, complete to this point, is available [here](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-3)
+As usual, if you lost track at any point a version of the code, complete to this point, is available [here](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-3.0.1)
