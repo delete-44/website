@@ -78,7 +78,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
     end
   ```
 
-  The `.update` method returns true or false based on whether the update was successful, so we're using that to set the response accordingly. Now if you go through and try updating your films with invalid data via the UI, you'll see none of the records save; check the console and you'll see something like the following:
+  The `.update` method returns true or false based on whether the update was successful, so we're using that to set the response accordingly. We're only returning the first error message - at the very least, when the user corrects that one they can progress onto the others. Of course, you are more than welcome to adjust this response as appropriate for your application. Now if you go through and try updating your films with invalid data via the UI, you'll see none of the records save; check the console and you'll see something like the following:
 
   ```bash
     Error: Request failed with status code 403
@@ -87,3 +87,102 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   Which is good! The update action is failing and returning the forbidden head we set.
 
 ### 4. Processing erroneous data
+
+  Now we are succesfully causing errors (the irony isn't lost on me, don't worry) we can appropriately convey that information to the user.
+
+  Firstly, lets add some css to show the problematic entry:
+
+  ```css
+    /* app/javascript/films-table.vue */
+    <style scoped>
+      body { padding: 1rem; }
+      .danger input { border-color: red !important; }
+    </style>
+  ```
+
+  I **know** the `!important` tag is bad - but the CSS written here applies only to this component, and without it we cannot overwrite the bootstrap defaults.
+
+  Next, add the class to the target row:
+
+  ```js
+    // app/javascript/films-table.vue
+    <script>
+      export default {
+        data() { // Unchanged },
+        created () { // Unchanged },
+        methods: {
+          dataChanged(e) {
+            let row = e.target.closest('tr')
+            // ...
+
+            axios
+              .put( // Unchanged )
+              // Add this clause
+              .catch(function(response) {
+                row.classList.add('danger')
+              })
+          },
+        }
+      }
+    </script>
+  ```
+
+  At this point you can fill in your table with broken data and see the cells highlight.
+
+  Now there are two major issues for us to handle:
+
+  Firstly, when you fix the errors the `danger` highlight stays. Axios gives us a convenient hook to fix this:
+
+  ```js
+    // app/javascript/films-table.vue
+    <script>
+      export default {
+        data() { // Unchanged },
+        created () { // Unchanged },
+        methods: {
+          dataChanged(e) {
+            // ...
+
+            axios
+              .put( // Unchanged )
+              // Add this clause
+              .then(function(response) {
+                row.classList.remove('danger')
+              })
+              .catch( // Unchanged )
+          },
+        }
+      }
+    </script>
+  ```
+
+  Or: when the response returns successfully, remove the `danger` class from the target row. You should now be able to add and remove the warning border by entering different data states.
+
+  The second issue is that we've gone to all the effort to return the warning message, but haven't actually shown that to the user. For the sake of brevity, I'm going to show you how to retrieve the message and then simply alert it. Feel free to show it however you can:
+
+  ```js
+    // app/javascript/films-table.vue
+    <script>
+      export default {
+        data() { // Unchanged },
+        created () { // Unchanged },
+        methods: {
+          dataChanged(e) {
+            // ...
+
+            axios
+              .put( // Unchanged )
+              .then(function(response) (// Unchanged)
+              .catch( function(response) {
+                row.classList.add('danger')
+
+                let message = response.response.data.error
+                alert(message)
+              })
+          },
+        }
+      }
+    </script>
+  ```
+
+  Now go mess with your data - you'll see the errors displaying as appropriate, and the erroneous cells highlighted.
