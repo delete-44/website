@@ -60,4 +60,30 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   Now - save yourself some hassle and write a test suite so you don't need to go through this again.
 
-### 3. Handling erroneous data
+### 3. Returning appropriate responses
+
+  The next step is to update our controller action to handle requests with bad data.
+
+  ```rb
+    # app/controllers/films_controller.rb
+
+    def update
+      if @film.update(film_params)
+        head :ok
+      else
+        render json: {
+          error: @film.errors.full_messages.first
+        }, status: :forbidden
+      end
+    end
+  ```
+
+  The `.update` method returns true or false based on whether the update was successful, so we're using that to set the response accordingly. Now if you go through and try updating your films with invalid data via the UI, you'll see none of the records save; check the console and you'll see something like the following:
+
+  ```bash
+    Error: Request failed with status code 403
+  ```
+
+  Which is good! The update action is failing and returning the forbidden head we set.
+
+### 4. Processing erroneous data
