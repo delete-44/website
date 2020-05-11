@@ -21,41 +21,41 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   With that in mind:
 
   ```rb
-    # app/models/film.rb
-    class Film < ApplicationRecord
-      validates :title, length: { in: 2..20 }, presence: true
-      validates :description, length: { in: 5..100 }, presence: true
-    end
+  # app/models/film.rb
+  class Film < ApplicationRecord
+    validates :title, length: { in: 2..20 }, presence: true
+    validates :description, length: { in: 5..100 }, presence: true
+  end
   ```
 
   If you're unfamiliar with Ruby validation, this simply requires that both fields be complete (`presence: true`) and defines upper and lower character limits for them both (`length: { in lower_bound..upper_bound }`). In a full application I'd take this opportunity to write a full test suite covering these validations, but for the sake of a demo application we can move past it. You can confirm that the validations work by running the following commands:
 
   ```bash
-    $ bin/rails c
-      > Loading development environment (Rails 5.2.4.1)
-      $ film = Film.create
-        >   (0.2ms)  BEGIN
-        >   (0.1ms)  ROLLBACK
-        > => #<Film id: nil, title: nil, description: nil, created_at: nil, updated_at: nil>
-      $ film.errors.full_messages
-        > => ["Title is too short (minimum is 2 characters)", "Title can't be blank", "Description is too short (minimum is 5 characters)", "Description can't be blank"]
-      $ film = Film.create(title: '1', description: '1234')
-        >   (0.2ms)  BEGIN
-        >   (0.4ms)  ROLLBACK
-        > => #<Film id: nil, title: "1", description: "1234", created_at: nil, updated_at: nil>
-      $ film.errors.full_messages
-        > ["Title is too short (minimum is 2 characters)", "Description is too short (minimum is 5 characters)"]
-      $ film = Film.create(title: '123456789012345678901', description: 'A string long enough to hit the 100-character limit')
-        >   (0.2ms)  BEGIN
-        >   (0.4ms)  ROLLBACK
-        > => #<Film id: nil, title: "123456789012345678901", description: "...", created_at: nil, updated_at: nil>
-      $ film.errors.full_messages
-        > ["Title is too long (maximum is 20 characters)", "Description is too long (maximum is 100 characters)"]
-      $ film = Film.create(title: 'Reasonable Title', description: 'Reasonable Description')
-        >   (0.2ms)  BEGIN
-        >   Film Create (0.6ms)  INSERT INTO "films" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reasonable Title"], ["description", "Reasonable Description"], ["created_at", "2020-05-08 12:23:47.784686"], ["updated_at", "2020-05-08 12:23:47.784686"]]
-        >   (0.8ms)  COMMIT
-        > => #<Film id: 12, title: "Reasonable Title", description: "Reasonable Description", created_at: "2020-05-08 12:23:47", updated_at: "2020-05-08 12:23:47">
+  $ bin/rails c
+    > Loading development environment (Rails 5.2.4.1)
+    $ film = Film.create
+      >   (0.2ms)  BEGIN
+      >   (0.1ms)  ROLLBACK
+      > => #<Film id: nil, title: nil, description: nil, created_at: nil, updated_at: nil>
+    $ film.errors.full_messages
+      > => ["Title is too short (minimum is 2 characters)", "Title can't be blank", "Description is too short (minimum is 5 characters)", "Description can't be blank"]
+    $ film = Film.create(title: '1', description: '1234')
+      >   (0.2ms)  BEGIN
+      >   (0.4ms)  ROLLBACK
+      > => #<Film id: nil, title: "1", description: "1234", created_at: nil, updated_at: nil>
+    $ film.errors.full_messages
+      > ["Title is too short (minimum is 2 characters)", "Description is too short (minimum is 5 characters)"]
+    $ film = Film.create(title: '123456789012345678901', description: 'A string long enough to hit the 100-character limit')
+      >   (0.2ms)  BEGIN
+      >   (0.4ms)  ROLLBACK
+      > => #<Film id: nil, title: "123456789012345678901", description: "...", created_at: nil, updated_at: nil>
+    $ film.errors.full_messages
+      > ["Title is too long (maximum is 20 characters)", "Description is too long (maximum is 100 characters)"]
+    $ film = Film.create(title: 'Reasonable Title', description: 'Reasonable Description')
+      >   (0.2ms)  BEGIN
+      >   Film Create (0.6ms)  INSERT INTO "films" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reasonable Title"], ["description", "Reasonable Description"], ["created_at", "2020-05-08 12:23:47.784686"], ["updated_at", "2020-05-08 12:23:47.784686"]]
+      >   (0.8ms)  COMMIT
+      > => #<Film id: 12, title: "Reasonable Title", description: "Reasonable Description", created_at: "2020-05-08 12:23:47", updated_at: "2020-05-08 12:23:47">
   ```
 
   Now - save yourself some hassle and write a test suite so you don't need to go through this again.
@@ -65,17 +65,17 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   The next step is to update our controller action to handle requests with bad data.
 
   ```rb
-    # app/controllers/films_controller.rb
+  # app/controllers/films_controller.rb
 
-    def update
-      if @film.update(film_params)
-        head :ok
-      else
-        render json: {
-          error: @film.errors.full_messages.first
-        }, status: :forbidden
-      end
+  def update
+    if @film.update(film_params)
+      head :ok
+    else
+      render json: {
+        error: @film.errors.full_messages.first
+      }, status: :forbidden
     end
+  end
   ```
 
   The `.update` method returns true or false based on whether the update was successful, so we're using that to set the response accordingly. We're only returning the first error message - at the very least, when the user corrects that one they can progress onto the others. Of course, you are more than welcome to adjust this response as appropriate for your application. Now if you go through and try updating your films with invalid data via the UI, you'll see none of the records save; check the console and you'll see something like the following:
@@ -93,11 +93,11 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   Firstly, lets add some css to show the problematic entry:
 
   ```css
-    /* app/javascript/films-table.vue */
-    <style scoped>
-      body { padding: 1rem; }
-      .danger input { border-color: red !important; }
-    </style>
+  /* app/javascript/films-table.vue */
+  <style scoped>
+    body { padding: 1rem; }
+    .danger input { border-color: red !important; }
+  </style>
   ```
 
   I **know** the `!important` tag is bad - but the CSS written here applies only to this component, and without it we cannot overwrite the bootstrap defaults.
@@ -105,26 +105,26 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   Next, add the class to the target row:
 
   ```js
-    // app/javascript/films-table.vue
-    <script>
-      export default {
-        data() { // Unchanged },
-        created () { // Unchanged },
-        methods: {
-          dataChanged(e) {
-            let row = e.target.closest('tr')
-            // ...
+  // app/javascript/films-table.vue
+  <script>
+    export default {
+      data() { // Unchanged },
+      created () { // Unchanged },
+      methods: {
+        dataChanged(e) {
+          let row = e.target.closest('tr')
+          // ...
 
-            axios
-              .put( // Unchanged )
-              // Add this clause
-              .catch(function(response) {
-                row.classList.add('danger')
-              })
-          },
-        }
+          axios
+            .put( // Unchanged )
+            // Add this clause
+            .catch(function(response) {
+              row.classList.add('danger')
+            })
+        },
       }
-    </script>
+    }
+  </script>
   ```
 
   At this point you can fill in your table with broken data and see the cells highlight.
@@ -134,26 +134,26 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   Firstly, when you fix the errors the `danger` highlight stays. Axios gives us a convenient hook to fix this:
 
   ```js
-    // app/javascript/films-table.vue
-    <script>
-      export default {
-        data() { // Unchanged },
-        created () { // Unchanged },
-        methods: {
-          dataChanged(e) {
-            // ...
+  // app/javascript/films-table.vue
+  <script>
+    export default {
+      data() { // Unchanged },
+      created () { // Unchanged },
+      methods: {
+        dataChanged(e) {
+          // ...
 
-            axios
-              .put( // Unchanged )
-              // Add this clause
-              .then(function(response) {
-                row.classList.remove('danger')
-              })
-              .catch( // Unchanged )
-          },
-        }
+          axios
+            .put( // Unchanged )
+            // Add this clause
+            .then(function(response) {
+              row.classList.remove('danger')
+            })
+            .catch( // Unchanged )
+        },
       }
-    </script>
+    }
+  </script>
   ```
 
   Or: when the response returns successfully, remove the `danger` class from the target row. You should now be able to add and remove the warning border by entering different data states.
@@ -161,28 +161,28 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   The second issue is that we've gone to all the effort to return the warning message, but haven't actually shown that to the user. For the sake of brevity, I'm going to show you how to retrieve the message and then simply alert it. Feel free to show it however you can:
 
   ```js
-    // app/javascript/films-table.vue
-    <script>
-      export default {
-        data() { // Unchanged },
-        created () { // Unchanged },
-        methods: {
-          dataChanged(e) {
-            // ...
+  // app/javascript/films-table.vue
+  <script>
+    export default {
+      data() { // Unchanged },
+      created () { // Unchanged },
+      methods: {
+        dataChanged(e) {
+          // ...
 
-            axios
-              .put( // Unchanged )
-              .then(function(response) (// Unchanged)
-              .catch( function(response) {
-                row.classList.add('danger')
+          axios
+            .put( // Unchanged )
+            .then(function(response) (// Unchanged)
+            .catch( function(response) {
+              row.classList.add('danger')
 
-                let message = response.response.data.error
-                alert(message)
-              })
-          },
-        }
+              let message = response.response.data.error
+              alert(message)
+            })
+        },
       }
-    </script>
+    }
+  </script>
   ```
 
   Now go mess with your data - you'll see the errors displaying as appropriate, and the erroneous cells highlighted.
