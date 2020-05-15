@@ -73,7 +73,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
     else
       render json: {
         error: @film.errors.full_messages.first
-      }, status: :forbidden
+      }, status: :unprocessable_entity
     end
   end
   ```
@@ -84,7 +84,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
     Error: Request failed with status code 403
   ```
 
-  Which is good! The update action is failing and returning the forbidden head we set.
+  Which is good! The update action is failing and returning the `unprocessable_entity` head we set.
 
 ### 4. Processing erroneous data
 
