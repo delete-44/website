@@ -10,15 +10,18 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
 ### 1. Why I avoided Vuelidate
 
-  If you've looked into validation on Vue components before, chances are you've encountered the [Vuelidate](https://vuelidate.js.org/) package - if you're trying to validate a Vue component on it's own, this is a fantastic all-in-one solution. However, I'm approaching this as a Ruby developer first and foremost, and I am much more comfortable using Ruby's in-built validations.
-  
-  If I add Vuelidate, I'd need to recreate these validations specifically for the component, and make sure to keep them updated whenever I changed the Ruby validations. So, in the interest of DRY code, I want to avoid any additional modules - I just want to apply my existing validations.
+  If you've looked into validation on Vue components before, chances are you've encountered the [Vuelidate](https://vuelidate.js.org/) package - if you're trying to validate a Vue component on it's own, this is a fantastic all-in-one solution. However, I'm approaching this as a Ruby developer first and foremost, and as such am much more comfortable using Ruby's in-built validations.
+
+  If I add Vuelidate, I'd need to
+
+  1. recreate these validations specifically for the component;
+  2. make sure to keep them updated whenever I changed the Ruby validations.
+
+  In the interest of DRY code, I want to avoid any additional modules - I just want to apply my existing validations.
 
 ### 2. Adding validations
 
-  This is of course a demo application, so our validations are going to be as straightforward as possible. If you are working with anything more complex then don't worry, by the end our Vue component will be rendering any error messages that would be displayed by your typical Rails application.
-
-  With that in mind:
+  This is of course a demo application, so our validations are going to be as straightforward as possible. If you are working with anything more complex then don't worry, by the end our Vue component will be rendering any error messages that would be displayed in a typical Rails application. With that in mind...
 
   ```rb
   # app/models/film.rb
@@ -28,7 +31,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   end
   ```
 
-  If you're unfamiliar with Ruby validation, this simply requires that both fields be complete (`presence: true`) and defines upper and lower character limits for them both (`length: { in lower_bound..upper_bound }`). In a full application I'd take this opportunity to write a full test suite covering these validations, but for the sake of a demo application we can move past it. You can confirm that the validations work by running the following commands:
+  If you're unfamiliar with Ruby validation, this simply requires that both fields be complete (`presence: true`) and defines upper and lower character limits for them both (`length: { in lower_bound..upper_bound }`). In a full application I'd take this opportunity to write a full test suite covering these validations, but for the sake of a demo application we can move past it. As a sanity check, you can confirm that the validations work by running the following commands:
 
   ```bash
   $ bin/rails c
@@ -81,16 +84,14 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   The `.update` method returns true or false based on whether the update was successful, so we're using that to set the response accordingly. We're only returning the first error message - at the very least, when the user corrects that one they can progress onto the others. Of course, you are more than welcome to adjust this response as appropriate for your application. Now if you go through and try updating your films with invalid data via the UI, you'll see none of the records save; check the console and you'll see something like the following:
 
   ```bash
-    Error: Request failed with status code 403
+    Error: Request failed with status code 422
   ```
 
   Which is good! The update action is failing and returning the `unprocessable_entity` head we set.
 
 ### 4. Processing erroneous data
 
-  Now we are succesfully causing errors (the irony isn't lost on me, don't worry) we can appropriately convey that information to the user.
-
-  Firstly, lets add some css to show the problematic entry:
+  Now we are succesfully causing errors (the irony isn't lost on me, don't worry) we can appropriately convey that information to the user. Firstly, lets add some css to show the problematic entry:
 
   ```css
   /* app/javascript/films-table.vue */
@@ -106,6 +107,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   ```js
   // app/javascript/films-table.vue
+
   <script>
     export default {
       data() { // Unchanged },
@@ -129,12 +131,11 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   At this point you can fill in your table with broken data and see the cells highlight.
 
-  Now there are two major issues for us to handle:
-
-  Firstly, when you fix the errors the `danger` highlight stays. Axios gives us a convenient hook to fix this:
+  Now there are two major issues for us to handle; firstly, when you fix the errors the `danger` highlight stays. Axios gives us a convenient hook to fix this:
 
   ```js
   // app/javascript/films-table.vue
+
   <script>
     export default {
       data() { // Unchanged },
@@ -186,3 +187,5 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
   ```
 
   Now go mess with your data - you'll see the errors displaying as appropriate, and the erroneous cells highlighted.
+
+As usual, if you lost track at any point you can pick up a complete version of the code covered here from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-4) code repo.
