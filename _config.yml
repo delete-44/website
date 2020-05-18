@@ -19,8 +19,6 @@ email: daviesanthonye1234@gmail.com
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-assets
 
 # Markdown formatter
 kramdown:  
