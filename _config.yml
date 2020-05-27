@@ -21,14 +21,10 @@ email: daviesanthonye1234@gmail.com
 markdown: kramdown
 
 # Markdown formatter
-kramdown:  
+kramdown:
   parse_block_html: true
 
 date-format: '%B %d, %Y'
-  
-# Asset pipeline
-assets:
-  digest: true
 
 # Collections
 collections_dir: collections
@@ -43,3 +39,6 @@ collections:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+sass:
+  style: compressed

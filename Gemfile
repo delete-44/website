@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |_repo_name| 'https://github.com/#{repo_name}' }
 
-gem 'sprockets', '~> 3.7', '>= 3.7.2'
+gem 'sprockets', '~> 4.0'
 
 gem 'rails', '~> 5.2.3'
 
