@@ -17,10 +17,10 @@
     <div class='w-40-ns dib-ns'>
         {% if portfolio-piece.link %}
             <a href='{{ portfolio-piece.link }}' class='link'>
-                {% asset '{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100' %}
+                <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100' />
             </a>
         {% else %}
-            {% asset '{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100' %}
+            <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100' />
         {% endif %}
     </div>
 </div>
