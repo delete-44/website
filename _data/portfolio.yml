@@ -54,7 +54,6 @@ dungeons-ror:
     basics of Rails and created a test application (following Michael Hartl's wonderful
     <a href='https://www.railstutorial.org'>tutorial</a>). I have since been able to expand upon this, and use it
     as a testing ground for for significant changes in other projects.
-    At time of writing, this is live <a href='https://young-forest-93499.herokuapp.com/'>here</a>
 
 rainy-days:
   title: This website!
