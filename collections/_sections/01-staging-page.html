@@ -5,10 +5,12 @@ link_to: false
 priority: 1
 ---
 
-<a href='{{ site.data.resources.github.url }}'>
-  <img src='{{ site.avatar }}?s=500' class='link center br-100-ns br-0-ns b--secondary h5-ns h4 db pa1-ns ba-ns'
-    title='{{ site.name }}' alt='{{ site.name }}'>
-</a>
+<div class='tc'>
+  <a href='{{ site.data.resources.github.url }}' class='dib w5-ns w4'>
+    <img src='{{ site.avatar }}?s=500' class='link center br-100-ns br-0-ns b--secondary w5-ns w4 db pa1-ns ba-ns'
+      title='{{ site.name }}' alt='{{ site.name }}'>
+  </a>
+</div>
 
 <div class='w-100 flex justify-center mt3'>
   {% assign size=1 %}
