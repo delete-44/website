@@ -6,7 +6,7 @@ priority: 5
 ---
 
 {% for portfolio-data in site.data.portfolio %}
-    {% assign portfolio-piece = portfolio-data[1] %}
-    {% assign modulus = forloop.index | modulo:2 %}
-    {% include portfolio-card.html flipper=modulus %}
+  {% assign portfolio-piece = portfolio-data[1] %}
+  {% assign modulus = forloop.index | modulo:2 %}
+  {% include portfolio-card.html flipper=modulus %}
 {% endfor %}
