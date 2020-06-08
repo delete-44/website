@@ -21,7 +21,9 @@ train-service:
     as a university-managed task, the GitHub repo has since been removed.
   summary: >-
     My role in this was building the desktop app, web app, and co-authoring a Java library that handled our
-    API connections that we could simply import to every project.
+    API connections that we could simply import to every project. This was my first introduction to developing
+    with and for an API, and whilst we used very different frameworks to those I use now the experience was
+    informative.
 
 zombies:
   title: Mazemaker
