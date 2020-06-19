@@ -151,3 +151,83 @@ With this written, we can run a command in a disposable container to install web
 ```
 
 And navigate to [localhost:3000](localhost:3000) to finally, finally hit that classic welcome screen.
+
+To give use something to use, I'm going to scaffold something very briefly:
+
+```bash
+  $ docker-compose run --rm web bin/rails g scaffold user name:string
+    > ...
+    > invoke  scss
+    > create    app/assets/stylesheets/scaffolds.scss
+
+  $ docker-compose run --rm web bin/rails db:migrate
+    > == 20200619160457 CreateUsers: migrating ======================================
+    > -- create_table(:users)
+    >    -> 0.0077s
+    > == 20200619160457 CreateUsers: migrated (0.0082s) =============================
+
+```
+
+If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is *not* running.
+
+We're going to need a new service to run it. For clarity's sake, let's call it webpack:
+
+```yml
+  # docker-compose.yml
+  webpack:
+    build: .
+    command: ./bin/webpack-dev-server
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - '3035:3035'
+    environment:
+      NODE_ENV: development
+      RAILS_ENV: development
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+```
+
+This will get the server running, but won't allow hot reloading... We can't be having that.
+
+And that should be all you need!
+
+Stop your servers, delete your `tmp/pids`, and redeploy everything - this time use `docker-compose up web webpack` to start both services simultaneously. You should get an output something like this...
+
+```bash
+  $ docker-compose up web webpack
+    > webpacker-on-docker-demo_db_1 is up-to-date
+    > Starting webpacker-on-docker-demo_webpack_1 ... done
+    > Starting webpacker-on-docker-demo_web_1     ... done
+    > Attaching to webpacker-on-docker-demo_web_1, webpacker-on-docker-demo_webpack_1
+    > web_1      | => Booting Puma
+    > web_1      | => Rails 6.0.3.2 application starting in development
+    > web_1      | => Run `rails server --help` for more startup options
+    > webpack_1  | ℹ ｢wds｣: Project is running at http://localhost:3035/
+    > webpack_1  | ℹ ｢wds｣: webpack output is served from /packs/
+    > webpack_1  | ℹ ｢wds｣: Content not from webpack is served from /usr/src/app/public/packs
+    > webpack_1  | ℹ ｢wds｣: 404s will fallback to /index.html
+    > webpack_1  | ℹ ｢wdm｣: Hash: 4030c4049dd2c45d5d92
+    > webpack_1  | Version: webpack 4.43.0
+    > webpack_1  | Time: 5902ms
+    > webpack_1  | Built at: 06/19/2020 3:45:00 PM
+    > webpack_1  |                                      Asset       Size       Chunks                         Chunk Names
+    > webpack_1  |     js/application-7ebe8ea7d1fee93ab92a.js    506 KiB  application  [emitted] [immutable]  application
+    > webpack_1  | js/application-7ebe8ea7d1fee93ab92a.js.map    570 KiB  application  [emitted] [dev]        application
+    > webpack_1  |                              manifest.json  364 bytes               [emitted]
+    > webpack_1  | ℹ ｢wdm｣: Compiled successfully.
+    > web_1      | Puma starting in single mode...
+    > web_1      | * Version 4.3.5 (ruby 2.7.1-p83), codename: Mysterious Traveller
+    > web_1      | * Min threads: 5, max threads: 5
+    > web_1      | * Environment: development
+    > web_1      | * Listening on tcp://0.0.0.0:3000
+    > web_1      | Use Ctrl-C to stop
+```
+
+Items of note here:
+
+* Because you have both containers running, the output from each container is marked by their `web_1      |` and `webpack_1  |` tags
+* Using this, you can see that the `web` service *starts* to build, then waits for the `webpack` server to compile successfully before hosting the server
+
+To test that the webpack server is running successfully, you can check a few things.
+
+1. Navigate to [localhost:3035](localhost:3035). If you get an `Unable to connect` error, something is wrong. If you get a white page with `Cannot GET /` then, even though it looks like a disaster, your server is running successfully. This is because everything that should usually run through [localhost:3035(localhost:3035) is routed to [localhost:3000](localhost:3000) for us to work with instead.
