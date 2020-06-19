@@ -1,5 +1,5 @@
 ---
-title: Dockerizing Webpacker
+title: Dockerising Webpacker
 date: 2020-06-10
 layout: post
 image: https://placekitten.com/1920/1920
@@ -32,7 +32,7 @@ A breakdown:
 - `gem install rails:"~> 6.0.3"`
 - `rails new --skip-test applet`
 
-Let that run through to create our base application. If you're used to older versions of Rails then this might take longer than you'd expect. No worries, it's because webpacker is now included by default, so creating a new project will also install yarn and webpacker. I'm also skipping tests - I want to keep this lightweight, but also would always advise using [RSpec](https://rspec.info/) instead.
+Now - there are a few more steps involved with setting up a modern rails app (ie installing webpacker) to run before we can get started. But to make this process easier we're going to put together a `Dockerfile` and `docker-compose.yml`.
 
 <!-- To make sure everything has worked as intended, boot up your server.
 
@@ -56,7 +56,7 @@ Lets start with our Dockerfile - this is, if you're unfamiliar, a file created i
 
 ```rb
   # Dockerfile
-  FROM ruby:2.6
+  FROM ruby:2.7
 
   # Install nodejs
   RUN apt-get update -qq && apt-get install -y nodejs
@@ -72,7 +72,35 @@ Lets start with our Dockerfile - this is, if you're unfamiliar, a file created i
   CMD rails server -b 0.0.0.0
 ```
 
-This is code adapted from Chris Blunt's [Rails on Docker](https://www.plymouthsoftware.com/courses), which proivdes an extensive introduction to Docker and the concept of containerisation.
+```rb
+  # Better dockerfile
+  FROM ruby:2.7
+
+  # Install nodejs
+  RUN apt-get update -qq && apt-get install -y nodejs
+
+  # Add Yarn repository
+  RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+  RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+  # Update
+  RUN apt-get update -y
+
+  # Install Yarn
+  RUN apt-get install yarn -y
+
+  ADD . /usr/src/app
+  WORKDIR /usr/src/app
+
+  # Install & run bundler
+  RUN gem install bundler:'~> 2.1.4'
+
+  RUN bundle
+
+  CMD rails server -b 0.0.0.0
+  ```
+
+This is code adapted from Chris Blunt's [Rails on Docker](https://www.plymouthsoftware.com/courses), which provides an extensive introduction to Docker and the concept of containerisation.
 
 With it, you should be able to build your application:
 
@@ -87,7 +115,36 @@ With it, you should be able to build your application:
 Next, our `docker-compose` file. This is a `yml` document that organises and names our services to make them easier to manage.
 
 ```yml
+# docker-compose.yml
+version: '3.2'
 
+volumes:
+  dbdata:
+    driver: local
+
+services:
+  db:
+    image: postgres:11
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_USER=rails
+      - POSTGRES_PASSWORD=secret123
+    volumes:
+      - dbdata:/var/lib/postgresql/data/pgdata
+
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - RAILS_ENV=development
+      - RACK_ENV=development
+      - POSTGRES_USER=rails
+      - POSTGRES_PASSWORD=secret123
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
 ```
 
 With this written, we can run a command in a disposable container to setup our local environment.
