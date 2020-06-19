@@ -6,15 +6,15 @@ image: https://placekitten.com/1920/1920
 custom_excerpt: Create a dockerised Rails app with webpack-dev-server
 ---
 
-### This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker
+#### This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. You are welcome to skip the start application if needed and jump straight to [Dockerising Webpacker](#dockerising-webpacker)
 
 #### For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation
 
-#### I could not have written this post without the [Rails on Docker]() book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough
+#### I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough
 
 ### 1. Getting started
 
-We're going to need an application to dockerise. I'm sure you're familiar with this process, but we're going to take it up a level. Following the [Rails on Docker]() guidelines, we're going to complete this entirely in Docker.
+We're going to need an application to dockerise. I'm sure you're familiar with this process, but we're going to take it up a level. Following the [Rails on Docker](https://www.plymouthsoftware.com/courses) guidelines, we're going to complete this entirely in Docker.
 
 ```bash
   $ docker run --rm -it -v ${PWD}:/usr/src -w /usr/src ruby:2.7 sh -c 'gem install rails:"~> 6.0.3" && rails new --skip-test webpacker-on-docker-demo'
@@ -54,6 +54,7 @@ Lets start with our Dockerfile - this is, if you're unfamiliar, a file created i
 
 ```rb
   # Dockerfile
+
   FROM ruby:2.7
 
   # Install nodejs
@@ -80,7 +81,7 @@ Lets start with our Dockerfile - this is, if you're unfamiliar, a file created i
   CMD rails server -b 0.0.0.0
   ```
 
-This is code adapted from Chris Blunt's [Rails on Docker](https://www.plymouthsoftware.com/courses), which provides an extensive introduction to Docker and the concept of containerisation.
+#### This is code adapted from Chris Blunt's [Rails on Docker](https://www.plymouthsoftware.com/courses), which provides an extensive introduction to Docker and the concept of containerisation
 
 With it, you should be able to build your application:
 
@@ -95,37 +96,40 @@ With it, you should be able to build your application:
 Next, our `docker-compose` file. This is a `yml` document that organises and names our services to make them easier to manage.
 
 ```yml
-# docker-compose.yml
-version: '3.2'
+  # docker-compose.yml
 
-volumes:
-  dbdata:
-    driver: local
+  version: '3.2'
 
-services:
-  db:
-    image: postgres:11
-    environment:
-      - PGDATA=/var/lib/postgresql/data/pgdata
-      - POSTGRES_USER=rails
-      - POSTGRES_PASSWORD=secret123
-    volumes:
-      - dbdata:/var/lib/postgresql/data/pgdata
+  volumes:
+    dbdata:
+      driver: local
 
-  web:
-    build: .
-    ports:
-      - '3000:3000'
-    environment:
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - POSTGRES_USER=rails
-      - POSTGRES_PASSWORD=secret123
-    volumes:
-      - .:/usr/src/app
-    depends_on:
-      - db
+  services:
+    db:
+      image: postgres:11
+      environment:
+        - PGDATA=/var/lib/postgresql/data/pgdata
+        - POSTGRES_USER=rails
+        - POSTGRES_PASSWORD=secret123
+      volumes:
+        - dbdata:/var/lib/postgresql/data/pgdata
+
+    web:
+      build: .
+      ports:
+        - '3000:3000'
+      environment:
+        - RAILS_ENV=development
+        - RACK_ENV=development
+        - POSTGRES_USER=rails
+        - POSTGRES_PASSWORD=secret123
+      volumes:
+        - .:/usr/src/app
+      depends_on:
+        - db
 ```
+
+### Installing Webpacker
 
 With this written, we can run a command in a disposable container to install webpacker!
 
@@ -165,8 +169,18 @@ To give use something to use, I'm going to scaffold something very briefly:
     > -- create_table(:users)
     >    -> 0.0077s
     > == 20200619160457 CreateUsers: migrated (0.0082s) =============================
-
 ```
+
+```rb
+  # config/routes.rb
+
+  Rails.application.routes.draw do
+    root to: 'users#index'
+    resources :users
+  end
+```
+
+### Dockerising Webpacker
 
 If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is *not* running.
 
@@ -174,6 +188,7 @@ We're going to need a new service to run it. For clarity's sake, let's call it w
 
 ```yml
   # docker-compose.yml
+
   webpack:
     build: .
     command: ./bin/webpack-dev-server
@@ -187,11 +202,42 @@ We're going to need a new service to run it. For clarity's sake, let's call it w
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
 ```
 
-This will get the server running, but won't allow hot reloading... We can't be having that.
+This will get the server running, but won't allow hot reloading... We can't be having that. While we're here I'm also going to add a useful `docker-entrypoint` file to automatically clear out leftover `pids`.
+
+```yml
+  # docker-compose.yml
+
+  services:
+    web:
+      ports: # Unchanged
+      environment:
+        # ...
+        WEBPACKER_DEV_SERVER_HOST: webpack
+      depends_on:
+        # ...
+        - webpack
+      volumes: # Unchanged
+```
+
+```rb
+  # Dockerfile
+
+  ... # Unchanged up to `CMD` line
+  CMD ./docker-entrypoint.sh
+```
+
+```sh
+  # docker-entrypoint.sh
+
+  #!/bin/sh
+
+  rm -f tmp/pids/server.pid
+  bin/rails server -b 0.0.0.0
+```
 
 And that should be all you need!
 
-Stop your servers, delete your `tmp/pids`, and redeploy everything - this time use `docker-compose up web webpack` to start both services simultaneously. You should get an output something like this...
+For the first run we're going to use `docker-compose up web webpack` to inspect the output from both containers. But, in the future, you can get away with `docker-compose up web` and the `webpack` service will run automatically :grin: You should get an output something like this...
 
 ```bash
   $ docker-compose up web webpack
@@ -225,9 +271,14 @@ Stop your servers, delete your `tmp/pids`, and redeploy everything - this time u
 
 Items of note here:
 
-* Because you have both containers running, the output from each container is marked by their `web_1      |` and `webpack_1  |` tags
+* Because you have both containers running in the same terminal, the output from each container is marked by their `web_1      |` and `webpack_1  |` tags
 * Using this, you can see that the `web` service *starts* to build, then waits for the `webpack` server to compile successfully before hosting the server
 
 To test that the webpack server is running successfully, you can check a few things.
 
 1. Navigate to [localhost:3035](localhost:3035). If you get an `Unable to connect` error, something is wrong. If you get a white page with `Cannot GET /` then, even though it looks like a disaster, your server is running successfully. This is because everything that should usually run through [localhost:3035(localhost:3035) is routed to [localhost:3000](localhost:3000) for us to work with instead.
+2. More importantly, test the **actual** reason we're here. Go to your `app/javascript/packs/application.js` and add a line - say, `console.log('Hello from webpacker!')`. Save the file, **don't** refresh your page, and it should update automatically.
+
+From here, everything under the `app/javascript/` directory will trigger a hot reload when it's contents change!
+
+Now, to put your newfound dockerised app to the test, try adding Vue components. Something a little like [this](/blog-posts/02-rails-with-vue-your-first-component.html)...
