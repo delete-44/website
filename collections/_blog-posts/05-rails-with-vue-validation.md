@@ -25,6 +25,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   ```rb
   # app/models/film.rb
+
   class Film < ApplicationRecord
     validates :title, length: { in: 2..20 }, presence: true
     validates :description, length: { in: 5..100 }, presence: true
@@ -95,6 +96,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   ```css
   /* app/javascript/films-table.vue */
+
   <style scoped>
     body { padding: 1rem; }
     .danger input { border-color: red !important; }
@@ -163,6 +165,7 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   ```js
   // app/javascript/films-table.vue
+
   <script>
     export default {
       data() { // Unchanged },
