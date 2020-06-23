@@ -3,16 +3,20 @@ title: Dockerising Webpacker
 date: 2020-06-10
 layout: post
 image: https://placekitten.com/1920/1920
-custom_excerpt: Create a dockerised Rails app with webpack-dev-server
+custom_excerpt: An article following the creation of a dockerised Ruby on Rails application, complete with a dockerised Webpack development server running parallel. Worth a read if you're trying to dockerise a modern, reactive application
 ---
 
-#### This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. If you have a pre-existing & already Dockerised app then skip to [Dockerising Webpacker](#dockerising-webpacker)
+#### A github repo containing the code discussed in this tutorial can be found on [my GitHub](https://github.com/ctrlaltdelete44/webpacker-on-docker)
 
-#### For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation
+### 1. Introduction
 
-#### I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough. Get started with a [free course](https://railsondocker.com/) by the same author
+This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. If you have a pre-existing & already Dockerised app then skip to [Dockerising Webpacker](#dockerising-webpacker).
 
-### 1. Getting started
+For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation.
+
+Finally, I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough. Get started with a [free course](https://railsondocker.com/) by the same author.
+
+### 2. Getting started
 
 We're going to need an application to dockerise. I'm sure you're familiar with this process, but we're going to take it up a level. Following the [Rails on Docker](https://www.plymouthsoftware.com/courses) guidelines, we're going to complete this entirely in Docker.
 
@@ -41,7 +45,7 @@ We'll get all the way to installing webpacker, and then hit an error. No worries
 
 Now - there are a few more steps involved with setting up a modern rails app (ie installing webpacker) to run before we can get started. To start this process easier we're going to put together a `Dockerfile` and `docker-compose.yml`.
 
-### 2. Dockerising the base application
+### 1. Dockerising the base application
 
 We need to add two files to the root directory of our application:
 
@@ -127,7 +131,9 @@ services:
       - db
 ```
 
-### Installing Webpacker
+#### This is code adapted from Chris Blunt's [Rails on Docker](https://www.plymouthsoftware.com/courses), which also covers concepts such as scaling containers with Docker Swarm. If you are interested in advancing your knowledge, I would recommend starting here
+
+### 3. Installing Webpacker
 
 With this written, we can run a command in a disposable container to install webpacker!
 
@@ -178,7 +184,7 @@ Rails.application.routes.draw do
 end
 ```
 
-### Dockerising Webpacker
+### 4. Dockerising Webpacker
 
 If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is *not* running.
 
@@ -267,7 +273,7 @@ $ docker-compose up web webpack
   > web_1      | Use Ctrl-C to stop
 ```
 
-### N.B Alternatively, you can use `docker-compose up -d web` (which will launch web in a detached state and webpack due to the `depends_on`), and then call `docker-compose logs -f web webpack` to see the output for any selected services
+#### N.B Alternatively, you can use `docker-compose up -d web` (which will launch web in a detached state and webpack due to the `depends_on`), and then call `docker-compose logs -f web webpack` to see the output for any selected services
 
 Items of note here:
 
