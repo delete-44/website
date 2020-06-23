@@ -166,15 +166,17 @@ $ rails g controller static_pages landing
 then you'll want to amend the following files to...
 
 ```ruby
-# at config/routes.rb
+# config/routes.rb
+
 Rails.application.routes.draw do
   root to: 'static_pages#landing' # Add this line
   get 'static_pages/landing'
 end
 ```
 
-```erb
+```html
 <!-- to app/views/layouts/application.html.erb -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -244,6 +246,7 @@ And then fill these in as following:
 
 ```js
 // app/javascript/packs/navigation.js
+
 import Vue from 'vue'
 import NavigationApp from '../navigation.vue'
 

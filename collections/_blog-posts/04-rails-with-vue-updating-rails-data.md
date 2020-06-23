@@ -105,7 +105,7 @@ custom_excerpt: This is the third installment in a series, covering updating Rai
   Now we can update the Javascript `films-list` mounter to render the table as well:
 
   ```js
-  // At app/javascript/packs/films-list.js
+  // app/javascript/packs/films-list.js
 
   // your previous imports
 
@@ -133,7 +133,8 @@ custom_excerpt: This is the third installment in a series, covering updating Rai
   ... add the relevant `div` for this to attach to into our view...
 
   ```html
-  <!-- Add to app/views/films/index.html.erb -->
+  <!-- app/views/films/index.html.erb -->
+
   <div id='filmTable'></div>
   ```
 
@@ -160,6 +161,7 @@ Step one is clearing out the static data, so you should end up with something li
 
 ```js
 // app/javascript/films-table.vue
+
 <script>
   export default {
     data() {
@@ -176,6 +178,7 @@ And then add the simple axios request we used in the list. The only caveat is to
 
 ```js
 // app/javascript/films-table.vue
+
 <script>
   import axios from 'axios'
 
@@ -209,6 +212,7 @@ Currently we're three steps into this article and essentially all we've done is 
 
   ```html
   <!-- app/javascript/films-table.vue -->
+
   <template>
     <div>
       <b-table striped hover
@@ -244,6 +248,7 @@ Currently we're three steps into this article and essentially all we've done is 
 
   ```rb
   # app/controllers/films_controller.rb
+
   before_action :fetch_film, except: :index
 
   private
@@ -294,6 +299,7 @@ Currently we're three steps into this article and essentially all we've done is 
 
   ```rb
   # config/routes.rb
+
   resources :films, only: %i[index update] # -> formerly resources :films, only: :index
   ```
 
@@ -368,6 +374,7 @@ Currently we're three steps into this article and essentially all we've done is 
 
   ```html
   <!-- app/javascript/films-table.vue, on each of your template input fields -->
+
   <template v-slot:cell(title)='row'>
     <b-form-input v-model='row.item.title' v-on:change.native="dataChanged"/>
   </template>

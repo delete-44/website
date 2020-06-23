@@ -56,8 +56,9 @@ To make this a touch nicer to use, we need to make a few changes.
 
     *(You can use this opportunity to clear out the default text as well)*
 
-    ```erb
-    <%# app/views/layouts/application.html.erb %>
+    ```html
+    <!-- app/views/layouts/application.html.erb -->
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -83,6 +84,7 @@ To make this a touch nicer to use, we need to make a few changes.
 
     ```ruby
     # db/seeds.rb
+
     (0..9).each do |i|
       Film.create(title: "Film-#{i}", description: "This is film #{i}")
     end
@@ -98,6 +100,7 @@ To make this a touch nicer to use, we need to make a few changes.
 
     ```js
     // app/javascript/navigation.vue
+
     <script>
     export default {
       data: function () {
@@ -149,6 +152,7 @@ To access your seed data in your frontend, we're going to add an API view to you
 
     ```ruby
     # app/controllers/films_controller.rb
+
     def index
       @films = Film.all
     end
@@ -187,6 +191,7 @@ Now we put them all together!
 
     ```html
     <!-- app/javascript/films-list.vue -->
+
     <template>
       <ul class='films'>
         <li v-for="film in films" :key="film.id" class='film-item'>
@@ -273,6 +278,7 @@ Now we put them all together!
 
     ```js
     // app/javascript/packs/films-list.js
+
     import Vue from 'vue'
     import List from '../films-list.vue'
 
