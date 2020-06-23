@@ -10,7 +10,7 @@ custom_excerpt: Create a dockerised Rails app with webpack-dev-server
 
 #### For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation
 
-#### I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough
+#### I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough. Get started with a [free course](railsondocker.com) by the same author
 
 ### 1. Getting started
 
@@ -154,7 +154,7 @@ $ docker-compose up web
 
 And navigate to [localhost:3000](localhost:3000) to finally, finally hit that classic welcome screen.
 
-To give use something to use, I'm going to scaffold something very briefly:
+To give us something to use, I'm going to scaffold something very briefly:
 
 ```bash
 $ docker-compose run --rm web bin/rails g scaffold user name:string
@@ -182,7 +182,7 @@ end
 
 If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is *not* running.
 
-We're going to need a new service to run it. For clarity's sake, let's call it webpack:
+We're going to need to define a new service in our `docker-compose` file to run it. For clarity's sake, let's call it webpack:
 
 ```yml
 # docker-compose.yml
@@ -200,7 +200,7 @@ webpack:
     WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
 ```
 
-This will get the server running, but won't allow hot reloading... We can't be having that. While we're here I'm also going to add a useful `docker-entrypoint` file to automatically clear out leftover `pids`.
+This will get the server running, but won't allow hot reloading... We can't have that. Additionally, if you've needed to restart your server for any reason you might be running into an error regarding leftover `server.pid` files. You can resolve this by manually deleting the temporary files, but I'm going to add a useful `docker-entrypoint` file to automatically resolve this.
 
 ```yml
 # docker-compose.yml
@@ -267,6 +267,8 @@ $ docker-compose up web webpack
   > web_1      | Use Ctrl-C to stop
 ```
 
+### N.B Alternatively, you can use `docker-compose up -d web` (which will launch web in a detached state and webpack due to the `depends_on`), and then call `docker-compose logs -f web webpack` to see the output for any selected services
+
 Items of note here:
 
 * Because you have both containers running in the same terminal, the output from each container is marked by their `web_1      |` and `webpack_1  |` tags
@@ -274,9 +276,9 @@ Items of note here:
 
 To test that the webpack server is running successfully, you can check a few things.
 
-1. Navigate to [localhost:3035](localhost:3035). If you get an `Unable to connect` error, something is wrong. If you get a white page with `Cannot GET /` then, even though it looks like a disaster, your server is running successfully. This is because everything that should usually run through [localhost:3035(localhost:3035) is routed to [localhost:3000](localhost:3000) for us to work with instead.
+1. Navigate to [localhost:3035](localhost:3035). If you get an `Unable to connect` error, something is wrong. If you get a white page with `Cannot GET /` then, even though it looks like a disaster, your server is running successfully. This is because everything that should usually run through [localhost:3035](localhost:3035) is routed to [localhost:3000](localhost:3000) for us to work with instead.
 2. More importantly, test the **actual** reason we're here. Go to your `app/javascript/packs/application.js` and add a line - say, `console.log('Hello from webpacker!')`. Save the file, **don't** refresh your page, and it should update automatically.
 
-From here, everything under the `app/javascript/` directory will trigger a hot reload when it's contents change!
+From here, everything under the `app/javascript/` directory will trigger a hot reload when its contents change!
 
-Now, to put your newfound dockerised app to the test, try adding Vue components. Maybe something a little like [this](/blog-posts/02-rails-with-vue-your-first-component.html)...
+Now, to put your newfound dockerised app to the test, try adding Vue components. Maybe something a little like [this](https://delete44.com/blog-posts/02-rails-with-vue-your-first-component.html)...
