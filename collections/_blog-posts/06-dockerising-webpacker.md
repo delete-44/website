@@ -10,7 +10,7 @@ custom_excerpt: An article following the creation of a dockerised Ruby on Rails 
 
 ### 1. Introduction
 
-This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. If you have a pre-existing & already Dockerised app then skip to [Dockerising Webpacker](#4-dockerising-webpacker).
+This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. If you have a pre-existing & already Dockerised app then skip to [Dockerising Webpacker](#5-dockerising-webpacker).
 
 For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation.
 
@@ -45,7 +45,7 @@ We'll get all the way to installing webpacker, and then hit an error. No worries
 
 Now - there are a few more steps involved with setting up a modern rails app (ie installing webpacker) to run before we can get started. To start this process easier we're going to put together a `Dockerfile` and `docker-compose.yml`.
 
-### 1. Dockerising the base application
+### 3. Dockerising the base application
 
 We need to add two files to the root directory of our application:
 
@@ -133,7 +133,7 @@ services:
 
 #### This is code adapted from Chris Blunt's [Rails on Docker](https://www.plymouthsoftware.com/courses), which also covers concepts such as scaling containers with Docker Swarm. If you are interested in advancing your knowledge, I would recommend starting here
 
-### 3. Installing Webpacker
+### 4. Installing Webpacker
 
 With this written, we can run a command in a disposable container to install webpacker!
 
@@ -184,7 +184,7 @@ Rails.application.routes.draw do
 end
 ```
 
-### 4. Dockerising Webpacker
+### 5. Dockerising Webpacker
 
 If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is *not* running.
 
