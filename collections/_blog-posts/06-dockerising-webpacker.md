@@ -10,7 +10,7 @@ custom_excerpt: Create a dockerised Rails app with webpack-dev-server
 
 #### For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation
 
-#### I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough. Get started with a [free course](railsondocker.com) by the same author
+#### I could not have written this post without the [Rails on Docker](https://www.plymouthsoftware.com/courses) book, to the extent that several lines I use are taken from here and adapted for purpose (with consent, and marked when used). If you're new to Docker I can't recommend it enough. Get started with a [free course](https://railsondocker.com/) by the same author
 
 ### 1. Getting started
 
