@@ -38,7 +38,7 @@ If you're curious about the command above, here's a quick breakdown:
 * `-v`: Attaches a specific volume to the running container. This allows persistent data, so you get too keep your app even the the container is disposed
 * `${PWD}:/usr/src`: The directory of the volume to mount into the container. `${PWD}` is used to represent the current directory
 * `-w`: The working directory for the container - for this example this needs to be where the code is mounted so we can create the project
-* `ruby:2.7`: The name of the [Docker image]() we want to use. These exist for different Ruby versions if you want to change this
+* `ruby:2.7`: The name of the [Docker image](https://hub.docker.com/_/ruby) we want to use. These exist for different Ruby versions if you want to change this
 * `sh -c gem install rails:"~> 6.0.3" rails new --skip-test applet` - The command to run in our container. In this case we are installing rails (at a locked version to ensure the tutorial works when later versions are released) and creating the base app, commands very typical in Ruby development
 
 We'll get all the way to installing webpacker, and then hit an error. No worries, but to install Node and correctly install webpacker we're going to formalise our environment.
