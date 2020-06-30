@@ -1,9 +1,15 @@
 <div class='w-90-ns w-100 mb2 pa2 bb b--primary center flex items-center justify-between justify-center-ns'>
-  <a href='{{ post.url }}' class='link fl ml2 mr4 dib-ns dn'>
-    <img src='{{ post.image }}' class='br-100 h3 w3' title='{{ post.title }}' alt='{{ post.title }}'>
-  </a>
+  {% if post.image %}
+    <a href='{{ post.url }}' class='link fl ml2 mr4 dib-ns dn'>
+      <img src='{{ post.image }}' class='br-100 h3 w3' title='{{ post.title }}' alt='{{ post.title }}'>
+    </a>
 
-  <div class='dib w-70-ns'>
+    {% assign width=70 %}
+  {% else %}
+    {% assign width=100 %}
+  {% endif %}
+
+  <div class='dib w-{{ width }}-ns'>
     <div class='mv0'>
       <a href='{{ post.url }}' class='f4 mb0'>
         {{ post.title }}
