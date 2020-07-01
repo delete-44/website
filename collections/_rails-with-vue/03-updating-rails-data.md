@@ -2,6 +2,7 @@
 title: Updating Rails Data
 date: 2020-03-03
 layout: post
+return_link: /blog-posts/02-rails-with-vue-index
 image: https://placekitten.com/1920/1920
 custom_excerpt: This is the third installment in a series, covering updating Rails data using an inline table editor made with Vue
 ---

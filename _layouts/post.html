@@ -15,5 +15,9 @@ layout: page
 </div>
 
 <div class='mw8 center bt b--primary tc pv2'>
-  <a href='/#articles'>Return</a>
+  {% if page.return_link %}
+    <a href='{{ page.return_link }}'>Return</a>
+  {% else %}
+    <a href='/#articles'>Return</a>
+  {% endif %}
 </div>
