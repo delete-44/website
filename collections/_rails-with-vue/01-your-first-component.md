@@ -1,7 +1,7 @@
 ---
 title: Your First Component
 date: 2020-03-02
-layout: post
+layout: rails-with-vue-chapter
 return_link: /blog-posts/02-rails-with-vue-index
 image: https://placekitten.com/1920/1920
 custom_excerpt: This is intended to be an introduction to the VueJS framework, running from the creation of a new Rails project through to creating your first Vue component
