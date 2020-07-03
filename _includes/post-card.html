@@ -5,38 +5,11 @@
     </a>
 
     {% assign width=80 %}
-  {% elsif post.chapter_index %}
-    <a class='link fl ml2 mr4 dib-ns dn' href='{{ post.url }}'>
-      <i class='fas fa-list f1 h3 w3'></i>
-    </a>
-
-    {% assign width=80 %}
   {% else %}
     {% assign width=100 %}
   {% endif %}
 
-  <div class='dib w-{{ width }}-ns'>
-    <div class='mv0'>
-      <a href='{{ post.url }}' class='f4 mb0'>
-        {{ post.title }}
-      </a>
-
-      {% if post.date %}
-        <p class='subtle dib-ns db ph2-ns f7 mv0-ns mb0'>
-          {{ post.date | date: site.date-format }}
-        </p>
-      {% endif %}
-    </div>
-
-    <div class='mv0 db-ns dn'>
-      {% if post.custom_excerpt %}
-        {{ post.custom_excerpt }}
-      {% else %}
-        {% assign excerpt = post.content | split:'.' | first %}
-        {{ excerpt }}&hellip;
-      {% endif %}
-    </div>
-  </div>
+  {% include post_excerpt.html width=width %}
 
   <a class='f3 ph1 dn-ns fr mt2' href='{{ post.url }}'>
     <i class='fas fa-arrow-circle-right'></i>
