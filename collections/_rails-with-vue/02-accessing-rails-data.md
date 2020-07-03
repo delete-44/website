@@ -1,7 +1,7 @@
 ---
 title: Accessing Rails Data
 date: 2020-03-03
-layout: rails-with-vue-chapter
+layout: post
 return_link: /blog-posts/02-rails-with-vue-index
 image: https://placekitten.com/1920/1920
 custom_excerpt: This is intended to be a guide to accessing your Rails data in Vue components. It works independently of the first article, but if you're new to Vue it's recommended you start there

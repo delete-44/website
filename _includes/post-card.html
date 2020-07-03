@@ -1,10 +1,16 @@
-<div class='w-90-ns w-100 mb2 pa2 bb b--primary center flex items-center justify-between justify-center-ns'>
+<div class='w-90-ns w-100 mb2 pa2 bb b--primary center flex items-center justify-between justify-around-ns'>
   {% if post.image %}
     <a href='{{ post.url }}' class='link fl ml2 mr4 dib-ns dn'>
       <img src='{{ post.image }}' class='br-100 h3 w3' title='{{ post.title }}' alt='{{ post.title }}'>
     </a>
 
-    {% assign width=70 %}
+    {% assign width=80 %}
+  {% elsif post.chapter_index %}
+    <a class='link fl ml2 mr4 dib-ns dn' href='{{ post.url }}'>
+      <i class='fas fa-list f1 h3 w3'></i>
+    </a>
+
+    {% assign width=80 %}
   {% else %}
     {% assign width=100 %}
   {% endif %}

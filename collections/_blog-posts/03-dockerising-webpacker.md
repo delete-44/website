@@ -4,6 +4,7 @@ date: 2020-06-10
 layout: post
 image: https://placekitten.com/1920/1920
 custom_excerpt: An article following the creation of a dockerised Ruby on Rails application, complete with a dockerised Webpack development server running parallel. Worth a read if you're trying to dockerise a modern, reactive application
+chapter_index: false
 ---
 
 #### A github repo containing the code discussed in this tutorial can be found on [my GitHub](https://github.com/ctrlaltdelete44/webpacker-on-docker)
