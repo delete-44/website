@@ -15,7 +15,7 @@ custom_excerpt: This is intended to be an introduction to the VueJS framework, r
 
 Sometimes, the best feeling in the world is starting a new, fast, and up-to-date project. That's why this article is going to start at the beginning and we're going to go through the classic steps of creating a new application and creating a Vue project from scratch.
 
-#### *If you are already familiar with loading Vue components into Rails and want to explore their API potential, then you might be looking for the [next article](rails-with-vue/02-accessing-rails-data.html) in this series*
+#### *If you are already familiar with loading Vue components into Rails and want to explore their API potential, then you might be looking for the [next article](/rails-with-vue/02-accessing-rails-data.html) in this series*
 
 1. Create your project
 
