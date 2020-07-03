@@ -3,6 +3,7 @@ layout: post
 title: GitHub Basics
 image: https://placekitten.com/1920/1920
 date:  2019-10-19
+chapter_index: false
 ---
 At time of writing, I've just finished the second year of my CompSci degree and am taking a placement year in industry. Two years ago, I had absolutely no programming experience and I'm sure there are other people in a similar situation.
 

@@ -33,6 +33,8 @@ collections:
     output: true
   sections:
     output: false
+  rails-with-vue:
+    output: true
 
 # Exclude from processing.
 exclude:

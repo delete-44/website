@@ -1,0 +1,22 @@
+<div class='dib w-{{ width }}-ns'>
+  <div class='mv0'>
+    <a href='{{ post.url }}' class='f4 mb0'>
+      {{ post.title }}
+    </a>
+
+    {% if post.date %}
+      <p class='subtle dib-ns db ph2-ns f7 mv0-ns mb0'>
+        {{ post.date | date: site.date-format }}
+      </p>
+    {% endif %}
+  </div>
+
+  <div class='mv0 db-ns dn'>
+    {% if post.custom_excerpt %}
+      {{ post.custom_excerpt }}
+    {% else %}
+      {% assign excerpt = post.content | split:'.' | first %}
+      {{ excerpt }}&hellip;
+    {% endif %}
+  </div>
+</div>

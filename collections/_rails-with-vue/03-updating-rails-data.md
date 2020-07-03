@@ -2,11 +2,12 @@
 title: Updating Rails Data
 date: 2020-03-03
 layout: post
+return_link: /blog-posts/02-rails-with-vue-index
 image: https://placekitten.com/1920/1920
 custom_excerpt: This is the third installment in a series, covering updating Rails data using an inline table editor made with Vue
 ---
 
-#### This tutorial assumes you have read the previous articles, starting from [here](/blog-posts/02-rails-with-vue-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-2) repo
+#### This tutorial assumes you have read the previous articles, starting from [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-2) repo
 
 ## 1. Adding a static table
 

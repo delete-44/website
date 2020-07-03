@@ -2,6 +2,7 @@
 title: Your First Component
 date: 2020-03-02
 layout: post
+return_link: /blog-posts/02-rails-with-vue-index
 image: https://placekitten.com/1920/1920
 custom_excerpt: This is intended to be an introduction to the VueJS framework, running from the creation of a new Rails project through to creating your first Vue component
 ---
@@ -14,7 +15,7 @@ custom_excerpt: This is intended to be an introduction to the VueJS framework, r
 
 Sometimes, the best feeling in the world is starting a new, fast, and up-to-date project. That's why this article is going to start at the beginning and we're going to go through the classic steps of creating a new application and creating a Vue project from scratch.
 
-#### *If you are already familiar with loading Vue components into Rails and want to explore their API potential, then you might be looking for the [next article](/blog-posts/03-rails-with-vue-accessing-rails-data.html) in this series*
+#### *If you are already familiar with loading Vue components into Rails and want to explore their API potential, then you might be looking for the [next article](/rails-with-vue/02-accessing-rails-data.html) in this series*
 
 1. Create your project
 
@@ -335,4 +336,4 @@ You will need to refresh your page this time after restarting the `webpack` serv
 
 This is what I mean by the power of Vue being in it's completely isolated components: the navigation bar is fully created, styled, and configured without impacting anything else on the page. You could feasibly add other Vue components with the `.navigation-bar` and `.navigation-item` classes styled differently, and both would work *independently*.
 
-Now that we've created our new Vue project in Rails, its time to take a look at APIs and how we can use these components to access your Rails data. Join me in the next article, [Accessing Rails Data](/blog-posts/03-rails-with-vue-accessing-rails-data)
+Now that we've created our new Vue project in Rails, its time to take a look at APIs and how we can use these components to access your Rails data. Join me in the next article, [Accessing Rails Data](/rails-with-vue/02-accessing-rails-data)

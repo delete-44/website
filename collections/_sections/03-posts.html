@@ -6,5 +6,9 @@ priority: 3
 ---
 
 {% for post in site.blog-posts %}
-  {% include post-card.html %}
+  {% if post.chapter_index %}
+    {% include chapter-index-card.html %}
+  {% else %}
+    {% include post-card.html %}
+  {% endif %}
 {% endfor %}
