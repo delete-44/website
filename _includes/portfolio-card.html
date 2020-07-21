@@ -3,7 +3,7 @@
 </p>
 
 <div class='w-100-ns mb2 center flex-ns justify-between-ns pa-1 flex-flip-{{ include.flipper }}-ns'>
-  <div class='w-50-ns dib w-100 pa2'>
+  <div class='w-40-ns dib w-100 pa2'>
     {% if portfolio-piece.link %}
       <a href='{{ portfolio-piece.link }}'>
         <p class='secondary link hover-secondary-dark dib-ns'> {{ portfolio-piece.title }} </p>
@@ -17,13 +17,13 @@
     </p>
   </div>
 
-  <div class='w-40-ns dib-ns'>
+  <div class='w-50-ns dib-ns'>
     {% if portfolio-piece.link %}
       <a href='{{ portfolio-piece.link }}' class='link'>
-        <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100' />
+        <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100 owned-image' />
       </a>
     {% else %}
-      <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100' />
+      <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100 owned-image' />
     {% endif %}
   </div>
 </div>

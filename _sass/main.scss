@@ -35,6 +35,12 @@ a {
   }
 }
 
+// Image defaults - on hover, fade
+.owned-image:hover {
+  filter: brightness(50%);
+  transition: filter .15s ease-in;
+}
+
 // Header defaults for styling MD
 h1, h2, h3 { color: $secondary; }
 h4 { color: $subtle; }
