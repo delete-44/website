@@ -36,9 +36,13 @@ a {
 }
 
 // Image defaults - on hover, fade
-.owned-image:hover {
+.owned-image {
+  transition: .15s;
+
+  &:hover {
   filter: brightness(50%);
   transition: filter .15s ease-in;
+  }
 }
 
 // Header defaults for styling MD
@@ -114,9 +118,12 @@ h4 { color: $subtle; }
   color: $secondary-dark;
 }
 
+.anchor-link {
+  transition: .15s;
+}
+
 .active-anchor-link {
   border-color: $secondary;
-  width: 10rem;
-  transition: color .15s ease-in;
+  width: 10rem !important;
   transition: width .15s ease-in;
 }

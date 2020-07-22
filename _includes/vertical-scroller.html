@@ -3,7 +3,7 @@
   <ul class='list pa0' id='verticalScroller'>
     {% for section in sections %}
       {% if section.link_to %}
-      <li class='ma2 w4 bb b--primary'>
+      <li class='ma2 w4 bb b--primary anchor-link'>
         <a href='#{{ section.label | slugify }}'>
           {{ section.label }}
         </a>
