@@ -110,7 +110,7 @@ h4 { color: $subtle; }
 
 .active-anchor-link {
   border-color: $secondary;
-  width: 10rem;
+  width: 10rem !important;
   transition: color .15s ease-in;
   transition: width .15s ease-in;
 }
