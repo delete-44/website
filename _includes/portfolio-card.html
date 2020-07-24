@@ -21,9 +21,11 @@
     {% if portfolio-piece.link %}
       <a href='{{ portfolio-piece.link }}' class='link'>
         <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100 owned-image' />
+        <p class='copyright-text'>HIDDEN TEXT</p>
       </a>
     {% else %}
       <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100 owned-image' />
+      <p class='copyright-text'>HIDDEN TEXT</p>
     {% endif %}
   </div>
 </div>

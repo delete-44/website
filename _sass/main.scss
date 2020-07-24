@@ -35,16 +35,6 @@ a {
   }
 }
 
-// Image defaults - on hover, fade
-.owned-image {
-  transition: .15s;
-
-  &:hover {
-  filter: brightness(50%);
-  transition: filter .15s ease-in;
-  }
-}
-
 // Header defaults for styling MD
 h1, h2, h3 { color: $secondary; }
 h4 { color: $subtle; }
@@ -95,6 +85,25 @@ h4 { color: $subtle; }
 
   .flex-flip-1-ns{
     flex-direction: row-reverse;
+  }
+
+  // Copyright information for images
+  .owned-image {
+    transition: .15s;
+
+    &:hover {
+    filter: brightness(50%);
+    transition: filter .15s ease-in;
+    }
+  }
+
+  .copyright-text {
+    position: absolute;
+    display: none;
+  }
+
+  .owned-image:hover + .copyright-text {
+    display: block;
   }
 }
 
