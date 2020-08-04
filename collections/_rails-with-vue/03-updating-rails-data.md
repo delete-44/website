@@ -7,7 +7,7 @@ image: https://placekitten.com/1920/1920
 custom_excerpt: This is the third installment in a series, covering updating Rails data using an inline table editor made with Vue
 ---
 
-#### This tutorial assumes you have read the previous articles, starting from [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-2) repo
+#### This tutorial assumes you have read the previous articles, starting from [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/delete-44/vue-test-app/tree/chp-2) repo
 
 ## 1. Adding a static table
 
@@ -201,7 +201,7 @@ And then add the simple axios request we used in the list. The only caveat is to
 
 And that's it!
 
-*N.B that around here the `films-list` component becomes really redundant. If you're checking against the [repository](https://github.com/ctrlaltdelete44/vue-test-app) and are concerned, I've just cleared out some of the older code from the first two chapters*
+*N.B that around here the `films-list` component becomes really redundant. If you're checking against the [repository](https://github.com/delete-44/vue-test-app) and are concerned, I've just cleared out some of the older code from the first two chapters*
 
 ## 3. Updating the data
 
@@ -383,4 +383,4 @@ Currently we're three steps into this article and essentially all we've done is 
 
   The moment of truth. Make some changes to your data, refresh your page and see the change in data persisted. You can check this in the console, in other Vue components, wherever - you've just built an inline editor for Rails data!
 
-As usual, if you lost track at any point a version of the code, complete to this point, is available [here](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-3.0.1)
+As usual, if you lost track at any point a version of the code, complete to this point, is available [here](https://github.com/delete-44/vue-test-app/tree/chp-3.0.1)

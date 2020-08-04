@@ -7,7 +7,7 @@ custom_excerpt: An article following the creation of a dockerised Ruby on Rails 
 chapter_index: false
 ---
 
-#### A github repo containing the code discussed in this tutorial can be found on [my GitHub](https://github.com/ctrlaltdelete44/webpacker-on-docker)
+#### A github repo containing the code discussed in this tutorial can be found on [my GitHub](https://github.com/delete-44/webpacker-on-docker)
 
 ### 1. Introduction
 

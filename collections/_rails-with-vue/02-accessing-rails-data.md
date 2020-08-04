@@ -7,7 +7,7 @@ image: https://placekitten.com/1920/1920
 custom_excerpt: This is intended to be a guide to accessing your Rails data in Vue components. It works independently of the first article, but if you're new to Vue it's recommended you start there
 ---
 
-#### This tutorial assumes you have read the first article, found [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-1) repo
+#### This tutorial assumes you have read the first article, found [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/delete-44/vue-test-app/tree/chp-1) repo
 
 ## 1. Adding a rails model
 
