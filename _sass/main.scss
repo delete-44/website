@@ -90,6 +90,7 @@ h4 { color: $subtle; }
   // Copyright information for images
   .owned-image {
     transition: .15s;
+    position: relative;
 
     &:hover {
     filter: brightness(50%);
@@ -98,8 +99,8 @@ h4 { color: $subtle; }
   }
 
   .copyright-text {
-    position: absolute;
-    display: none;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .owned-image:hover + .copyright-text {

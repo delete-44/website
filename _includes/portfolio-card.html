@@ -17,15 +17,16 @@
     </p>
   </div>
 
-  <div class='w-50-ns dib-ns'>
+  <div class='w-50-ns flex justify-center align-start'>
     {% if portfolio-piece.link %}
       <a href='{{ portfolio-piece.link }}' class='link'>
         <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100 owned-image' />
-        <p class='copyright-text'>HIDDEN TEXT</p>
       </a>
+
+      <p class='copyright-text self-center'>HIDDEN TEXT</p>
     {% else %}
       <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-100-ns w-100 owned-image' />
-      <p class='copyright-text'>HIDDEN TEXT</p>
+      <p class='copyright-text self-center'>HIDDEN TEXT</p>
     {% endif %}
   </div>
 </div>
