@@ -86,26 +86,6 @@ h4 { color: $subtle; }
   .flex-flip-1-ns{
     flex-direction: row-reverse;
   }
-
-  // Copyright information for images
-  .owned-image {
-    transition: .15s;
-    position: relative;
-
-    &:hover {
-    filter: brightness(50%);
-    transition: filter .15s ease-in;
-    }
-  }
-
-  .copyright-text {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  .owned-image:hover + .copyright-text {
-    display: block;
-  }
 }
 
 .hover-primary:focus,
