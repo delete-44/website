@@ -9,9 +9,12 @@ layout: page
     </div>
 
     {% if page.image-owner %}
-      <a href='{{ page.image-link }}'>
-        {{ page.image-owner }}
-      </a>
+      <p class='subtle'>
+        Image provided by 
+        <a href='{{ page.image-link }}'>
+          {{ page.image-owner }}
+        </a>
+      </p>
     {% endif %}
   </div>
 {% else %}

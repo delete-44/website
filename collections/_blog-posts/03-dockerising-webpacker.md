@@ -2,7 +2,9 @@
 title: Dockerising Webpacker
 date: 2020-06-10
 layout: post
-image: https://placekitten.com/1920/1920
+image: /assets/img/whale-todd-cravens.jpg
+image-owner: "@toddcravens"
+image-link: https://unsplash.com/photos/lwACYK8ScmA
 custom_excerpt: An article following the creation of a dockerised Ruby on Rails application, complete with a dockerised Webpack development server running parallel. Worth a read if you're trying to dockerise a modern, reactive application
 chapter_index: false
 ---
