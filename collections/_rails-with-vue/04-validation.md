@@ -3,7 +3,9 @@ title: Validation
 date: 2020-05-07
 layout: post
 return_link: /blog-posts/02-rails-with-vue-index
-image: https://placekitten.com/1920/1920
+image: /assets/img/wrong-greta-pichetti.jpg
+image-owner: "@gretapichi"
+image-link: https://unsplash.com/photos/6qpGLW5YmCI
 custom_excerpt: This is the fourth installment in a series, describing a way to implement validation for your vue tables.
 ---
 

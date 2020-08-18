@@ -1,7 +1,9 @@
 ---
 layout: post
 title: GitHub Basics
-image: https://placekitten.com/1920/1920
+image: /assets/img/tree-nico-photos.jpg
+image-owner: "@nico_photos"
+image-link: https://unsplash.com/photos/tGTVxeOr_Rs
 date:  2019-10-19
 chapter_index: false
 ---

@@ -1,7 +1,7 @@
 patient-admin:
   title: Patient Administration System
   link: https://github.com/delete-44/SOFT252
-  image: assets/img/java.svg
+  image: assets/img/coffee.png
   introduction: >-
     During my time with the University of Plymouth I have studied C# and Java. Using these I have
     explored the fundamentals of Object Orientated Programming, including the study of design patterns.
@@ -46,21 +46,21 @@ zombies:
 dungeons-ror:
   title: RoR Tutorial
   link: https://github.com/delete-44/DungeonsROR
-  image: assets/img/ruby-on-rails.svg
+  image: assets/img/forest.png
   introduction: >-
     Working with Plymouth Software has drastically improved my skills both in development and project
-    management. I have been working largely with Ruby on Rails - this website itself is a testament to
-    that - handling serverside functionality.
+    management. I have been working largely with Ruby on Rails handling serverside functionality.
   summary: >-
     In preparation for my placement here, I taught myself the
     basics of Rails and created a test application (following Michael Hartl's wonderful
-    <a href='https://www.railstutorial.org'>tutorial</a>). I have since been able to expand upon this, and use it
+    <a href='https://www.railstutorial.org'>tutorial</a>). The application earned the colloquial name 'Young Forest'
+    following it's deployment to Heroku. I have since been able to expand upon this, and use it
     as a testing ground for for significant changes in other projects.
 
 rainy-days:
   title: This website!
   link: https://github.com/delete-44/website
-  image: assets/img/docker.svg
+  image: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb?s=500
   introduction: >-
     Learning about so many new technologies made me excited to try them outside of work. So I made this!
   summary: >-
