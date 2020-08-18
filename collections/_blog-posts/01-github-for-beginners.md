@@ -17,7 +17,7 @@ If your course is structured anything like mine, you might not encounter Git *at
 
 ### What is it?
 
-GitHub is used for version control. Whenever you make a significant change to your code, you upload the change (called a 'commit'), and the project ('repository') can be rebuilt any number of times using this commit history. For example, my personal [website](https://github.com/ctrlaltdelete44/website) has a repository, and you can see a detailed list of the commit history.
+GitHub is used for version control. Whenever you make a significant change to your code, you upload the change (called a 'commit'), and the project ('repository') can be rebuilt any number of times using this commit history. For example, my personal [website](https://github.com/delete-44/website) has a repository, and you can see a detailed list of the commit history.
 
 ### Glossary of terms
 
@@ -43,7 +43,7 @@ Assuming you've got a GitHub account set up and project in mind, getting started
 
 1. Through the GitHub site, create a new repository. There will be an option to initialise the project with a `README.md`, which is good to check. That will create an empty Markdown document that will be displayed on the repositories page to share important information with people viewing it.
 
-2. With this created, you'll be presented with a page like [this](https://github.com/ctrlaltdelete44/website), albeit much more empty. There will be a button in the corner, `Clone or Download`, and when you click it you'll be given a link:
+2. With this created, you'll be presented with a page like [this](https://github.com/delete-44/website), albeit much more empty. There will be a button in the corner, `Clone or Download`, and when you click it you'll be given a link:
 
    ```bash
    https://github.com/your-github-username/your-repository-name.git
@@ -130,7 +130,7 @@ With your command line set up as before and already in the correct directory, yo
    >   Writing objects: 100% (7/7), 4.03 KiB | 4.03 MiB/s, done.
    >   Total 7 (delta 2), reused 0 (delta 0)
    >   remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-   >   To https://github.com/ctrlaltdelete44/website.git
+   >   To https://github.com/delete-44/website.git
    >      dc92a21..5b36022  github-blog-post -> github-blog-post
    ```
 

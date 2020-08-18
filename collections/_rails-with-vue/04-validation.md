@@ -9,7 +9,7 @@ image-link: https://unsplash.com/photos/6qpGLW5YmCI
 custom_excerpt: This is the fourth installment in a series, describing a way to implement validation for your vue tables.
 ---
 
-#### This tutorial assumes you have read the previous articles, starting from [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-3.0.1) repo
+#### This tutorial assumes you have read the previous articles, starting from [here](/rails-with-vue/01-your-first-component.html). If you want to skip straight to this step, pick up a copy of the code you'll need from [this](https://github.com/delete-44/vue-test-app/tree/chp-3.0.1) repo
 
 ### 1. Why I avoided Vuelidate
 
@@ -194,4 +194,4 @@ custom_excerpt: This is the fourth installment in a series, describing a way to 
 
   Now go mess with your data - you'll see the errors displaying as appropriate, and the erroneous cells highlighted.
 
-As usual, if you lost track at any point you can pick up a complete version of the code covered here from [this](https://github.com/ctrlaltdelete44/vue-test-app/tree/chp-4) code repo.
+As usual, if you lost track at any point you can pick up a complete version of the code covered here from [this](https://github.com/delete-44/vue-test-app/tree/chp-4) code repo.

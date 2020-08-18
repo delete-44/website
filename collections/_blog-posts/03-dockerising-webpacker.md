@@ -9,11 +9,11 @@ custom_excerpt: An article following the creation of a dockerised Ruby on Rails 
 chapter_index: false
 ---
 
-#### A github repo containing the code discussed in this tutorial can be found on [my GitHub](https://github.com/ctrlaltdelete44/webpacker-on-docker)
+#### A github repo containing the code discussed in this tutorial can be found on [my GitHub](https://github.com/delete-44/webpacker-on-docker)
 
 ### 1. Introduction
 
-This article will create a starter Rails application (running Ruby 2.6.5), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. If you have a pre-existing & already Dockerised app then skip to [Dockerising Webpacker](#5-dockerising-webpacker).
+This article will create a starter Rails application (running Ruby 2.7.1), dockerise it, and teach you how to run the `webpack-dev-server` (key for developing with JS frameworks such as React or Vue) in Docker. If you have a pre-existing & already Dockerised app then skip to [Dockerising Webpacker](#5-dockerising-webpacker).
 
 For the sake of brevity I'm not going to cover installing Docker or Rails. If you are looking for guides to cover these, I can recommend the [Docker](https://docs.docker.com/get-docker/) and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) official documentation.
 
