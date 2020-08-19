@@ -5,13 +5,22 @@ This is a site built in [Jekyll](https://jekyllrb.com/) and containerised with [
 ## Running locally
 
 To run locally, you must have Docker installed on your development machine. Firstly clone a copy of the repository:
-`$git clone https://github.com/delete-44/website.git`
+
+```bash
+$ git clone https://github.com/delete-44/website.git`
+```
 
 Next build the image:
-`$docker-compose build`
+
+```bash
+$ docker-compose build
+```
 
 And, all being successful, run the server and navigate to your [localhost](localhost:4000) on port 4000 to see the site served with Jekyll
-`$docker-compose up`
+
+```bash
+$ docker-compose up`
+```
 
 ## Development pipeline
 
