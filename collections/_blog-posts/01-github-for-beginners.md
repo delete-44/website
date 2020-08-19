@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitHub Basics
-image: /assets/img/tree-nico-photos.jpg
+image: https://res.cloudinary.com/delete-44/image/upload/v1597824066/Website/tree-nico-photos_wgrgio.jpg
 image-owner: "@nico_photos"
 image-link: https://unsplash.com/photos/tGTVxeOr_Rs
 date:  2019-10-19
