@@ -3,7 +3,8 @@ title: Validation
 date: 2020-05-07
 layout: post
 return_link: /blog-posts/02-rails-with-vue-index
-image: https://res.cloudinary.com/delete-44/image/upload/v1597824076/Website/wrong-greta-pichetti_lsovmd.webp
+thumbnail: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_300/v1597824076/Website/wrong-greta-pichetti_lsovmd.webp
+image: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_1920/v1597824076/Website/wrong-greta-pichetti_lsovmd.webp
 image-owner: "@gretapichi"
 image-link: https://unsplash.com/photos/6qpGLW5YmCI
 custom_excerpt: This is the fourth installment in a series, describing a way to implement validation for your vue tables.
