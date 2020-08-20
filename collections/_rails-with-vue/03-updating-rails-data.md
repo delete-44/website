@@ -3,7 +3,7 @@ title: Updating Rails Data
 date: 2020-03-03
 layout: post
 return_link: /blog-posts/02-rails-with-vue-index
-image: https://res.cloudinary.com/delete-44/image/upload/v1597824060/Website/table-jeremy-manoto_zwi6sk.jpg
+image: https://res.cloudinary.com/delete-44/image/upload/v1597824060/Website/table-jeremy-manoto_zwi6sk.webp
 image-owner: "@jmanoto"
 image-link: https://unsplash.com/photos/0NCwJjtcSd8
 custom_excerpt: This is the third installment in a series, covering updating Rails data using an inline table editor made with Vue
