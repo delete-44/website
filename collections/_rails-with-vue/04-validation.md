@@ -7,6 +7,7 @@ thumbnail: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_300/v1597
 image: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_1920/v1597824076/Website/wrong-greta-pichetti_lsovmd.webp
 image-owner: "@gretapichi"
 image-link: https://unsplash.com/photos/6qpGLW5YmCI
+image-alt: A picture of a blue door with a "No entry" sticker on it
 custom_excerpt: This is the fourth installment in a series, describing a way to implement validation for your vue tables.
 ---
 
