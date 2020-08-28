@@ -20,10 +20,10 @@
   <div class='w-50-ns'>
     {% if portfolio-piece.link %}
       <a href='{{ portfolio-piece.link }}' class='link'>
-        <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-90-ns w-100' />
+        <img src='{{ portfolio-piece.image }}' title='{{ portfolio-piece.title }}' alt='{{ portfolio-piece.alt }}'class='h-90-ns w-100' />
       </a>
     {% else %}
-      <img src='{{ portfolio-piece.image }}' alt='{{ portfolio-piece.title }}' class='h-90-ns w-100' />
+      <img src='{{ portfolio-piece.image }}' title='{{ portfolio-piece.title }}' alt='{{ portfolio-piece.alt }}'class='h-90-ns w-100' />
     {% endif %}
 
     {% if portfolio-piece.image-credits %}
