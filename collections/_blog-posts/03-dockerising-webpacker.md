@@ -114,9 +114,9 @@ services:
   db:
     image: postgres:11
     environment:
-      - PGDATA=/var/lib/postgresql/data/pgdata
-      - POSTGRES_USER=rails
-      - POSTGRES_PASSWORD=secret123
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: rails
+      POSTGRES_PASSWORD: secret123
     volumes:
       - dbdata:/var/lib/postgresql/data/pgdata
 
@@ -125,10 +125,10 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - POSTGRES_USER=rails
-      - POSTGRES_PASSWORD=secret123
+      RAILS_ENV: development
+      RACK_ENV: development
+      POSTGRES_USER: rails
+      POSTGRES_PASSWORD: secret123
     volumes:
       - .:/usr/src/app
     depends_on:
