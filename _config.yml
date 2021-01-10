@@ -6,16 +6,15 @@
 # Site settings
 title: Delete 44
 description: >- # this means to ignore newlines until "baseurl:"
-  A digital portfolio and collection of blog posts for and by Anthony Davies, 
+  A digital portfolio and collection of blog posts for and by Anthony,
   a software developer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.delete44.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Contact info
-name: Anthony Davies
+name: Anthony
 avatar: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb
-alt: A picture of a smiling person standing on a rock
-email: daviesanthonye1234@gmail.com
+alt: A picture of the site author, Anthony
 
 # Build settings
 markdown: kramdown
@@ -24,7 +23,7 @@ markdown: kramdown
 kramdown:
   parse_block_html: true
 
-date-format: '%B %d, %Y'
+date-format: "%B %d, %Y"
 
 # Collections
 collections_dir: collections

@@ -8,19 +8,17 @@ custom_excerpt: >-
 chapter_index: true
 ---
 
-<p class='i pb3'>
-  {{ page.custom_excerpt }}
+<p class="i pb3">{{ page.custom_excerpt }}</p>
+
+<p class="i pb3">
+  A GitHub repository exists following these tutorials with tags at each chapter
+  - if you want to skip ahead to a specific chapter, you can just pull whichever
+  version of the code you need.
 </p>
 
-<p class='i pb3'>
-  A GitHub repository exists following these tutorials with tags at each chapter - if you want to skip
-  ahead to a specific chapter, you can just pull whichever version of the code you need.
+<p class="i pb5">
+  That repo can be found
+  <a href="https://github.com/delete-44/vue-test-app/tree/chp-1">here</a>.
 </p>
 
-<p class='i pb5'>
-  That repo can be found <a href='https://github.com/delete-44/vue-test-app/tree/chp-1'>here</a>.
-</p>
-
-{% for post in site.rails-with-vue %}
-  {% include post-card.html %}
-{% endfor %}
+{% for post in site.rails-with-vue %} {% include post-card.html %} {% endfor %}

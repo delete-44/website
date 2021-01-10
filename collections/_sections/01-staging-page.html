@@ -5,53 +5,45 @@ link_to: false
 priority: 1
 ---
 
-<div class='tc'>
-  <a href='{{ site.data.resources.github.url }}' class='dib w5-ns w4'>
-    <img src='{{ site.avatar }}?s=500' class='link center br-100-ns br-0-ns b--secondary w5-ns w4 db pa1-ns ba-ns'
-      title='{{ site.name }}' alt='{{ site.alt }}'>
+<div class="tc">
+  <a href="{{ site.data.resources.github.url }}" class="dib w5-ns w4">
+    <img
+      src="{{ site.avatar }}?s=500"
+      class="link center br-100-ns br-0-ns b--secondary w5-ns w4 db pa1-ns ba-ns"
+      title="{{ site.name }}"
+      alt="{{ site.alt }}"
+    />
   </a>
 </div>
 
-<div class='w-100 flex justify-center mt3'>
-  {% assign size=1 %}
-  {% include contact-info.html size=size %}
+<div class="w-100 flex justify-center mt3">
+  {% assign size=1 %} {% include contact-info.html size=size %}
 </div>
 
-<div class='w-70 center mt3 tc'>
-  <p class='tertiary'>
-    I'm Anthony, a software development student currently taking a placement at
-    <a href='https://plymouthsoftware.com'>
-      Plymouth Software
-    </a> - which really means I spend
-    most of my time listening to music and struggling with UI design.
+<div class="w-70 center mt3 tc">
+  <p class="tertiary">
+    I'm Anthony, a final year CompSci student and part-time software developer
+    at
+    <a href="https://plymouthsoftware.com"> Plymouth Software </a> - which
+    really means I spend most of my time listening to music and struggling with
+    UI design.
   </p>
 
-  <p class='tertiary'>
+  <p class="tertiary">
     I currently work primarily with
-    <a href='https://rubyonrails.org/'>
-      Ruby on Rails
-    </a> for web applications and
-    <a href='https://flutter.dev'>
-      Flutter
-    </a> for mobile development. This site itself is built on
-    <a href='https://jekyllrb.com/'>
-      Jekyll
-    </a>
-    (which compiles Markdown, Liquid, HTML & SCSS
-    into static websites), using
-    <a href='https://tachyons.io'>
-      Tachyons
-    </a> for styling and
-    containerised with
-    <a href='https://www.docker.com'>
-      Docker
-    </a>
+    <a href="https://rubyonrails.org/"> Ruby on Rails </a> and
+    <a href="https://reactjs.org/"> React </a> for web applications and
+    <a href="https://flutter.dev"> Flutter </a> for mobile development. This
+    site itself is built on
+    <a href="https://jekyllrb.com/"> Jekyll </a>
+    (which compiles Markdown, Liquid, HTML & SCSS into static websites), using
+    <a href="https://tachyons.io"> Tachyons </a> for styling and containerised
+    with
+    <a href="https://www.docker.com"> Docker </a>
   </p>
 
-  <p class='tertiary'>
+  <p class="tertiary">
     You can find the GitHub repo
-    <a href='https://github.com/delete-44/website'>
-      here
-    </a>
+    <a href="https://github.com/delete-44/website"> here </a>
   </p>
 </div>

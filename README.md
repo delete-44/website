@@ -19,7 +19,7 @@ $ docker-compose build
 And, all being successful, run the server and navigate to your [localhost](localhost:4000) on port 4000 to see the site served with Jekyll
 
 ```bash
-$ docker-compose up`
+$ docker-compose up
 ```
 
 ## Development pipeline

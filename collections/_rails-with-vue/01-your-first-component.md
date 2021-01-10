@@ -19,61 +19,61 @@ custom_excerpt: This is intended to be an introduction to the VueJS framework, r
 
 Sometimes, the best feeling in the world is starting a new, fast, and up-to-date project. That's why this article is going to start at the beginning and we're going to go through the classic steps of creating a new application and creating a Vue project from scratch.
 
-#### *If you are already familiar with loading Vue components into Rails and want to explore their API potential, then you might be looking for the [next article](/rails-with-vue/02-accessing-rails-data.html) in this series*
+### _If you are already familiar with loading Vue components into Rails and want to explore their API potential, then you might be looking for the [next article](/rails-with-vue/02-accessing-rails-data.html) in this series_
 
 1. Create your project
 
-    ```bash
-    $ cd your/directory
-    $ rails new vue-test-app
-    $ cd vue-test-app
-    ```
+   ```bash
+   cd your/directory
+   rails new vue-test-app
+   cd vue-test-app
+   ```
 
 2. Initialise your local git repo
 
-    ```bash
-    $ git init
-    # For the sake of this demo, I did clean the app a little by removing files that will not be used
+   ```bash
+   $ git init
+   # For the sake of this demo, I did clean the app a little by removing files that will not be used
 
-    $ git status
-        > On branch master
-        > No commits yet
-        > Untracked files:
-        > (use "git add <file>..." to include in what will be committed)
-        > ... # File list
-        > nothing added to commit but untracked files present (use "git add" to track)
+   $ git status
+       > On branch master
+       > No commits yet
+       > Untracked files:
+       > (use "git add <file>..." to include in what will be committed)
+       > ... # File list
+       > nothing added to commit but untracked files present (use "git add" to track)
 
-    $ git add -A
-    $ git commit -m 'Initial commit'
-    ```
+   $ git add -A
+   $ git commit -m 'Initial commit'
+   ```
 
 3. Initialise the remote git repository
 
-    ```bash
-    # 1. Navigate to github.com and sign in
-    # 2. Create a repository with a name matching your app (ie vue-test-app) and no README
-    # 3. Follow the commands under "…or push an existing repository from the command line":
+   ```bash
+   # 1. Navigate to github.com and sign in
+   # 2. Create a repository with a name matching your app (ie vue-test-app) and no README
+   # 3. Follow the commands under "…or push an existing repository from the command line":
 
-    $ git remote add origin https://github.com/your-github-username/your-app-name.git
-    $ git push -u origin master
-    ```
+   $ git remote add origin https://github.com/your-github-username/your-app-name.git
+   $ git push -u origin master
+   ```
 
 4. And confirm that everything works as intended!
 
-    ```bash
-    $ rails db:create db:migrate
-        >  Created database 'vue-test-app_development'
-        >  Created database 'vue-test-app_test'
+   ```bash
+   $ rails db:create db:migrate
+       >  Created database 'vue-test-app_development'
+       >  Created database 'vue-test-app_test'
 
-    $ rails s
-    # Navigate to localhost:3000 to see the familiar welcome screen
-    ```
+   $ rails s
+   # Navigate to localhost:3000 to see the familiar welcome screen
+   ```
 
 ## 2. Installing VueJS
 
 We're going to use the `webpacker` gem to manage assets: visit [https://rubygems.org/gems/webpacker/versions/4.2.2](https://rubygems.org/gems/webpacker/versions/4.2.2 "https://rubygems.org/gems/webpacker/versions/4.2.2") and grab the latest version (at time of writing, 4.2.2) and add it to your Gemfile.
 
-*While you're there, if you plan to follow this tutorial faithfully, remove the `turbolinks` gem. This will require an additional dependency to be installed in step 4, which is discussed in the default Vue documentation*
+_While you're there, if you plan to follow this tutorial faithfully, remove the `turbolinks` gem. This will require an additional dependency to be installed in step 4, which is discussed in the default Vue documentation_
 
 ```bash
 // Gemfile
@@ -140,15 +140,15 @@ The Vue components themselves are entirely self-contained pieces of front-end wo
 
 ```html
 <template>
-    <!-- Layout rules go here -->
+  <!-- Layout rules go here -->
 </template>
 
 <script>
-    // Methods and data go here
+  // Methods and data go here
 </script>
 
 <style>
-    /* Styling rules, scoped to this component only, go here */
+  /* Styling rules, scoped to this component only, go here */
 </style>
 ```
 
@@ -186,10 +186,8 @@ end
 <html>
   <head>
     <title>VueTestApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= javascript_pack_tag 'hello_vue' %> <%# Add this line %>
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= javascript_pack_tag
+    'hello_vue' %> <%# Add this line %>
   </head>
 
   <body>
@@ -252,16 +250,16 @@ And then fill these in as following:
 ```js
 // app/javascript/packs/navigation.js
 
-import Vue from 'vue'
-import NavigationApp from '../navigation.vue'
+import Vue from "vue";
+import NavigationApp from "../navigation.vue";
 
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new Vue({
-        render: h => h(NavigationApp)
-    }).$mount()
+document.addEventListener("DOMContentLoaded", () => {
+  const app = new Vue({
+    render: (h) => h(NavigationApp),
+  }).$mount();
 
-    document.body.insertBefore(app.$el, document.body.firstChild);
-})
+  document.body.insertBefore(app.$el, document.body.firstChild);
+});
 ```
 
 This adds an event listener to the page: When the page loads, render the given Vue component and insert it at the top of the DOM structure.
@@ -270,10 +268,8 @@ The `insertBefore` is standard javascript for injecting html elements, and any a
 ```html
 <template>
   <!-- This is the html-esque code used to define the layout. Note the syntax difference in assigning variable attributes -->
-  <div class='navigation-bar'>
-    <a class='navigation-item' :href=link.path>
-      {{link.text}}
-    </a>
+  <div class="navigation-bar">
+    <a class="navigation-item" :href="link.path"> {{link.text}} </a>
   </div>
 </template>
 ```
@@ -338,6 +334,6 @@ $ bin/webpack-dev-server
 
 You will need to refresh your page this time after restarting the `webpack` server but, all being well, you should get a fairly useless navigation bar!
 
-This is what I mean by the power of Vue being in it's completely isolated components: the navigation bar is fully created, styled, and configured without impacting anything else on the page. You could feasibly add other Vue components with the `.navigation-bar` and `.navigation-item` classes styled differently, and both would work *independently*.
+This is what I mean by the power of Vue being in it's completely isolated components: the navigation bar is fully created, styled, and configured without impacting anything else on the page. You could feasibly add other Vue components with the `.navigation-bar` and `.navigation-item` classes styled differently, and both would work _independently_.
 
 Now that we've created our new Vue project in Rails, its time to take a look at APIs and how we can use these components to access your Rails data. Join me in the next article, [Accessing Rails Data](/rails-with-vue/02-accessing-rails-data)
