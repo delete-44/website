@@ -1,6 +1,6 @@
 # Rainy Days Site
 
-This is a site built in [Jekyll](https://jekyllrb.com/) and containerised with [Docker](https://docker.com). It is hosted on [Netlify](https://www.netlify.com) with a temporary URL of https://unruffled-minsky-f3b245.netlify.com/. It is intended to be a portfolio and blog.
+This is a personal site and blog. It can be found at [delete44.com](https://www.delete44.com)
 
 ## Running locally
 
