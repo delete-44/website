@@ -7,6 +7,7 @@ thumbnail: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_300/v1597
 image: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_1920/v1597824071/Website/tunnel-daniel-jerez_aglwvy.webp
 image-owner: "@danieljerez"
 image-link: https://unsplash.com/photos/CD4WHrWio6Q
+image-alt: A picture of a tunnel entrance
 custom_excerpt: This is intended to be an introduction to the VueJS framework, running from the creation of a new Rails project through to creating your first Vue component
 ---
 

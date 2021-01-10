@@ -7,6 +7,7 @@ thumbnail: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_300/v1597
 image: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_1920/v1597824060/Website/table-jeremy-manoto_zwi6sk.webp
 image-owner: "@jmanoto"
 image-link: https://unsplash.com/photos/0NCwJjtcSd8
+image-alt: A picture of a table with a railing behind it overlooking trees
 custom_excerpt: This is the third installment in a series, covering updating Rails data using an inline table editor made with Vue
 ---
 

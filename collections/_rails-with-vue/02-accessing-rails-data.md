@@ -7,6 +7,7 @@ thumbnail: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_300/v1597
 image: https://res.cloudinary.com/delete-44/image/upload/c_scale,w_1920/v1597824056/Website/film-jakob-owens_kbmh9m.webp
 image-owner: "@jakobowens1"
 image-link: https://unsplash.com/photos/CiUR8zISX60
+image-alt: A picture of hands holding a clapperboard 
 custom_excerpt: This is intended to be a guide to accessing your Rails data in Vue components. It works independently of the first article, but if you're new to Vue it's recommended you start there
 ---
 
