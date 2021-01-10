@@ -1,18 +1,19 @@
 {% if site.data.education_config[education_level.first].condense %}
-  <tr>
-    {% assign content='' %}
-    {% for qualification in education_level[1] %}
-    {% assign content=content | append: qualification[1].grade %}
-    {% endfor %}
+<tr>
+  {% assign content='' %}
 
-    <td class='primary'>{{ content }}</td>
-  </tr>
+  {% for qualification in education_level[1] %}
+    {% assign content=content | append: qualification[1].grade %}
+  {% endfor %}
+
+  <td class="primary">{{ content }}</td>
+</tr>
 {% else %}
   {% for qualification in education_level[1] %}
-    <tr>
-      <td class='primary dn-ns dib'>{{ qualification[1].shorthand }}</td>
-      <td class='primary w-70 db-ns dn'>{{ qualification[1].name }}</td>
-      <td class='primary tr w-30'>{{ qualification[1].grade }}</td>
-    </tr>
+  <tr>
+    <td class="primary dn-ns dib">{{ qualification[1].shorthand }}</td>
+    <td class="primary w-70 db-ns dn">{{ qualification[1].name }}</td>
+    <td class="primary tr w-30">{{ qualification[1].grade }}</td>
+  </tr>
   {% endfor %}
 {% endif %}

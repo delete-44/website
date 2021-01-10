@@ -38,13 +38,13 @@ $ docker run --rm -it -v ${PWD}:/usr/src -w /usr/src ruby:2.7 sh -c 'gem install
 
 If you're curious about the command above, here's a quick breakdown:
 
-* `--rm`: Remove the container once we've completed the task
-* `-it`: Allows our terminal to connect to the running instance - all I know here is it gives us proper syntax highlighting :P
-* `-v`: Attaches a specific volume to the running container. This allows persistent data, so you get too keep your app even the the container is disposed
-* `${PWD}:/usr/src`: The directory of the volume to mount into the container. `${PWD}` is used to represent the current directory
-* `-w`: The working directory for the container - for this example this needs to be where the code is mounted so we can create the project
-* `ruby:2.7`: The name of the [Docker image](https://hub.docker.com/_/ruby) we want to use. These exist for different Ruby versions if you want to change this
-* `sh -c gem install rails:"~> 6.0.3" rails new --skip-test applet` - The command to run in our container. In this case we are installing rails (at a locked version to ensure the tutorial works when later versions are released) and creating the base app, commands very typical in Ruby development
+- `--rm`: Remove the container once we've completed the task
+- `-it`: Allows our terminal to connect to the running instance - all I know here is it gives us proper syntax highlighting :P
+- `-v`: Attaches a specific volume to the running container. This allows persistent data, so you get too keep your app even the the container is disposed
+- `${PWD}:/usr/src`: The directory of the volume to mount into the container. `${PWD}` is used to represent the current directory
+- `-w`: The working directory for the container - for this example this needs to be where the code is mounted so we can create the project
+- `ruby:2.7`: The name of the [Docker image](https://hub.docker.com/_/ruby) we want to use. These exist for different Ruby versions if you want to change this
+- `sh -c gem install rails:"~> 6.0.3" rails new --skip-test applet` - The command to run in our container. In this case we are installing rails (at a locked version to ensure the tutorial works when later versions are released) and creating the base app, commands very typical in Ruby development
 
 We'll get all the way to installing webpacker, and then hit an error. No worries, but to install Node and correctly install webpacker we're going to formalise our environment.
 
@@ -54,8 +54,8 @@ Now - there are a few more steps involved with setting up a modern rails app (ie
 
 We need to add two files to the root directory of our application:
 
-  1. A `Dockerfile` to define our Docker image
-  2. A `docker-compose.yml` to organise our containers, including our webpack one
+1. A `Dockerfile` to define our Docker image
+2. A `docker-compose.yml` to organise our containers, including our webpack one
 
 Lets start with our Dockerfile - this is, if you're unfamiliar, a file created in the root directory of your app (alongside your Gemfile and .gitignore) with that exact name: `Dockerfile`. It dictates how to build our app's image.
 
@@ -105,7 +105,7 @@ Next, our `docker-compose` file. This is a `yml` document that organises and nam
 ```yml
 # docker-compose.yml
 
-version: '3.2'
+version: "3.2"
 
 volumes:
   dbdata:
@@ -124,7 +124,7 @@ services:
   web:
     build: .
     ports:
-      - '3000:3000'
+      - "3000:3000"
     environment:
       RAILS_ENV: development
       RACK_ENV: development
@@ -191,7 +191,7 @@ end
 
 ### 5. Dockerising Webpacker
 
-If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is *not* running.
+If you've used webpacker (and it's `webpack-dev-server`) before, you'll know it runs on [localhost:3035](localhost:3035). Feel free to visit that now to see that it definitely is _not_ running.
 
 We're going to need to define a new service in our `docker-compose` file to run it. For clarity's sake, let's call it webpack:
 
@@ -204,7 +204,7 @@ webpack:
   volumes:
     - .:/usr/src/app
   ports:
-    - '3035:3035'
+    - "3035:3035"
   environment:
     NODE_ENV: development
     RAILS_ENV: development
@@ -282,8 +282,8 @@ $ docker-compose up web webpack
 
 Items of note here:
 
-* Because you have both containers running in the same terminal, the output from each container is marked by their `web_1      |` and `webpack_1  |` tags
-* Using this, you can see that the `web` service *starts* to build, then waits for the `webpack` server to compile successfully before hosting the server
+- Because you have both containers running in the same terminal, the output from each container is marked by their `web_1 |` and `webpack_1 |` tags
+- Using this, you can see that the `web` service _starts_ to build, then waits for the `webpack` server to compile successfully before hosting the server
 
 To test that the webpack server is running successfully, you can check a few things.
 

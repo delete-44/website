@@ -1,8 +1,15 @@
-<div class='w-90-ns w-100 mb2 pa2 bb b--primary center flex items-center justify-between justify-around-ns'>
+<div
+  class="w-90-ns w-100 mb2 pa2 bb b--primary center flex items-center justify-between justify-around-ns"
+>
   {% if post.image %}
-    <a href='{{ post.url }}' class='link fl ml2 mr4 dib-ns dn'>
-      <img src='{{ post.thumbnail }}' class='br-100 h3 w3' title='{{ post.title }}' alt='{{ post.image-alt }}'>
-    </a>
+  <a href="{{ post.url }}" class="link fl ml2 mr4 dib-ns dn">
+    <img
+      src="{{ post.thumbnail }}"
+      class="br-100 h3 w3"
+      title="{{ post.title }}"
+      alt="{{ post.image-alt }}"
+    />
+  </a>
 
     {% assign width=80 %}
   {% else %}
@@ -11,7 +18,7 @@
 
   {% include post_excerpt.html width=width %}
 
-  <a class='f3 ph1 dn-ns fr mt2' href='{{ post.url }}'>
-    <i class='fas fa-arrow-circle-right'></i>
+  <a class="f3 ph1 dn-ns fr mt2" href="{{ post.url }}">
+    <i class="fas fa-arrow-circle-right"></i>
   </a>
 </div>
