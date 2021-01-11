@@ -69,3 +69,30 @@ rainy-days:
     This website is my personal practice in development. I'm using GitHub for version control (and to a
     better standard than I have before) and have it deployed via Netlify. Feel free to check out the repo
     for more information on how it's been built :)
+
+vignette:
+  title: Vignette
+  link: https://vignette-app.herokuapp.com/
+  image: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb?s=500
+  alt: Todo
+  introduction: >-
+    I'll be the first to admit that I have a lot of unresolved issues with Javascript. But, despite my best
+    intentions, the programming community are determined to keep digging it up. When a university course
+    required us to learn ME*N stack (Angular excluded for health and safety reasons), I decided to take the
+    opportunity to learn React as well... And promptly fell in love.
+  summary: >-
+    Vignette is another gratuitous, self-indulgent project. It's designed to help writers struggling with
+    writers block by motivating them to write flash fiction that is posted publicly, anonymously, and deleted
+    after 30 days; no pressure, no need to write anything good, just an opportunity to write something.
+    It is, in essence, the app I needed in college.
+    </p><p>
+    At time of writing this is hosted on <a href="https://vignette-app.herokuapp.com/">Heroku</a>, and
+    once university allows I'll make the source code publicly available.
+    </p><p>
+    Does the colour scheme look familiar?
+  outroduction: >-
+    This is also around the time I started caring about accessibility. The internet is a wonderful thing,
+    and everybody should be able to use it. So a key requirement of this app was it's accessbility - the
+    colours chosen are visibly distinct when tested with colourblindness simulators & the site is easily
+    navigatable via keyboard. The app scored 95 in Google's Lighthouse test for accessibility, and this is
+    the bar I set for myself and developers I deal with.
