@@ -96,3 +96,23 @@ vignette:
     colours chosen are visibly distinct when tested with colourblindness simulators & the site is easily
     navigatable via keyboard. The app scored 95 in Google's Lighthouse test for accessibility, and this is
     the bar I set for myself and developers I deal with.
+
+scription:
+  title: Scription
+  link: https://scription-app.herokuapp.com/
+  image: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb?s=500
+  alt: Todo
+  introduction: >-
+    And this brings me to now, to this year. At time of writing I'm in my final stage at university, and
+    for my course I have complete freedom to make a project of my choice to be developed during the year.
+    True to form, I'm making something nerdy and self-indulgent - a Dungeons & Dragons notes organiser.
+    </p><p>
+    With the complete technical freedom for this project, I've combined some of my favourite things. A
+    Ruby on Rails API with a React web app, (soon-to-be) Flutter App, all wrapped in Docker and hosted on
+    Heroku.
+  summary: >-
+    Enter Scription. This is designed to be a quick-reference for notes during a session. You define
+    notable characters, locations, or items and then write notes about them. Then should you need to
+    fact-check yourself or deal with annoying players, you can quickly see the information about a given
+    notable. Once again, this is designed to be accessible-first. To check progress, this app is hosted
+    <a href="https://scription-app.herokuapp.com/">here</a>
