@@ -1,31 +1,21 @@
-patient-admin:
-  title: Patient Administration System
-  link: https://github.com/delete-44/SOFT252
-  image: https://res.cloudinary.com/delete-44/image/upload/v1597824052/Website/coffee_zodpsm.webp
-  alt: A mug of coffee with a heart in the foam
-  introduction: >-
-    During my time with the University of Plymouth I have studied C# and Java. Using these I have
-    explored the fundamentals of Object Orientated Programming, including the study of design patterns.
-  summary: >-
-    These skills were used particularly during my second year, in which one assignment called for the
-    development of a Patient Administration System. This was graded on the use of effective (but basic)
-    version control, and appropriate use of design patterns.
-
 train-service:
   title: Train Booking System
   link: Null
   image: https://res.cloudinary.com/delete-44/image/upload/v1597824062/Website/train_vikstm.webp
   alt: A steam train
   introduction: >-
-    The following semester, we were assigned random groups and given a bigger project than we'd seen before,
-    a train booking system. This was to incorporate a mobile app for customers, a Java desktop app for staff
-    use, and a web app for administration (plus a database and web API so they could interact). Unfortunately
-    as a university-managed task, the GitHub repo has since been removed.
+    My second year at Plymouth brought with it an interesting introduction to full-stack development.
+    In teams of 4, we were to develop a ticket booking system for trains. This was to incorporate a mobile
+    app for customers, a Java desktop app for staff use, and a web app for administration (plus a database
+    and web API so they could interact).
+    </p><p>
+    Unfortunately as a university-managed task, the GitHub repo has since
+    been removed.
   summary: >-
     My role in this was building the desktop app, web app, and co-authoring a Java library that handled our
-    API connections that we could simply import to every project. This was my first introduction to developing
-    with and for an API, and whilst we used very different frameworks to those I use now the experience was
-    informative.
+    API connections that we could simply import to every project. The primary lesson I took from this course
+    was, well, which frameworks to avoid. I'd be content to not touch Java Swing or Kotlin for the rest of my
+    career.
 
 zombies:
   title: Mazemaker
@@ -38,12 +28,16 @@ zombies:
     The process was to create a `Master` path from the center of the given range, which would repeatedly select
     'valid' (ie unblocked) adjacent squares until it couldn't find any other valid paths or reached the end of
     the selection.
+    </p><p>
     The code would then traverse along this path (with a given step size so you could adjust complexity)
     and create a 'child' path wherever it could.
   summary: >-
     This was created purely as an exercise to see if I <strong>could</strong>. It was used very briefly in
-    a Dungeons and Dragons session I wrote, but the project ended there with vague plans that I could take
-    concepts from it to apply to bigger projects as needed.
+    a Dungeons and Dragons session, but the project ended with vague plans that concepts from it could be
+    taken to apply to bigger projects as needed.
+    </p><p>
+    It was, however, refreshing and exciting at the time
+    to work on something entirely for myself; this passion for programming is something I intend to keep.
 
 dungeons-ror:
   title: RoR Tutorial
@@ -51,14 +45,18 @@ dungeons-ror:
   image: https://res.cloudinary.com/delete-44/image/upload/v1597824056/Website/forest_q6kdbv.webp
   alt: A path leading into a forest
   introduction: >-
-    Working with Plymouth Software has drastically improved my skills both in development and project
-    management. I have been working largely with Ruby on Rails handling serverside functionality.
-  summary: >-
-    In preparation for my placement here, I taught myself the
+    In preparation for my placement at Plymouth Software, I taught myself the
     basics of Rails and created a test application (following Michael Hartl's wonderful
     <a href='https://www.railstutorial.org'>tutorial</a>). The application earned the colloquial name 'Young Forest'
-    following it's deployment to Heroku. I have since been able to expand upon this, and use it
-    as a testing ground for for significant changes in other projects.
+    following it's deployment to Heroku.
+  summary: >-
+    The project was expanded beyond the tutorial during my first few weeks on placement as a learning
+    exercise. Additional features such as private favourites were added, and the codebase was used as
+    a testing ground for significant migrations required in other applications to work out any major issues.
+    </p><p>
+    This highlighted the importance of spike applications when undergoing new, challenging, or large changes;
+    recreate the issue in a smaller, simpler app and work through the problems in a simpler environment first.
+
 
 rainy-days:
   title: This website!
@@ -70,4 +68,4 @@ rainy-days:
   summary: >-
     This website is my personal practice in development. I'm using GitHub for version control (and to a
     better standard than I have before) and have it deployed via Netlify. Feel free to check out the repo
-    for more information on how it's been built
+    for more information on how it's been built :)
