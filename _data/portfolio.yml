@@ -73,8 +73,8 @@ rainy-days:
 vignette:
   title: Vignette
   link: https://vignette-app.herokuapp.com/
-  image: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb?s=500
-  alt: Todo
+  image: https://res.cloudinary.com/delete-44/image/upload/v1610326938/Website/vignette_mittlr.png
+  alt: A section of the Vignette app, shown with different colourblindness simulators
   introduction: >-
     I'll be the first to admit that I have a lot of unresolved issues with Javascript. But, despite my best
     intentions, the programming community are determined to keep digging it up. When a university course
@@ -100,7 +100,7 @@ vignette:
 scription:
   title: Scription
   link: https://scription-app.herokuapp.com/
-  image: https://s.gravatar.com/avatar/27daea5cb28598ef30526f1586d9affb?s=500
+  image: https://res.cloudinary.com/delete-44/image/upload/v1610327171/Website/Scription_heehbn.png
   alt: Todo
   introduction: >-
     And this brings me to now, to this year. At time of writing I'm in my final stage at university, and
